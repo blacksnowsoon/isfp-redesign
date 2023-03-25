@@ -1,0 +1,242 @@
+[
+  {
+    "overView": {
+      "aboutUs": {
+        "whoWeAre": {
+          "1": "An Egyptian pioneer software house in the field of Transport Automation, Integration Solutions and Business Process Management, Integrated Solutions for Ports (ISFP) provides the necessary expertise required to develop local and regional ports in the field of Information Technology and Communications.",
+          "2": "Our leading enterprise modeling products and solutions enable transport organizations to visualize, understand, analyze, improve, audit and continually enhance complex operating processes and IT infrastructures. With the objective of setting new performance standards in the Transport business, ISFP operates to create first quality transport automation systems, as well as provide installation, operation, consultation and training services",
+          "3": "Established in 2005, under the memorandum of understanding concluded between the Egyptian Ministry of Transport, the Ministry of Communications & Information Technology and The Arab Academy for Science, Technology & Maritime Transport."
+        },
+        "ourVision": "To become the leading company in offering IT services to the Maritime Transport Sector in the Middle East by providing the latest and most up-to-date technological solutions and techniques so as to promote and upgrade Egyptian and regional ports, container terminals and cargo terminals.",
+        "ourMission": "Provide the maritime ports with appropriate IT integrated solutions that help improve ports operation efficiency & performance through business process re engineering, specialized software solutions, outsourced IT management services and developing customer staff through customized professional technical training."
+      },
+      "shareHolders": {
+        "1": { "name": "The Egyption Ministry of Transport", "value": "66%" },
+        "2": {
+          "name": "The Egyption Ministry of Communectations and Information Technology",
+          "value": "9%"
+        },
+        "3": {
+          "name": "The Arab Academy for Science, Technology and Maritime Transport",
+          "value": "66%"
+        }
+      },
+      "ourHistory": {
+        "2005": "",
+        "2010": "",
+        "2011": "",
+        "2013": "",
+        "2014": "",
+        "2015": "",
+        "2016": "",
+        "2017": ""
+      }
+    },
+    "boardMembersAndExecutives": {
+      "boardMembers": [
+        {
+          "name": "Prof. Dr Ismail Abdel Ghafar",
+          "position": "ISFP chairman"
+        },
+        {
+          "name": "Eng. Hala El Sheridy",
+          "position": "ISFP CEO"
+        },
+        {
+          "name": "Major General / Mohamed Ahmed Ibrahim Youssef",
+          "position": "Member of the Board Directors."
+        },
+        {
+          "name": "Counselor / Abdel Salam El Sayed Hamdy Mubarak",
+          "position": "Board Member - Legal advisor to the President of the Academy."
+        },
+        {
+          "name": "Doctor/El-Senousi Mohamed El-Senousi Balbaa",
+          "position": "Board Member - Vice-President of the Academy for African and Asian Affairs."
+        },
+        {
+          "name": "Dr. / Ahmed Mohamed Daher Mohamed Hussein",
+          "position": "Board Member - Managing Director of the Academy for Information and Communication Technology."
+        },
+        {
+          "name": "Dr. / Akram Suleiman Muhammad Suleiman",
+          "position": "Board Member - Dean of the Ports Training Institute."
+        },
+        {
+          "name": "Mr. Samer Ahmed Saeed Mohamed Al-Masry",
+          "position": "Board Member - Head of financial affairs at the Arab Academy."
+        },
+        {
+          "name": "Major General / Reda Ahmed Ismail",
+          "position": "Board Member - President of the General Authority for Red Sea Ports."
+        },
+        {
+          "name": "Mr. Ahmed Saber Ahmed Hassan",
+          "position": "Board Member - Advisor to the President of the National Postal Authority."
+        },
+        {
+          "name": "Major General / Ayman Saleh Mohamed Ibrahim",
+          "position": "Board Member - Head of the Maritime Transport Sector."
+        },
+        {
+          "name": "Major General / Ali Sharif Mohamed Salah al-Din",
+          "position": "Board Member - Vice President of the General Authority."
+        }
+      ],
+      "executives": [
+        {
+          "name": "Eng.Ghada El-Menshawi",
+          "position": "Strategic & Operational Planning Director"
+        },
+        {
+          "name": "Eng.Moataz Farghaly",
+          "position": "Professional Services Director"
+        },
+        {
+          "name": "Mr. Mahmoud Saeed",
+          "position": "Administrative & Financial Director"
+        },
+        {
+          "name": "Mrs.Mayada Saleh",
+          "position": "Human Resources Manager"
+        },
+        {
+          "name": "Eng.Eman Ebrahim",
+          "position": "Research & Development Director"
+        },
+        {
+          "name": "Eng. Ashraf Ramzy",
+          "position": "Business Development Manager"
+        },
+        {
+          "name": "Eng. Adel Abo El-Fetouh",
+          "position": "Projects Manager"
+        }
+      ]
+    },
+    "ourClients": {
+      "1": {
+        "logo": "./assets/imgs/logos/MinistryOfTransportlogo.png"
+      },
+      "2": {
+        "logo": "./assets/imgs/logos/MTS1.png"
+      },
+      "3": {
+        "logo": "./assets/imgs/logos/ACCHC.png"
+      },
+      "4": {
+        "logo": "./assets/imgs/logos/Al-Khums_Port.jpg"
+      },
+      "5": {
+        "logo": "./assets/imgs/logos/APA.jpg"
+      },
+      "6": {
+        "logo": "./assets/imgs/logos/DPA.jpg"
+      },
+      "7": {
+        "logo": "./assets/imgs/logos/EMDBLogoBig.png"
+      },
+      "8": {
+        "logo": "./assets/imgs/logos/LPC.jpg"
+      },
+      "9": {
+        "logo": "./assets/imgs/logos/misurata.png"
+      },
+      "10": {
+        "logo": "./assets/imgs/logos/RailLogo.png"
+      },
+      "11": {
+        "logo": "./assets/imgs/logos/RSPA.png"
+      },
+      "12": {
+        "logo": "./assets/imgs/logos/suda-HD.jpg"
+      },
+      "13": {
+        "logo": "./assets/imgs/logos/tripoli.png"
+      }
+    },
+    "beneficiaries": {
+      "1": { "logo": "./assets/imgs/Beneficiaries/DCHC.png" },
+      "2": { "logo": "./assets/imgs/Beneficiaries/EAFMS.png" },
+      "3": { "logo": "./assets/imgs/Beneficiaries/ECA.png" },
+      "4": { "logo": "./assets/imgs/Beneficiaries/FreightFowards.png" },
+      "5": { "logo": "./assets/imgs/Beneficiaries/goiec.jpg" },
+      "6": { "logo": "./assets/imgs/Beneficiaries/shippingAgent.jpg" },
+      "7": { "logo": "./assets/imgs/Beneficiaries/Warehouse_C.png" }
+    },
+    "products": {
+      "sps": {
+        "name": "Smart Port Solution",
+        "description": "Integrated Solutions for Ports (ISFP) developed a port operating system named Smart Port Solution (SPS). SPS is a package of applications developed specifically to serve main activities in ports and terminals. SPS is the first Egyptian and Arab IT product to be developed locally and specifically established for this purpose. In addition to the huge number of features implemented in the package it can handle the port operating model, landlord model and port terminals",
+        "modules": [
+          "SPS-Harbor",
+          "SPS-Port Simulator",
+          "SPS-Containers",
+          "SPS-Stevedoring",
+          "SPS-Warehousing",
+          "SPS-Gates",
+          "SPS-Billing",
+          "SPS-Interface"
+        ],
+				"image": "./assets/imgs/SPS.jpg"
+      },
+      "erp": {
+        "name": "Smart ERP",
+        "description": "SMART ERP software helps organizations effectively manage their critical resources with an array of scalable solutions",
+        "modules": [
+          "Financial Management",
+          "Procurement Management",
+          "Human Resources System",
+          "Inventory Management",
+          "Electronic Archiving"
+        ],
+				"image": "./assets/imgs/ERP.png"
+      },
+      "sib": {
+        "name": "Smart Integration Bus",
+        "description": "SIB is an integration middleware to perform intermediary services for the integrated parties, moreover a web application to provide a variety of collaboration services.",
+        "modules": [
+          "Message Tracking",
+          "Messaging administration",
+          "Administrate Master Data",
+          "Code Mapping",
+          "Business Process Trading",
+          "Validating",
+          "File & Code conversion"
+        ],
+				"image": "./assets/imgs/integration.png"
+      }
+    },
+		"Projects":	{
+			"egypt": {
+				"alex": {
+					"overView": "In order to meet rising customer expectations and stay ahead of the competition, APA sought to enrich the overall port operation services by moving to a paperless environment and providing a valuable and relevant solution that completely restructures the manual process of documents exchange between port community members. Automation aimed at and achieved the optimization of the Port Management Processes from decreasing the vessel and cargo turn-around time to making available the necessary real time data for yard operations and performing all statistical and data analysis for decision makers.",
+          "image": "./assets/imgs/alex_port.jpg"
+				},
+        "damietta": {
+          "overView": "ISFP acts as an IT implementer and operator at the Damietta Port. Process Reengineering was the first step undertaken at the Damietta Port, in an aim to establish an automated workflow. This was followed by the implementation of an international port management package, developed by Zebra Solutions (NAVIS).",
+          "image": "./assets/imgs/DPA.jpg"
+        },
+        "safaga": {
+          "overView": "",
+          "image": "./assets/imgs/safaga.jpg"
+        },
+        "LandPortManagementSystem": {
+          "overView":"The project aims to manage & control processes related to the General Authority for Land & Dry Ports GLDAP in the land ports stated ( Taba, Qasta & Arquen). This is a TURNKEY project. The solution includes IT infrastructure (supplies & implementation) and Application (design, development & implementation ). The solution will handle all processes related to passengers and cargo including E-payment. The information from the three ports will be replicated at the HO in GLDAP to generate statistical & follow up reports for decision makers.",
+          "image": "./assets/imgs/Landport_pic.jpg"
+        },
+        "suez": {
+          "overView": "The project is a turnkey project  about establishing port management system in Suez Port including providing and implementing IT infrastructure components (Servers, switches, fiber cabling, end user equipment’s, …etc)  and the daily IT operation activities. Another major part in the project is to develop a mini databank for Red Sea ports operational data and get required indicators and integrated reports for red sea ports to help decision makers. The project includes developing the required electronic messages for communicating data among members of the port Community and between them and the port authority,through an electronic message exchange system.",
+          "image": "./assets/imgs/port_tawfik.jpg"
+        },
+        "adabeya": {
+          "overView": "The Adabeya Port Project was the first time for ISFP to deliver a turnkey solution, All with what it includes from infrastructure components and software applications. The first phase of the Adabeya Project was about establishing an electronic management system in the port. This required establishing a professional standardized workflow before actually automating it. implementing the necessary applications required for automating the different operations in the port. The Second phase of the Adabeya Project includes integrating and establishing electronic linkage among members of the port community and between them and the port authority, through an electronic message exchange system.",
+          "image": "./assets/imgs/SCZ.jpg"
+        },
+        "stateCouncil": {
+          "overView": "As the Egyptian statecouncil aims to keep pace with recent technological development of judicial work in the modern world, it contracted ISFP to automate its business processes. The project aims at improving the efficiency of case resolution while raising the quality of courts provided services"
+        }
+		  }
+    }
+  }
+]
