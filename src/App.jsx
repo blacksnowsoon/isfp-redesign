@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <main>
+      <main style={{border: "10px solid yellow"}}>
         <Outlet />
       </main>
     </div>

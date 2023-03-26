@@ -1,51 +1,244 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  /* padding: 2rem;/ */
   text-align: center;
   min-height: 100svh;
+  /* max-width: 1000px; */
 }
 .nav-bar {
   margin: 0;
   text-align: justify;
   padding: 0 1rem;
 }
-.contact {
+/* up bar */
+.bar1 {
   font-size: 13px;
-  
+  border-bottom: 1px solid;
 }
-/* .logo {
-  height: 6em;
-  padding: 1.5em;
+/* below bar */
+.bar2 {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  box-shadow: 0px .5em .5em -.5em ;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+.logo {
+  height: 5em;
+  padding: 1em;
   will-change: filter;
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 1.5em var(--dark-blue));
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* first ul in the bar2 */
+.bar2 > ul {
+  justify-self: end;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  gap: 2em;
+  margin-right: 1em;
+}
+.bar2> ul li {
+  --under-line: transparent;
+  padding: 0;
+  display: inherit;
+  gap: 1em;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.bar2 > ul li a{
+  border-bottom: 3px solid;
+  display: flex;
+  align-items: center;
+  border-color: var(--under-line);
+  transition: all 200ms linear;
+}
+.bar2 > ul li:hover {
+  --under-line : var(--yellow)
+}
+.bar2 > ul li:focus {
+  --under-line : var(--yellow)
+}
+/* first li in the first ul has nested menu */
+.nested-menu {
+  align-items: center;
+  border-bottom: 2px solid ;
+  border-color: var(--under-line);
+  transition: all 300ms linear;
+  cursor: pointer;
+}
+.menu-btn {
+  margin-right: 1em;
+  outline: transparent;
+  border: transparent;
+  display: flex;
+  padding: .5rem;
+  /* background: var(--dark-blue); */
+  align-items: center;
+  align-self: center;
+  cursor: pointer;
+  box-shadow: inset .0em .0em .3em .1em var(--yellow);
+}
+.hide {
+  display: none;
+}
+
+
+
+/* hero section */
+.hero {
+  background-image: url('./assets/imgs/full-map.png');
+  height: 100svh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center ;
+  position: relative;
+  perspective: 800px;
+  transform: rotateY(330deg);
+  scale: 1;
+}
+.hero img {
+  --iteration: infinite;
+  --delay: 0;
+  position: absolute;
+  opacity: 0;
+  scale: .8;
+  outline: none;
+  
+}
+/* point elx project */
+img[data-point="egy-alex"] {
+  animation: feedIn 4s var(--iteration)  both;
+  --x: 60px;
+  --y: 170px;
+  /* animation-delay: var(--delay); */
+}
+/* point damietta project */
+img[data-point="egy-damietta"] {
+  animation: feedIn 4s var( --iteration)  both;
+  --x: 90px;
+  --y: 170px;
+  /* animation-delay: 2s; */
+}
+/* point savaga project */
+img[data-point="egy-savaga"] {
+  animation: feedIn 4s var( --iteration) both;
+  --x: 125px;
+  --y: 210px;
+  /* animation-delay: 3s; */
+}
+/* point taba project */
+img[data-point="egy-taba"] {
+  animation: feedIn 4s var( --iteration)  both;
+  --x: 125px;
+  --y: 170px;
+  /* animation-delay: 4s; */
+}
+/* point suez project */
+img[data-point="egy-suez"] {
+  animation: feedIn 4s var( --iteration)  both;
+  --x: 110px;
+  --y: 180px;
+  /* animation-delay: 5s; */
+}
+/* point suez project */
+img[data-point="egy-adabeya"] {
+  animation: feedIn 4s var( --iteration)  both;
+  --x: 110px;
+  --y: 190px;
+  /* animation-delay: 6s; */
+}
+/* point nuweiba project */
+img[data-point="egy-nuweiba"] {
+  animation: feedIn 4s var( --iteration)  both;
+  --x: 110px;
+  --y: 150px;
+  /* animation-delay: 7s; */
+}
+/* point alkhums project */
+img[data-point="lybia-alkhums"] {
+  animation: feedIn 4s var( --iteration)  both;
+  --x: -50px;
+  --y: 170px;
+  /* animation-delay: 8s; */
+}
+/* point misurata project */
+img[data-point="lybia-misurata"] {
+  animation: feedIn 4s var( --iteration)  both;
+  --x: -20px;
+  --y: 180px;
+  /* transform: translate(-20px,180px); */
+  /* animation-delay: 9s; */
+}
+/* point sudanese project */
+img[data-point="sudan-sudanese"] {
+  animation: feedIn 4s var( --iteration)  both;
+  --x: 160px;
+  --y: 290px;
+  /* transform: translate(160px,290px); */
+  /* animation-delay: 10s; */
+}
+/* point tripoli project */
+img[data-point="lebanon-tripoli"] {
+  animation: feedIn 4s var( --iteration)  both;
+  --x: 150px;
+  --y: 130px;
+  /* animation-delay: 11s; */
+}
+@keyframes feedIn {
+  0% {
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  100%{
+    opacity: 1;
+    transform: translate(var(--x),var(--y)) rotate(90deg) rotate(-90deg);
   }
 }
 
-/* .card {
-  padding: 2em;
-}
 
-.read-the-docs {
-  color: #888;
-} */
+
+
+
+
+.hero::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--dark-blue);
+  opacity: .6;
+}
+.services {
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+}
+@media screen and (max-width: 767px) {
+  .nav-bar {
+    padding: 10px ;
+  }
+  .bar2 {
+    grid-template-columns: auto;
+  }
+  .bar2 > div {
+    display: flex;
+    justify-content: space-between;
+  }
+  .bar2 > ul {
+    justify-self: start;
+    display: block;
+  }
+  .menu-btn {
+    display: block;
+  }
+  .services {
+    grid-template-columns: repeat(1, minmax(307px, 1fr));
+  }
+  .item {
+    grid-area: 1 / -1;
+  }
+  
+}
