@@ -8,6 +8,7 @@ import map from '../assets/imgs/full-map.png'
 import integration from '../assets/imgs/integration.png'
 import pie1 from '../assets/imgs/pie1.png'
 import trainer1 from '../assets/imgs/trainer1.png'
+import { ClientsSection } from './ClientsSection'
 const Home = () => {
 	
 	
@@ -122,22 +123,8 @@ const Home = () => {
 			
 		</section>
 
-		<section>
-			<h1 className='sec-title'>Our Clients</h1>
-			<div className='clients'>
-					<img src="" alt="" />
-					<img src="" alt="" />
-					<img src="" alt="" />
-					<img src="" alt="" />
-					<img src="" alt="" />
-					<img src="" alt="" />
-					<img src="" alt="" />
-					<img src="" alt="" />
-					<img src="" alt="" />
-					<img src="" alt="" />
-					<img src="" alt="" />
-					<img src="" alt="" />
-			</div>
+		<section className='clients'>
+			<ClientsSection />
 		</section>
 		</div>
 	

@@ -6,7 +6,7 @@
 
 .nav-bar {
   text-align: justify;
-  padding: 0 1rem;
+
   position: sticky;
   top: 0;
   z-index: 999;
@@ -106,7 +106,6 @@
   top: 130px;
   height: 410px;
   z-index: -1;
-  outline: 2px solid;
   margin-bottom: 2rem;
   padding: .5rem;
 }
@@ -118,7 +117,7 @@
   overflow: hidden;
   /* transform: rotate(-270deg); */
   
-  /* animation: rotate360 24s infinite; */
+  animation: rotate360 24s infinite;
 }
 .map_top {
   grid-column: 4/7;
@@ -396,6 +395,24 @@
 }
 .service:hover .service_overlay {
   transform: scaleY(100%);
+}
+.clients {
+  margin-bottom: 3rem;
+  background-color: var(--background-color);
+}
+.clients-content {
+  display: grid;
+  grid-auto-flow: column;
+  overflow: auto;
+  gap: 20px;
+  padding: 1rem;
+}
+.clients-content img {
+  max-width: 150px;
+  object-fit: cover;
+  outline: 1px solid;
+  border-radius: 10%;
+  scale: .9;
 }
 @media screen and (max-width: 767px) {
   .nav-bar {
