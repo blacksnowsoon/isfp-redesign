@@ -6,9 +6,9 @@ export const NavBar = () => {
   return (
     <nav className='nav-bar'>
       <div className=' bar1'>
-            <p>📞+(2 03) 429 38 46 | 
+            <p><a href='tel:+2034293846' title='call ISFP'>📞+(2 03) 429 38 46</a> | 
                 <Link to={"/stafCorner"} title="Staff Corner" > Staff Corner</Link> |
-                <Link to={"/contactUs"}>Contact Us</Link>
+                <Link to={"/contactUs"}> Contact Us</Link>
             </p>
       </div>
       <div className='bar2'>
