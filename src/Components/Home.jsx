@@ -9,6 +9,8 @@ import integration from '../assets/imgs/integration.png'
 import pie1 from '../assets/imgs/pie1.png'
 import trainer1 from '../assets/imgs/trainer1.png'
 import { ClientsSection } from './ClientsSection'
+import { ProductsSection } from './ProductsSection'
+import { NavLink } from 'react-router-dom'
 const Home = () => {
 	
 	
@@ -75,7 +77,7 @@ const Home = () => {
 					<p>and welcome to professionals who wish to join a team of experts</p>
 				</div>
 
-				<div className='integration _bottom'>
+				<div className='integration_bottom'>
 					<img className='_background' src={integration} alt="" />
 					<h2>Confidence in our team of experts to provide Innovative and Efficient solutions </h2>
 				</div>
@@ -91,7 +93,9 @@ const Home = () => {
 						<h3>Consultation Services</h3>
 						<p>Faster, Smarter,Smoother, Better, Cheaper. This is how companies required to run IT.</p>
 					</div>
-					<div className='service_overlay'><button>View</button></div>
+					<div className='service_overlay'>
+						<NavLink className={"nav-link"}>Discover ➡️</NavLink>
+					</div>
 				</div>
 				<div className='service'>
 					<div className='service-content'>
@@ -99,7 +103,9 @@ const Home = () => {
 						<h3>ICT Infra-Structure Services</h3>
 						<p>We offer our customers the complete spectrum of ICT Infra-Structure Services to help them to build & to  manage reliable infrastructure.</p>
 					</div>
-					<div className='service_overlay'><button>View</button></div>
+					<div className='service_overlay'>
+						<NavLink className={"nav-link"}>Discover ➡️</NavLink>
+					</div>
 				</div>
 				<div className='service'>
 					<div className='service-content'>
@@ -107,7 +113,9 @@ const Home = () => {
 						<h3>Training Services </h3>
 						<p>Our training service delivers open enrollment classes that are based on cyclic topics.</p>
 					</div>
-					<div className='service_overlay'><button>View</button></div>
+					<div className='service_overlay'>
+						<NavLink className={"nav-link"}>Discover ➡️</NavLink>
+					</div>
 				</div>
 				<div className='service'>
 					<div className='service-content'>
@@ -116,16 +124,23 @@ const Home = () => {
 						<p>Basically Your company’s data is more important than its physical assets. We can help securing your information from threats.</p>
 						
 					</div>
-					<div className='service_overlay'> <button>View</button></div>
+					<div className='service_overlay'>
+						<NavLink className={"nav-link"}>Discover ➡️</NavLink>
+					</div>
 				</div>
 
 			</div>
 			
 		</section>
 
+		<section className='products'>
+			<ProductsSection />
+		</section>
+
 		<section className='clients'>
 			<ClientsSection />
 		</section>
+		
 		</div>
 	
 	)
