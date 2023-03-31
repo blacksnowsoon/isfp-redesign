@@ -5,7 +5,7 @@ import SIB from '../assets/imgs/SIB.png'
 
 export const ProductsSection = () => {
   return (
-    <div>
+    <section className='products'>
       <h1 className='sec-title'>Our Products</h1>
       <div className='products-content'>
         <div className='product-card'>
@@ -20,6 +20,6 @@ export const ProductsSection = () => {
         </div>
 
       </div>
-    </div>
+    </section>
   )
 }

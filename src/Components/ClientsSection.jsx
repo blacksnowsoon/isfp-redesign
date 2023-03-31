@@ -15,7 +15,7 @@ import tripoli from '../assets/imgs/logos/tripoli.png'
 
 export const ClientsSection = () => {
   return (
-    <>
+    <section className='clients'>
       <h1 className='sec-title'>Our Clients</h1>
 			<div className='clients-content'>
 					<img src={ACCHC} alt="ACCHC" />
@@ -31,6 +31,6 @@ export const ClientsSection = () => {
 					<img src={RSPA} alt="RSPA" />
 					<img src={suda_HD} alt="suda_HD" />
 			</div>
-    </>
+    </section>
   )
 }
