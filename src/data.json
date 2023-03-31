@@ -237,6 +237,47 @@
           "overView": "As the Egyptian statecouncil aims to keep pace with recent technological development of judicial work in the modern world, it contracted ISFP to automate its business processes. The project aims at improving the efficiency of case resolution while raising the quality of courts provided services"
         }
 		  }
-    }
+    },
+    "news":[
+      {
+        "title": "The State Council Contract",
+        "overView": "The President of the Egyptian State Council, Dr. Ahmed Abul Azm,  Dr. Ismail Abdel Ghafar",
+        "date": "05 Dec 2018",
+        "subject": "President of the Arab Academy for Science & Technology & Maritime Transport AASTMT and Mrs Hala El-Sheridy CEO of Integrated Solutions For Ports ISFP  signed  the contracts of implementation of Automation System for State Council. (date 5/12/2018)"
+        
+      },
+      {
+        "title": "ISFP participated in Cairo ICT ",
+        "overView": "ISFP Pariticipated in the 23rd International Telecommunication and Information Technology",
+        "date": "01 Dec 2019",
+        "subject": "Trade Fair and Forum for the Middle East and Africa"
+
+      },
+      {
+        "title": "Maritime Transport Sector",
+        "overView": "Maritime Transport Sector (MTS) and Integrated solutions for ports (ISFP)",
+        "date": "24 Jun 2020",
+        "subject": "have signed the contract of a new project for the development of a new system for the Egyptian Maritime Data Bank. The new system will be linked to the current port automation systems in the Egyptian ports. The new system will use the latest technologies to provide online KPI’s and statistical reports for Egyptian ports, vessel traffic, handled cargo. The new system will be live by the 2nd half of 2021 and its services will be also available to non - governmental entities through subscriptions. Also, ISFP will start a new service for economic analysis for Egyptian maritime sector data to support decision-makers."
+      },
+      {
+        "title": "Smart Court Management System",
+        "overView": "The Intellectual Property Rights Office affiliated to the Egyptian Ministry of Communications and Information Technology",
+        "date": "02 Mar 2021",
+        "subject": "has issued the certificate that recognizes the intellectual property rights for Smart Court Management System CMS for Integrated Solutions For Ports ISFP company. ISFP has developed this system to manage the courts of the Egyptian Council of State. It is currently being implemented in all Egyptian courts."
+      },
+      {
+        "title": "ISFP granted the Excellence Award by The Egyptian Ministry of Transportation",
+        "overView": "ISFP granted the Excellence Award by The Egyptian Ministry of Transportation",
+        "date": "09 Oct 2022",
+        "subject": "ISFP has been granted the Excellence Award by The Egyptian Ministry of Transportation during the celebrations of The World Maritime Day - 2022, The trophy was granted for launching the Yacht tourism single window system. Using this system, Tourists can plan and apply for their visit to Egypt by Yachts. The system provide several online services, like providing required information and scanned documents, Receive all governmental approvals from the involved ministries and Online payment for all governmental fees in a single invoice."
+      },
+      {
+        "title": " partnership agreement",
+        "overView": "partnership agreement to implement studying the establishment of an Arab mechanism and a database to support the field of ship repair and construction industry in the Arab countries.",
+        "date": "19 Jan 2023",
+        "subject": "Engineer Hani Salem Sonbol, CEO of the International Islamic Trade Finance Corporation, formally greeted His Excellency Dr. Ismail Abdel Ghaffar Ismail Farag, President of the Arab Academy for Science, Technology and Maritime Transport  And in the presence of Engineer / Hala Al-Shraidi, CEO of Integrated Solutions for Ports Where the two parties signed a partnership agreement to implement studying the establishment of an Arab mechanism and a database to support the field of ship repair and construction industry in the Arab countries. Which will be implemented by the Integrated Solutions for Ports Company During the meeting, the two sides discussed joint cooperation and projects that are being completed under the umbrella of the Trade Assistance Initiative for Arab Countries (AFTIAS 2.0) program."
+      }
+    ]
+
   }
 ]
