@@ -11,7 +11,10 @@
         "ourMission": "Provide the maritime ports with appropriate IT integrated solutions that help improve ports operation efficiency & performance through business process re engineering, specialized software solutions, outsourced IT management services and developing customer staff through customized professional technical training."
       },
       "shareHolders": {
-        "1": { "name": "The Egyption Ministry of Transport", "value": "66%" },
+        "1": { 
+          "name": "The Egyption Ministry of Transport", 
+          "value": "66%" 
+        },
         "2": {
           "name": "The Egyption Ministry of Communectations and Information Technology",
           "value": "9%"
@@ -22,14 +25,36 @@
         }
       },
       "ourHistory": {
-        "2005": "",
-        "2010": "",
-        "2011": "",
-        "2013": "",
-        "2014": "",
-        "2015": "",
-        "2016": "",
-        "2017": ""
+        "2005": [ "ISFP WAS FOUNDED", 
+                  "In FEB Satrted Damietta Port Automation",
+                  "In JULY Started Alexandrea Port Authority Automation Phase I",
+                  "In DEC Started Adabia Port Automation Phase I"
+          ],
+        "2010": [ "In MAY Started Al-Khmus Part Phase I",
+                  "In OCT Started Misurata Free Zone Automation"
+                ],
+        "2011": [ "In OCT Started Al-Khmus Port Phase II"],
+        "2013": [ "In FEB Started Damietta Port (Data Center Upgrade)",
+                  "In MAY Started Sudanese Port Authority (Single Window Implementation) Phase I",
+                  "In JUNE Started Adabia Port Automation Phase I",
+                  "In NOV Started Tripoli-Lebanon Port Automation"
+                ],
+        "2014": [ "In JAN Started Sudanese Sea Port Authority (Single Window Implementation) Phase II",
+                  "In March Started ERP System Red Sea Port Authority",
+                  "In JUNE Started Nuweiba Port Automation"
+                ],
+        "2015": [ "In MARCH Started Hurghada Port Automation",
+                  "In APRIL Started Damietta Container Terminal Navis Implementation",
+                  "In AUGUST Started Safaga Port Automation",
+                  ""
+                ],
+        "2016": [ "In MARCH Started Alexandrea Port Automation Upgrade & Techincal Support",
+                  "In AUGUST Strated Sharm El-Sheikh Port Automation",
+                  "In DEC Started Port Tawfik - Suez Port Automation"
+                ],
+        "2017": [ "In AUGUST Started Alexandrea Port Automation ERP System",
+                  "In DEC Data Bank (Opreation & Support) Maritime Transport Sector"
+                ]
       }
     },
     "boardMembersAndExecutives": {
