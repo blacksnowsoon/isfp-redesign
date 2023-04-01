@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
-import './index.css'
+import './index.scss'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Error } from './Error'
 import Home  from './Components/Home'

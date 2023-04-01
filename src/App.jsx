@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 
-import './App.css'
+import './App.scss'
 import { NavBar } from './Components/NavBar'
 import { Outlet } from 'react-router-dom'
+import { Footer } from './Components/Footer'
 
 function App() {
   
@@ -14,6 +15,7 @@ function App() {
       <main>
         <Outlet />
       </main>
+      <Footer />
     </div>
   )
 }

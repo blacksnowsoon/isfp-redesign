@@ -294,7 +294,7 @@
   border: none;
 }
 .product-card:hover {
-  filter: grayscale();
+  filter: grayscale(50%);
 }
 .clients {
   padding: 4rem 0;
