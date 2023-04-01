@@ -57,6 +57,25 @@
                 ]
       }
     },
+    
+    "services" : [
+      {
+        "name": "ICT Infra-Structure Services ",
+        "description": "We offer our customers the complete spectrum of ICT Infra-Structure Services to help them to build & to  manage reliable infrastructure"
+      },
+      {
+        "name": "Consultation Services",
+        "description": "Faster, Smarter, Smoother, Better, Cheaper. This is how companies required to run IT. "
+      },
+      {
+        "name": "IT Management & Operation Services",
+        "description": "Basically;Your company’s data is more important than its physical assets. We can help securing your information from threats"
+      },
+      {
+        "name": "Training Services",
+        "description": "Our training service delivers open enrollment classes that are based on cyclic topics"
+      }
+    ],
     "boardMembersAndExecutives": {
       "boardMembers": [
         {
