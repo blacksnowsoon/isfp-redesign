@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700;800&family=Outfit:wght@400;700&display=swap');
+
+:root {
+  --color-scheme:#ffd945 ;
+  --logo-blue: #044281;
+  --middle-blue: hsl(210, 95%, 15%);
+  --mate-blue: hsl(208, 37%, 20%);
+  --dark-blue: #000d9a;
+  --accent: #044888;;
+  --background-color: #242424;
+  --color:#ffffffde;
+
+/* global vars */
+  --box-shadow: 0rem 0rem .5rem var(--accent);
+  --s-gap: .375rem;
+  --m-gap: .75rem;
+  --l-gap: 1.25rem;
+  --raduis: 6px;
+  --hero-margin : var(--offset-top, 100px) ;
+  /* theme settings */
+  font-family: 'Hanken Grotesk', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: --color;
+  background-color: --background-color;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+html {
+  scroll-behavior: smooth;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+body,h1,h2,h3,h4,h5,h6,p {
+  margin: 0;
+}
+header {
+  position: relative;
+  width: 100%;
+  top: 0;
+}
+main {
+  position: relative;
+  max-width: 1280px;
+  margin: 100svh auto 0 auto;
+  background: var(--background-color);
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+footer {
+  /* min-height: 100svh; */
+  background: var(--background-color);
+}
+ul {
+  list-style: none;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --color:#242424;
+    --background-color: #ffffff;
+  }
+  a:hover {
+    color: var(--logo-blue);
+  }
+  
+} 

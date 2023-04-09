@@ -1,89 +1,42 @@
-import React from 'react'
-
+import React, { useEffect, useRef, useState } from 'react';
 import map from '../assets/imgs/full-map.png'
-import integration from '../assets/imgs/integration.png'
+import integration from '../assets/imgs/hero/integration.png'
 import pie1 from '../assets/imgs/pie1.png'
 import trainer1 from '../assets/imgs/trainer1.png'
+
+
 export const HeroSection = () => {
+
+	const heroRef = useRef(null);
+	const carousalContainer = useRef(null);
+	
+	const slideShow = ()=> {
+		const slidesContainer = carousalContainer.current
+		const containerRect = slidesContainer.getBoundingClientRect();
+		slidesContainer.scrollLeft += 100 +"px"
+		const slides = slidesContainer.querySelectorAll('div');
+		// console.log(slidesContainer.scrollLeft = 500 +"px")
+
+	}
+	useEffect(()=>{
+		slideShow()
+		
+	},[])
+	
   return (
-    <section  className='hero'>
-			<div className='hero-center'>
-        <h1 >
-          <span>I</span>
-          <span>S</span>
-          <span>F</span>
-          <span>P</span>
-        </h1>
-        <div className='hero-item map_top'>
-					<img className='_background' src={map} alt={"map"} />
-				{/*	<span title={'alex'} data-point={'egy-alex'}>⚪</span>
-					<span title={'damietta'} data-point={'egy-damietta'}>⚪</span>
-					<span title={'savaga'} data-point={'egy-savaga'}>⚪</span>
-					<span title={'taba'} data-point={'egy-taba'}>⚪</span>
-					<span title={'suez'} data-point={'egy-suez'}>⚪</span>
-					<span title={'adabeya'} data-point={'egy-adabeya'}>⚪</span>
-					<span title='nuweiba' data-point={'egy-nuweiba'}>⚪</span>
-					<span title='alkhums' data-point={'lybia-alkhums'}>⚪</span>
-					<span title='misurata' data-point={'lybia-misurata'}>⚪</span>
-					<span title='sudanese' data-point={'sudan-sudanese'}>⚪</span>
-					<span title='tripoli' data-point={'lebanon-tripoli'}>⚪</span>
-				*/}
-        </div> 
-        
-
-				<div className='hero-item pie_right'>
-          <img className='_background' src={pie1} alt="pie" />
-					{/*<p>
-						<h2>Credibillity in Our Strength</h2>
-						<h3>Sponsored & Owned by</h3>
-						<h4>the Gonverment & AASTMT</h4>
-					</p>
-					<p>
-							<small>The Egyption Ministry of Transport</small>
-							<small>Arab Academy for Science, Technology & Martitime Transport</small>
-							<small>The Egyption Ministry of Communications & Information Technology</small>
-						</p> */}
+    <div ref={heroRef} className='hero'>
+			<div ref={carousalContainer} className='media-container'>
+				<div className='slide'>
+					<img src={pie1} alt="pie1" />
 				</div>
-			
-				<div className='hero-item trainer_left'>
-          <img className='_background' src={trainer1} alt="" />
-					{/*<h1>
-						<span>W</span>
-						<span>e </span>
-						<span>I</span>
-						<span>v</span>
-						<span>e</span>
-						<span>s</span>
-						<span>t </span>
-						<span>i</span>
-						<span>n </span>
-						<span>H</span>
-						<span>u</span>
-						<span>m</span>
-						<span>a</span>
-						<span>n </span>
-						<span>A</span>
-						<span>s</span>
-						<span>s</span>
-						<span>e</span>
-						<span>e</span>
-						<span>t</span>
-						<span>e</span>
-						<span>s</span>
-					</h1>
-					<p>
-            and welcome to professionals who wish to join a team of experts
-            </p> */}
+				<div className='slide'>
+					<img src={pie1} alt="pie1" />
 				</div>
-
-				<div className='hero-item integration_bottom'>
-          <img className='_background' src={integration} alt="" />
-				{/*	<h2>
-            Confidence in our team of experts to provide Innovative and Efficient solutions 
-          </h2> */}
+				<div className='slide'>
+					<img src={pie1} alt="pie1" />
 				</div>
-
+				
 			</div>
-		</section>
+		</div>
   )
 }

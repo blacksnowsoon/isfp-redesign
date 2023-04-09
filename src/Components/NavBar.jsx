@@ -1,43 +1,94 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useCallback, useEffect, useRef } from 'react'
+import { NavLink } from 'react-router-dom'
 import logo from '../assets/imgs/logos/ISFP.png'
-export const NavBar = () => {
+export const NavBar = ({navProps}) => {
 
+  const menuRef = useRef();
+  const navRef = useRef()
+  /* useing the call back to avoid re-render 
+   * the menu unless the props has modified
+  */
+  const listFragment = useCallback(()=> {
+  /** if the value of the given key has an Array will return 
+   * a nested ul else will return a navLink.
+    */
+    const list = Object.keys(navProps).map(key => {
+      if (!Array.isArray(navProps[key])) {
+        return (
+        <li className='link-container' key={key + Math.random()}>
+          <a className={'menu-link'} href={`#${key.toLowerCase().replaceAll(" ", "")}`}>
+            {key}
+          </a>
+        </li>)
+      } else {
+        return (
+          <li className='link-container' key={key + Math.random()}>
+            <NavLink className={'menu-link'} to={key.toLowerCase().replaceAll(" ", "")}>{key}</NavLink>
+            <ul className='nested-menu'>
+              {
+                navProps[key].map(item => {
+                return (
+                  <li className='link-container' key={item + Math.random()}>
+                  <NavLink className={'menu-link'} to={`/${key.toLowerCase().replaceAll(" ", "")}/${item.toLowerCase().replaceAll(" ", "")}`}>
+                  {item}
+                  </NavLink>
+                </li> )
+                })
+              }
+            </ul>
+          </li>
+        )
+      }
+    })
+    return list;
+  },[navProps]);
+  const toggleMenu = (e)=> {
+    e.preventDefault()
+    menuRef.current.classList.toggle("grap-down")
+  }
+  const calcNavOffSet = ()=>{
+    const nav = navRef.current;
+    const rectBounds = nav.getBoundingClientRect()
+    document.documentElement.style
+    .setProperty('--offset-top', rectBounds.height + "px");
+  }
+  useEffect(()=>{
+    calcNavOffSet()
+    return()=>{
+      window.removeEventListener("loadeddata", calcNavOffSet)
+    }
+  }, [])
   return (
-    <nav className='nav-bar'>
+    <nav ref={navRef} className='nav-bar' onLoadedData={calcNavOffSet}>
       <div className=' bar1'>
-            <p><a href='tel:+2034293846' title='call ISFP'>📞+(2 03) 429 38 46</a> | 
-                <Link to={"/stafCorner"} title="Staff Corner" > Staff Corner</Link> |
-                <Link to={"/contactUs"}> Contact Us</Link>
+            <p>
+              <a href='tel:+2034293846' title='call ISFP'>
+                📞+(2 03) 429 38 46 | 
+              </a>  
+              <NavLink to={"https://www.isfpegypt.com/beta/./index.php/staff-corner2"} title="Staff Corner">
+                  Staff Corner
+                </NavLink> |
+              <NavLink to={"/contactUs"} title='contact ISFP'>
+                Contact Us
+              </NavLink>
             </p>
       </div>
       <div className='bar2'>
-        <div >
-        <img className='logo' src={logo} alt='logo'/>
-        <button className='menu-btn hide'>🪗🏠</button> 
+        <div className='bar2-left'>
+          <a href='/'>
+          <img className='logo' src={logo} alt='logo'/>
+          </a>
+          
+          <button className='menu-btn' onClick={toggleMenu}>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+              <path d="M3 18v-2h18v2Zm0-5v-2h18v2Zm0-5V6h18v2Z"/>
+            </svg>
+          </button> 
         </div>
-
-        <ul className='menu' data-toggle={"menu"}>
-            <li className='nested-menu'>
-                Corporate
-              <ul className='nested-ul hide'>
-                <li>OverView</li>
-                <li>Board Members</li>
-                <li>Clients</li>
-              </ul>
-            </li>
-            <li>
-              <Link >Products</Link>
-            </li>
-            <li>
-              <Link>Services</Link>
-            </li>
-            <li>
-              <Link>Projects</Link>
-            </li>
-            <li>
-              <Link>News & Events</Link>
-            </li>
+        <ul ref={menuRef} className='menu' data-toggle={"menu"}>
+            {
+              listFragment()
+            }
 
         </ul>  
       </div>

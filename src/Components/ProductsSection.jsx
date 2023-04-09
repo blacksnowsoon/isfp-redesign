@@ -1,25 +1,43 @@
-import React from 'react'
-import SPS from '../assets/imgs/SPS.png'
-import ERP from '../assets/imgs/ERP.png'
-import SIB from '../assets/imgs/SIB.png'
+import React, { useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
-export const ProductsSection = () => {
+export const ProductsSection = (products) => {
+  // to get the name of the section with upperCase for first letter
+  const secName =
+    Object.getOwnPropertyNames(products)[0].charAt(0).toLocaleUpperCase() +
+    Object.getOwnPropertyNames(products)[0].slice(1);
+
+  const productsList = Object.values(products)[0]
+
+  const generateProductsList = ()=>{
+    // public\assests\Sections_imgs\products\ERP.png
+    return (
+      <>
+      {
+        <ul className="products-content">
+          {
+            productsList.map(product =>{
+              const img = new URL(`../assets/imgs/products/${product.image}`, import.meta.url).href
+              return (
+                <li className="product-card" key={product.shortName + Math.random()}>
+                  <img src={img} alt={product.shortName} />
+                  <NavLink to={`./${product.shortName.toLocaleLowerCase()}`}>Discover</NavLink>
+                </li>
+              )
+            })
+          }
+      </ul>
+      }
+      </>
+    )
+  }
+  useEffect(()=>{generateProductsList()},[])
   return (
-    <section className='products'>
-      <h1 className='sec-title'>Our Products</h1>
-      <div className='products-content'>
-        <div className='product-card'>
-          <img src={ERP} alt="ERP" />
-
-        </div>
-        <div className='product-card'>
-          <img src={SPS} alt="SPS" />
-        </div>
-        <div className='product-card'>
-        <img src={SIB} alt="SIB" />
-        </div>
-
-      </div>
+    <section className="container">
+      <h2 className="sec-title">Main {secName}</h2>
+      {
+        generateProductsList()
+      }
     </section>
-  )
-}
+  );
+};

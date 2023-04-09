@@ -1,16 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.scss'
+
+import App, { loader   as appLoader } from './App'
+import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Error } from './Error'
 import Home  from './Components/Home'
+
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     errorElement: <Error />,
+    loader: appLoader,
     children: [
       {
         index: true,
