@@ -26,15 +26,7 @@ export const HeroSection = () => {
   return (
     <div ref={heroRef} className='hero'>
 			<div ref={carousalContainer} className='media-container'>
-				<div className='slide'>
-					<img src={pie1} alt="pie1" />
-				</div>
-				<div className='slide'>
-					<img src={pie1} alt="pie1" />
-				</div>
-				<div className='slide'>
-					<img src={pie1} alt="pie1" />
-				</div>
+				
 				
 			</div>
 		</div>
