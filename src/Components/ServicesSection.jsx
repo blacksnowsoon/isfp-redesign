@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-
+import React, { useCallback } from "react";
+// handle the section of an array data type
 export const ServicesSection = (services) => {
   // to get the name of the section from the prop key and captilize the first letter
   const secName =
@@ -7,8 +7,8 @@ export const ServicesSection = (services) => {
     Object.getOwnPropertyNames(services)[0].slice(1);
   // to get the array of the services which is the value of prop
   const listOfServices = Object.values(services)[0];
-  const generateServicesList = ()=>{
-    
+
+  const generateServicesList = useCallback(()=>{
       return (
         <>
           <ul className="services">
@@ -29,8 +29,7 @@ export const ServicesSection = (services) => {
           </ul>
         </>
       )
-  }
-useEffect(()=>{generateServicesList()}, [])
+  },[])
   return (
     <section id="services" className="container">
       <h2 className="sec-title">{secName}</h2>

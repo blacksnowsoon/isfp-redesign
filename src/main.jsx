@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom/client'
 
 import App, { loader   as appLoader } from './App'
 import './index.css';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, useRoutes } from 'react-router-dom'
 import { Error } from './Error'
 import Home  from './Components/Home'
+import { Product } from './Components/ProductsSection';
 
 
 const router = createBrowserRouter([
@@ -17,8 +18,14 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />
+        element: <Home />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/products/*",
+        element: <Product />,
       }
+      
     ]
   }
 ])

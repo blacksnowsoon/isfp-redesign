@@ -10,22 +10,28 @@ function App() {
 
   const { data }  = useLoaderData();
 
-  const generateNavBar = useCallback(()=> {
+  // to sepreate the nested link from the simple links
+  const generateNavBarMneu = useCallback(()=> {
     const navObj = {};
-    for(let [key, value] of Object.entries(data)) {
-      if(!Array.isArray(value) && value.length !== 0) {
-        navObj[key] = Object.getOwnPropertyNames(value)
-      } else {
+
+    Object.keys(data).map(key =>{
+      if (Array.isArray(data[key]) && data[key].length > 0) {
         navObj[key] = key
+      } else if (typeof(data[key]) === "object" && data[key] !== null) {
+        navObj[key] = Object.keys(data[key]).map(nestedKey => {
+          return nestedKey
+        })
       }
-    }
+    })
+    
     return navObj
   },[])
+
   return (
     <div className="App" >
       <header>
-        <NavBar navProps={generateNavBar()} />
-        <HeroSection />
+        <NavBar navProps={generateNavBarMneu()} />
+        
       </header>
       <main >
         <Outlet context={data}/>

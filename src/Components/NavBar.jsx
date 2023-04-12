@@ -55,7 +55,7 @@ export const NavBar = ({navProps}) => {
   useEffect(()=>{
     calcNavOffSet()
     return()=>{
-      window.removeEventListener("loadeddata", calcNavOffSet)
+      calcNavOffSet()
     }
   }, [])
   return (

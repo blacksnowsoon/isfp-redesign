@@ -12,6 +12,7 @@
   background: var(--background-color) ;
   box-shadow: 0px .5em .5em -.5em;
   z-index: 999;
+  padding: .5rem 0;
 }
 /* first bar */
 .bar1 {
@@ -36,8 +37,8 @@
   grid-template-columns: auto 1fr auto;
   margin: 0 auto;
   max-width: 1000px;
-  font-size: 13px;
-  height: 4em;
+  font-size: 15px;
+  /* height: 4em; */
   
 }
 .bar2 .bar2-left {
@@ -71,9 +72,11 @@
 /* first ul in the bar2 */
 .menu {
   justify-self: end;
+  align-self: center;
   display: flex;
   padding: 0;
-  gap: var(--m-gap);
+  gap: var(--l-gap);
+  font-weight: 500;
 }
 .link-container {
   --under-line: transparent;
@@ -87,8 +90,6 @@
   display: flex;
   border-color: var(--under-line);
   transition: all 300ms;
-  text-decoration: none;
-  color: var(--color);
 }
 /* li has ul as nested menu */
 .nested-menu {
@@ -98,14 +99,10 @@
   flex-direction: column;
   padding: 0;
   top: calc(100% - 1px);
-  left: -1px;
-  min-width: 150px;
-  max-width: 150px;
+  width: 150px;
   background: var(--background-color);
-  border-left: 2px solid var(--accent);
-  border-radius: var(--raduis);
   border-color: var(--under-line);
-  transition: opacity 2s, display 2s;
+  font-size: 13px;
 }
 .nested-menu .link-container {
   align-self: start;
@@ -167,6 +164,8 @@
 /* home container style --------------------------------- */
 .container {
   padding-top: var(--hero-margin);
+  
+  /* background: linear-gradient(to var(--direction, top), var(--accent), transparent); */
 }
 .sec-title {
   font-size: 2rem;
@@ -223,48 +222,88 @@
 .products-content {
   display: grid;
   grid-template-columns: repeat(3, minmax(275px, 1fr));
+  padding: 0 1rem 2rem; 
 }
 .product-card {
+  margin: 0;
   padding: 1rem;
+  float: right;
   cursor: pointer;
-  transition: filter .25s;
   display: grid;
-  grid-auto-flow: row;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--l-gap);
+  position: relative;
+  overflow: hidden;
+  perspective: 300px;
+  transform-origin: top left;
 }
-.product-card:nth-child(2){
+.product-card:nth-child(even) {
   border-left: 1px solid;
   border-right: 1px solid;
 }
-.product-card :nth-child(1) {
-  width: 50%;
-  height: 147px;
-  place-self: center;
-}
-.product-card :nth-child(2) {
+.product-card a {
+  grid-column: 1 / -1;
+  outline: 1px solid;
   position: relative;
-  margin: 1rem auto;
+  align-content: center;
+  justify-self: center;
   padding: .5rem 1rem;
-  transition: color 300ms, height 300ms;
+  
 }
-.product-card :nth-child(2)::before {
+.product-card a::after {
   content: "";
   position: absolute;
-  width: 2px;
+  top: 0;
+  left: 0;
+  width: 3px;
   height: 100%;
   background: var(--accent);
-  inset: 0;
-  transition: width 300ms;
   z-index: -1;
+  transition: width 300ms;
 }
-.product-card a:hover {
+.product-card a:hover  {
   color: var(--background-color);
 }
-.product-card a:hover::before {
+.product-card a:hover::after {
   width: 100%;
 }
-.product-card:hover {
-  filter: grayscale(50%);
+.product-card .product-img {
+  height: 200px;
 }
+.product-card .product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform-origin: top left;
+  transition: all 1s;
+}
+.product-card:hover img {
+  transform: translateX(-115%);
+  width: 30%;
+  height: 30%;
+}
+.product-card .product-description {
+  position: absolute;
+  max-height: 80%;
+  font-size: .8em;
+  padding: 1rem;
+  inset: 0;
+  transform: translate(100%,100%);
+  text-align: justify;
+  transition: all 1s;
+}
+.product-card .shape {
+  width: 30%;
+  height: 32%;
+  float: left;
+  shape-margin: 1rem;
+}
+.product-card:hover .product-description {
+  transform: translateX(0%);
+}
+/* projects style */
+
+
 /* clients section style */
 .clients {
   padding: 4rem 0;
@@ -307,6 +346,61 @@
   bottom: 0;
   transition: width 300ms;
 }
+/* project container which is ul---*/
+
+/* is -il- in the container */
+.country {
+  overflow: auto;
+  height: 500px;
+}
+.country h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 1rem;
+}
+.locations {
+  display: flex;
+  gap: 1rem;
+  overflow-y: hidden;
+  padding: 1rem
+}
+/* this the li of the locations */
+.location {
+  position: relative;
+  min-width: 250px;
+  max-width: 250px;
+  height: 350px;
+}
+.location h6 {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.3em;
+}
+.location img {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.location .location-overview{
+  background-color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  top: calc(100% + 1rem);
+  text-align: justify;
+  padding: .5rem;
+  height: 100%;
+  transition: top 1s;
+}
+.location-overview a {
+  align-content: end;
+}
+.location:hover .location-overview, .location:focus .location-overview{
+  top: 0;
+}
+
+/* footer style */
 .footer .column>h2:hover::before {
   width: 40%;
 }

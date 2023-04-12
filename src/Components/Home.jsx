@@ -10,22 +10,22 @@ import { NewsSection } from './NewsSection'
 import { useOutletContext } from 'react-router-dom'
 
 const Home = () => {
-	// const data = useOutletContext()
+	const data = useOutletContext()
 	const {Corporate : {"Clients & Beneficiaries": cli_ben}, Services, Products, "News & Events":news, Projects } = useOutletContext()
 	
 	
 	return (
 		<>
-				
-				<ServicesSection services ={Services} />
+				<HeroSection />
+				<ServicesSection services={Services} />
 				
 				<ProductsSection products ={Products}/>
 				
 				<ProjectsSection projects ={Projects} />
 
-				<NewsSection news={news} />
+				{/* <NewsSection news={news} /> */}
 
-				<ClientsSection clients={cli_ben.Clients} />  
+				{/* <ClientsSection clients={cli_ben.Clients} />   */}
 			
 		</>
 	)

@@ -1,0 +1,1 @@
+** in the data json file if the key has a value as an object will add a link with a nested menu to the nav bar else will just add a link in the menu
