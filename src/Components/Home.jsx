@@ -1,6 +1,6 @@
 import React from 'react'
 
-import point_small from '../assets/imgs/point_small.png'
+
 import { ClientsSection } from './ClientsSection'
 import { ProductsSection } from './ProductsSection'
 import { HeroSection } from './HeroSection'
@@ -16,12 +16,13 @@ const Home = () => {
 	
 	return (
 		<>
-				<HeroSection />
-				<ServicesSection services={Services} />
-				
-				<ProductsSection products ={Products}/>
-				
-				<ProjectsSection projects ={Projects} />
+			<HeroSection />
+			
+			<ServicesSection services={Services} />
+			
+			<ProductsSection products ={Products}/>
+			
+			<ProjectsSection projects ={Projects} />
 
 				{/* <NewsSection news={news} /> */}
 

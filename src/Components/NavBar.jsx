@@ -23,7 +23,9 @@ export const NavBar = ({navProps}) => {
       } else {
         return (
           <li className='link-container' key={key + Math.random()}>
-            <NavLink className={'menu-link'} to={key.toLowerCase().replaceAll(" ", "")}>{key}</NavLink>
+            <a className={'menu-link'} href={`#${key.toLowerCase().replaceAll(" ", "")}`}>
+            {key}
+            </a>
             <ul className='nested-menu'>
               {
                 navProps[key].map(item => {

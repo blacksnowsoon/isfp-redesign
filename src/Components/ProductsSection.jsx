@@ -43,7 +43,7 @@ export const ProductsSection = (products) => {
     generateProductsList();
   }, []);
   return (
-    <section id="#products" className="container">
+    <section id="products" className="container">
       <h2 className="sec-title">Main {secName}</h2>
       {generateProductsList()}
     </section>
