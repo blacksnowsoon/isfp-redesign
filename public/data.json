@@ -170,28 +170,28 @@
     {
       "name": "ICT Infra-Structure Services ",
       "description": "We offer our customers the complete spectrum of ICT Infra-Structure Services to help them to build & to  manage reliable infrastructure",
-      "image": "managed-services.jpg"
+      "image": "infrastructure1.png"
     },
     {
       "name": "Consultation Services",
       "description": "Faster, Smarter, Smoother, Better, Cheaper. This is how companies required to run IT. ",
-      "image": "consult44.png"
+      "image": "consultation1.png"
     },
     {
       "name": "IT Management & Operation Services",
-      "description": "Basically;Your company’s data is more important than its physical assets. We can help securing your information from threats",
-      "image": "sec444.png"
+      "description": "Basically Your company’s data is more important than its physical assets. We can help securing your information from threats",
+      "image": "securing1.png"
     },
     {
       "name": "Training Services",
       "description": "Our training service delivers open enrollment classes that are based on cyclic topics",
-      "image": "trainer.png"
+      "image": "training1.png"
     }
   ],
   "Products": {
       "SPS": {
         "fullName": "Smart Port Solution",
-        "description": "ISFP developed a port operating system named Smart Port Solution (SPS). SPS is a package of applications developed specifically to serve main activities in ports and terminals. SPS is the first Egyptian and Arab IT product to be developed locally and specifically established for this purpose. In addition to the huge number of features implemented in the package it can handle the port operating model, landlord model and port terminals",
+        "description": "ISFP developed a port operating system named Smart Port Solution (SPS). SPS is a package of applications developed specifically to serve main activities in ports and terminals.",
         "modules": [
             "SPS-Harbor",
             "SPS-Port Simulator",
@@ -214,7 +214,7 @@
           "Inventory Management",
           "Electronic Archiving"
         ],
-        "image": "ERP.png"
+        "image": "erp1.png"
       },
       "SIB":{
         "fullName": "Smart Integration Bus",
