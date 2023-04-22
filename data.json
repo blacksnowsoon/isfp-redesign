@@ -170,67 +170,97 @@
     {
       "name": "ICT Infra-Structure Services ",
       "description": "We offer our customers the complete spectrum of ICT Infra-Structure Services to help them to build & to  manage reliable infrastructure",
-      "image": "managed-services.jpg"
+      "image": "infrastructure1.png"
     },
     {
       "name": "Consultation Services",
       "description": "Faster, Smarter, Smoother, Better, Cheaper. This is how companies required to run IT. ",
-      "image": "consult44.png"
+      "image": "consultation1.png"
     },
     {
       "name": "IT Management & Operation Services",
-      "description": "Basically;Your company’s data is more important than its physical assets. We can help securing your information from threats",
-      "image": "sec444.png"
+      "description": "Basically Your company’s data is more important than its physical assets. We can help securing your information from threats",
+      "image": "securing1.png"
     },
     {
       "name": "Training Services",
       "description": "Our training service delivers open enrollment classes that are based on cyclic topics",
-      "image": "trainer.png"
+      "image": "training1.png"
     }
   ],
   "Products": {
-      "SPS": {
-        "fullName": "Smart Port Solution",
-        "description": "ISFP developed a port operating system named Smart Port Solution (SPS). SPS is a package of applications developed specifically to serve main activities in ports and terminals. SPS is the first Egyptian and Arab IT product to be developed locally and specifically established for this purpose. In addition to the huge number of features implemented in the package it can handle the port operating model, landlord model and port terminals",
-        "modules": [
-            "SPS-Harbor",
-            "SPS-Port Simulator",
-            "SPS-Containers",
-            "SPS-Stevedoring",
-            "SPS-Warehousing",
-            "SPS-Gates",
-            "SPS-Billing",
-            "SPS-Interface"
-          ],
-        "image": "SPS.png"
-      },
-      "ERP":{
-        "fullName": "Smart ERP",
-        "description": "SMART ERP software helps organizations effectively manage their critical resources with an array of scalable solutions",
-        "modules": [
-          "Financial Management",
-          "Procurement Management",
-          "Human Resources System",
-          "Inventory Management",
-          "Electronic Archiving"
+    "SPS": {
+      "fullName": "Smart Port Solution",
+      "description": "ISFP developed a port operating system named Smart Port Solution (SPS). SPS is a package of applications developed specifically to serve main activities in ports and terminals. SPS is the first Egyptian and Arab IT product to be developed locally and specifically established for this purpose. In addition to the huge number of features implemented in the package it can handle the port operating model, landlord model and port terminals",
+      "modules": [
+          "Harbor",
+          "Port Simulator",
+          "Cargo",
+          "Containers",
+          "Stevedoring",
+          "Warehousing",
+          "Gates",
+          "Billing",
+          "User Friendly Interface"
         ],
-        "image": "ERP.png"
-      },
-      "SIB":{
-        "fullName": "Smart Integration Bus",
-        "description": "SIB is an integration middleware to perform intermediary services for the integrated parties, moreover a web application to provide a variety of collaboration services.",
-        "modules": [
-          "Message Tracking",
-          "Messaging administration",
-          "Administrate Master Data",
-          "Code Mapping",
-          "Business Process Trading",
-          "Validating",
-          "File & Code conversion"
+      "thumbnail": "sps/SPS.png",
+      "images": [
+        "sps/harbor.jpg",
+        "sps/simulator.jpg",
+        "sps/cargo.jpg",
+        "sps/container.jpg",
+        "sps/stevedoring.jpg",
+        "sps/warehouse.jpg",
+        "sps/gates.jpg",
+        "sps/billing.jpg"
         ],
-      "image": "SIB.png"
-      }
+      "brochure": "https://www.isfpegypt.com/beta/images/productsPDF/ISFPsoftwareproductsSPSE.pdf"
     },
+    "ERP":{
+      "fullName": "Smart ERP",
+      "description": "SMART ERP software helps organizations effectively manage their critical resources with an array of scalable solutions.",
+      "modules": [
+        "Financial Management",
+        "Procurement Management",
+        "Human Resources System",
+        "Inventory Management",
+        "Electronic Archiving"
+      ],
+      "thumbnail": "erp/erp1.png",
+      "images": [
+        "erp/FinancialManagement.png",
+        "erp/Procurement.png",
+        "erp/HumanResourcesSystem.png",
+        "erp/InventoryManagement.png",
+        "erp/ElectronicArchiving.png"
+      ],
+      "brochure": "https://www.isfpegypt.com/beta/images/productsPDF/ISFPsoftwareproducts-SMARTERPE.pdf"
+    },
+    "SIB":{
+      "fullName": "Smart Integration Bus",
+      "description": "SIB is an integration middleware to perform intermediary services for the integrated parties, moreover a web application to provide a variety of collaboration services.",
+      "modules": [
+        "Message Tracking",
+        "Messaging administration",
+        "Administrate Master Data",
+        "Code Mapping",
+        "Business Process Trading",
+        "Validating",
+        "File & Code conversion"
+      ],
+    "thumbnail": "sib/SIB.png",
+    "images": [
+      "sib/MessageTracking.png",
+      "sib/Messagingadministration.png",
+      "sib/AdministrateMasterData.png",
+      "sib/CodeMapping.png",
+      "sib/BusinessProcessTrading.png",
+      "sib/Validating.png",
+      "sib/FileConversion.png"
+    ],
+    "brochure": "https://www.isfpegypt.com/beta/images/productsPDF/ISFPsoftwareproducts-SIBE.pdf"
+    }
+  },
   "Projects":	[
     {
       "Egypt": [
