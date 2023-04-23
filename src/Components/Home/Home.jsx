@@ -1,16 +1,16 @@
 import React from 'react'
 
 
-import { ClientsSection } from './ClientsSection'
-import { ProductsSection } from './ProductsSection'
-import { HeroSection } from './HeroSection'
-import { ServicesSection } from './ServicesSection'
-import { ProjectsSection } from './ProjectsSection'
-import { NewsSection } from './NewsSection'
+import { ClientsSection } from './Sections/ClientsSection'
+import { ProductsSection } from './Sections/ProductsSection'
+import { HeroSection } from './Sections/HeroSection'
+import { ServicesSection } from './Sections/ServicesSection'
+import { ProjectsSection } from './Sections/ProjectsSection'
+import { NewsSection } from './Sections/NewsSection'
 import { useOutletContext } from 'react-router-dom'
 
 const Home = () => {
-	const data = useOutletContext()
+	
 	const {Corporate : {"Clients & Beneficiaries": cli_ben}, Services, Products, "News & Events":news, Projects } = useOutletContext()
 	
 	

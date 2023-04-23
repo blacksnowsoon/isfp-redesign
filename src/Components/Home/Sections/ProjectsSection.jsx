@@ -1,5 +1,10 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback } from "react";
 import { NavLink } from "react-router-dom";
+
+// this section has an array of entities each item in the array
+// hold and Object with one key which is the country
+// and each country has a list of some objects each object
+// hold a project by location or the city
 // to handle the setion of an array data object
 export const ProjectsSection = (projects) => {
   const secName =
@@ -8,12 +13,6 @@ export const ProjectsSection = (projects) => {
 
   const listOfCountries = Object.values(projects)[0];
   
-  const inArray = (arr, num) => {
-    for (let i=0; i<arr.lenght; i++) {
-        if(arr[i] === num) return true;
-        return false;
-    }
-  }
   const generateHomeProjectsSection = ()=>{
     const elements = {}
     const array = []
@@ -64,8 +63,8 @@ export const ProjectsSection = (projects) => {
                         // console.log(project.location.replaceAll(/[^a-zA-Z0-9]/g,""))
                         return (
                         <li key={Math.random()} className="location card">
-                          <h6 className="location-title">{project.location}</h6>
-                          <img src={new URL(`../assets/imgs/projects/${project.image}`, import.meta.url).href}/>
+                          <h6 className="location-title">{project.city}</h6>
+                          <img src={new URL(`../../../assets/imgs/projects/${project.image}`, import.meta.url).href}/>
                           {/* <div className="location-img">
                           
                           </div> */}
@@ -73,7 +72,7 @@ export const ProjectsSection = (projects) => {
                             {
                               project.overView.slice(0, project.overView.split("").indexOf("."))
                             }.<br></br>
-                            <NavLink to={`projects/${project.location.toLowerCase().replace(/[^a-zA-Z0-9]/g,"")}`}> ➡️Read More</NavLink>
+                            <NavLink to={`projects/${project.city.toLowerCase().replace(/[^a-zA-Z0-9]/g,"")}`}> ➡️Read More</NavLink>
                           </p>
                           
                         </li>)

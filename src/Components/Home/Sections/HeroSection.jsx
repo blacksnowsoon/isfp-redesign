@@ -1,14 +1,12 @@
 import React, {
-  createRef,
-  useLayoutEffect,
   useEffect,
   useRef,
   useState,
   useCallback,
 } from "react";
-import shortmap from "../assets/imgs/hero/shortmap.png";
-import point from "../assets/imgs/hero/point.png";
-import logo from "../assets/imgs/logos/ISFP.png";
+import shortmap from "../../../assets/imgs/hero/shortmap.png";
+import point from "../../../assets/imgs/hero/point.png";
+import logo from "../../../assets/imgs/logos/ISFP.png";
 
 export const HeroSection = () => {
   const [slides, setSlides] = useState([
@@ -96,7 +94,7 @@ export const HeroSection = () => {
     slideRef.current.style.transform = `translateX(-${
       slideWidth * currentSlide
     }px)`;
-    console.log("currentSlide is: ",currentSlide)
+    
   }, [currentSlide]);
 
   // colne the first and the last childes for infinite

@@ -1,8 +1,9 @@
 import React, { useCallback, useEffect, useRef } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate, Link } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
 import logo from '../assets/imgs/logos/ISFP.png'
 export const NavBar = ({navProps}) => {
-
+  const navigate = useNavigate();
   const menuRef = useRef();
   const navRef = useRef()
   /* useing the call back to avoid re-render 
@@ -10,40 +11,44 @@ export const NavBar = ({navProps}) => {
   */
   const listFragment = useCallback(()=> {
   /** if the value of the given key has an Array will return 
-   * a nested ul else will return a navLink.
-    */
-    const list = Object.keys(navProps).map(key => {
-      if (!Array.isArray(navProps[key])) {
-        return (
+   * a nested ul else will return a page Link.
+  */
+  const list = Object.keys(navProps).map(key => {
+    // if the prop has value of an array will return a local page link
+    if (!Array.isArray(navProps[key])) {
+      return (
+      <li className='link-container' key={key + Math.random()}>
+        <HashLink className={'menu-link'} to={`/#${key.toLowerCase().replaceAll(" ", "")}`}>
+          {key}
+        </HashLink>
+      </li>)
+    } else {
+      // else will return a local page link with nested menu
+      return (
         <li className='link-container' key={key + Math.random()}>
-          <a className={'menu-link'} href={`#${key.toLowerCase().replaceAll(" ", "")}`}>
-            {key}
-          </a>
-        </li>)
-      } else {
-        return (
-          <li className='link-container' key={key + Math.random()}>
-            <a className={'menu-link'} href={`#${key.toLowerCase().replaceAll(" ", "")}`}>
-            {key}
-            </a>
-            <ul className='nested-menu'>
-              {
-                navProps[key].map(item => {
-                return (
-                  <li className='link-container' key={item + Math.random()}>
-                  <NavLink className={'menu-link'} to={`/${key.toLowerCase().replaceAll(" ", "")}/${item.toLowerCase().replaceAll(" ", "")}`}>
-                  {item}
-                  </NavLink>
-                </li> )
-                })
-              }
-            </ul>
-          </li>
-        )
-      }
-    })
-    return list;
+          <HashLink className={'menu-link'} to={`/#${key.toLowerCase().replaceAll(" ", "")}` || navigate("/")}>
+          {key}
+          </HashLink>
+          <ul className='nested-menu'>
+            {
+              navProps[key].map(item => {
+              return (
+                <li className='link-container' key={item + Math.random()}>
+                <NavLink className={'menu-link'} to={`/${key.toLowerCase().replaceAll(" ", "")}/${item.toLowerCase().replaceAll(" ", "")}`}>
+                {item}
+                </NavLink>
+              </li> )
+              })
+            }
+          </ul>
+        </li>
+      )
+    }
+  })
+  return list;
   },[navProps]);
+
+  // showing the menu
   const toggleMenu = (e)=> {
     e.preventDefault()
     menuRef.current.classList.toggle("grap-down")
