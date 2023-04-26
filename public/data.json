@@ -263,197 +263,282 @@
   },
   "Projects":	[
     {
-      "Egypt": [
-        { "city": "Alex",
-          "product": "SPS",
-          "overView": "In order to meet rising customer expectations and stay ahead of the competition, APA sought to enrich the overall port operation services by moving to a paperless environment and providing a valuable and relevant solution that completely restructures the manual process of documents exchange between port community members. Automation aimed at and achieved the optimization of the Port Management Processes from decreasing the vessel and cargo turn-around time to making available the necessary real time data for yard operations and performing all statistical and data analysis for decision makers.",
-          "image": "alex_port.jpg"
-        },
-        { "city": "Damietta",
-          "product": "SPS",
-          "overView": "ISFP acts as an IT implementer and operator at the Damietta Port. Process Reengineering was the first step undertaken at the Damietta Port, in an aim to establish an automated workflow. This was followed by the implementation of an international port management package. developed by Zebra Solutions (NAVIS). ISFP also developed the integration system between members of the port community and the port authority and is responsible for the daily operation of the Electronic Data Center at the Port.",
-          "image": "dpa_port.jpg",
-          "year": "2005"
-        },
-        { "city": "Safaga",
-          "product":"SPS",
-          "overView": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, ut vel sint est reiciendis neque, sapiente quis enim impedit, rem excepturi quas perferendis accusamus quasi quia! Ab, repellat illum dolorem similique est voluptatum cum dolorum cupiditate laborum veritatis rerum, iure delectus neque eum, enim saepe quod tenetur modi vero? Nesciunt?",
-          "image": "safaga.jpg"
-        },
-        { "city": "Taba, Qastal & Arquen ", 
-          "product": "SPS",
-          "overView":"The project aims to manage & control processes related to the General Authority for Land & Dry Ports GLDAP in the land ports stated ( Taba, Qasta & Arquen). This is a TURNKEY project. The solution includes IT infrastructure (supplies & implementation) and Application (design, development & implementation ). The solution will handle all processes related to passengers and cargo including E-payment. The information from the three ports will be replicated at the HO in GLDAP to generate statistical & follow up reports for decision makers.",
-          "image": "Landport_pic.jpg"
-        },
-        { "city": "suez",
-          "product": "SPS",
-          "overView": "The project is a turnkey project  about establishing port management system in Suez Port including providing and implementing IT infrastructure components (Servers, switches, fiber cabling, end user equipment’s, …etc)  and the daily IT operation activities. Another major part in the project is to develop a mini databank for Red Sea ports operational data and get required indicators and integrated reports for red sea ports to help decision makers. The project includes developing the required electronic messages for communicating data among members of the port Community and between them and the port authority, through an electronic message exchange system",
-          "image": "port_tawfik.jpg"
-        },
-        { "city": "State Council",
-          "product": "SIB",
-          "overView": "As the Egyptian state council aims to keep pace with recent technological development of judicial work in the modern world, it contracted ISFP to automate its business processes. The project aims at improving the efficiency of case resolution while raising the quality of courts provided services",
-          "description": {
-            "The project scope includes:" :[
-              "Automation of the various courts of the state council: The administrative courts, Administrative judiciary, Disciplinary courts as well as the Supreme Administrative Court.",
-              "Automation of the state council back office: Financial, Human resources, warehouses and archiving.",
-              "Consultationfor the technological infrastructure needed for the automation project"
-              ],
-              "categories": [
-                {
-                  "Improve the services provided to clients of the judicial system:":[
-                    "Publishing online court services: e-filing, e-payment, e-notifications",
-                    "Facilitate litigation procedures to save time and expedite adjudication",
-                    "Availing public data or remote private access to case data only for involved parties"
-                  ],
-                  "Facilitating judges work":[
-                    "Automatic activation of the court decisions once the session is over (notifications, claims of fines, placement of proceedings in court sessions, classification and preparation of cases lists)",
-                    "The electronic annexation of two lawsuit cases",
-                    "Avoid registering in many paper records such as schedule records, agendas, session diaries, etc.",
-                    "A 24/7 workspace available to the judge with all the updated resources and documents (at the court or remotely)"
-                  ],
-                  "State council senior management":[
-                    "Minimizes human intervention in the work cycle, hence minimizing corruption",
-                    "Monitor and control over the work cycle from senior management",
-                    "Improves judicial processes effiiency",
-                    "Supporting senior management in decision making by providing accurate reports and statistics"
-                  ],
-                  "Economic and social effect": [
-                    "Improves transparency and increases public confidence",
-                    "Improves national KPIs that measures Justice application in a certain country"
-                  ]
-                }
-              ]
-          },
-          "image": "statecouncil.jpg"
-        },
-        { "city": "Adabia",
-          "product": "SPS",
-          "overView": "The Adabeya Port Project was first of it's type for ISFP to deliver a turnkey solution, All with what it includes from infrastructure components and software applications. The first phase of the Adabeya Project was about establishing an electronic management system in the port. This required establishing a professional standardized workflow before actually automating it. implementing the necessary applications required for automating the different operations in the port. The Second phase of the Adabeya Project includes integrating and establishing electronic linkage among members of the port community and between them and the port authority, through an electronic message exchange system.",
-          "image": "SCZ.jpg"
-        },
-        { "city": "Nuweiba",
-          "product": "SPS",
-          "overView": "The project is about establishing an electronic management system in Nuweiba port and implementing A single window system for trade between Nuweiba port and El-Aqaba port. This required establishing a professional standardized workflow before actually automating it. The project includes integrating and establishing electronic linkage among members of the port Community and between them and the port authority, through an electronic message exchange system.",
-          "image": "Nuweiba_Port.jpg"
-        },
-        { "city": "hurghada",
-          "product": "SPS",
-          "overView": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, ut vel sint est reiciendis neque, sapiente quis enim impedit, rem excepturi quas perferendis accusamus quasi quia! Ab, repellat illum dolorem similique est voluptatum cum dolorum cupiditate laborum veritatis rerum, iure delectus neque eum, enim saepe quod tenetur modi vero? Nesciunt?",
-          "image": "hurghada.jpg"
-        },
-        { "city": "Egyptian Ministry Of transportation",
-          "product": "Archiving System",
-          "overView": "The project aims to manage the flow of the incoming and outgoing paper mails for The Egyptian Minister Of Transportation office. Also, The document flow between employees in the same department and between departments is managed by the system",
-          "image": "transportion.jpg"
-        },
-        { "city": "Egyptian Maritime Transport",
-          "product": "Archiving System",
-          "overView": "The project aims to manage the flow of the incoming and outgoing paper mails for Egyptian Maritime Transport Sector. Also, The document flow between employees in the same department and between departments is managed by the system.",
-          "image": "ministry.jpg"
-        },
-        { "city": "Red Sea Ports Authority",
-          "product": "ERP System",
-          "overView": "The project aims to automate the internal process in the Red Sea Ports Authority, Egypt. The project was a turn key project including integration with the port management system implemented in the Red Sea Authority Ports. The system includes the financial module , Human Resources module , Commercial module , Procurement module , Secretary module and Inventory module.",
-          "image": "RSPAIMAGE21.png"
-        },
-        { "city": "Alexandria Port Authority ",
-          "product": "ERP System",
-          "overView": "The system integrates data and processes of all port’s business departments. The system includes the financial module , Procurement module , Secretary module and Inventory module. The system is integrated with Port Management System SPS which is implemented for the port operations.",
-          "image": "alex.jpg"
-        },
-        { "city": "Ocean Express Shipping",
-          "product": "ERP System",
-          "overView": "The project aims to automate the internal process in Ocean Express Shipping, Egypt. The system integrates data and processes of all company’s business departments. The system includes the financial module , Human Resource module, Procurement module, Secretary module and Inventory module.",
-          "image": "new_OC.png"
-        },
-        { "city": "Rail Projects Company",
-          "product": "ERP System",
-          "overView": "The project aims to automate the internal process in the Rail Projects Company , Egypt. The project was a turn key project. The system includes the Financial module , Human Resources module , Commercial module , Procurement module , and Inventory modules.",
-          "image": "railway.jpg"
-        },
-        { "city": "Egyptian Maritime",
-          "product": "Data Bank Support& Operation",
-          "overView": "The Egyptian Maritime Data Bank EMDB is the first specialized data bank in the Middle East, Africa and the Arab World.EMDB aims to provide planners, decision-makers and researchers from various maritime fields with accurate information on all activities of the Egyptian maritime sector.EMDB is using about 21 subsystems implemented over a huge datacenter. The data is updated through all Egyptian maritime ports. ISFP is responsible of keeping the EMDB with best performance 24/7 through maintaining software applications, Database, networks , data security and operating systems.",
-          "image": "emdb.jpg"
-        },
-        { "city": "Damietta Container & Cargo Handling Terminal",
-          "product": "SPS",
-          "overView": "DCHC is one of  the biggest Egyptian container terminals located on  the meditrainean shore . DCHC is planning to fully implement Navis Sparcs N4 in order to automate operations , controlling when the container is supposed to move, which piece of equipment is going to move it and where it's going to be moved. ISFP successfully started Navis Sparcs N4 implementation at DCHC on November 2017. In order to achieve the success of the implementation, ISFP  lead the implementation of the wireless network at DCHC.",
-          "image": "navisDCCCC.png"
-        }
-      ]
+      "id": 1,
+      "product": "SPS",
+      "country": "Egypt",
+      "author": "Damietta Port",
+      "thumbnail": "dpa_port.jpg",
+      "date": "FEB-2005",
+      "overview": "ISFP acts as an IT implementer and operator at the Damietta Port. Process Reengineering was the first step undertaken at the Damietta Port, in an aim to establish an automated workflow. This was followed by the implementation of an international port management package. developed by Zebra Solutions (NAVIS).",
+      "description" : " ISFP also developed the integration system between members of the port community and the port authority and is responsible for the daily operation of the Electronic Data Center at the Port."
     },
     {
-    "Libya":[
-      {
-        "city": "misurata",
-        "overView": "As a maritime business consultant, ISFP has conducted an automation business study for the different operational activities at Misurata port.",
-        "image": "misurata.jpg"
-      },
-      {
-        "city" : "al-khums",
-        "overView":"As the Socialist people’s Libyan Arab Great Jamahiriya the Single Window Initiative to facilitate external trade, the Lybian government currently working to automate the Maritime Sector",
-        "image": "al_khoms_port.jpg"
+      "id": 2,
+      "product": "SPS",
+      "country": "Egypt",
+      "author": "Alex Port",
+      "thumbnail": "alex_port.jpg",
+      "date": "JULY-2005",
+      "overview": "In order to meet rising customer expectations and stay ahead of the competition, APA sought to enrich the overall port operation services by moving to a paperless environment and providing a valuable and relevant solution that completely restructures the manual process of documents exchange between port community members.",
+      "description": "The Automation aimed at and achieved the optimization of the Port Management Processes from decreasing the vessel and cargo turn-around time to making available the necessary real time data for yard operations and performing all statistical and data analysis for decision makers."
+    },{
+      "id": 3,
+      "product": "SPS",
+      "country": "Egypt",
+      "author": "Adabia Port",
+      "thumbnail": "SCZ.jpg",
+      "date": "DECEMBER-2005",
+      "overview":"The Adabeya Port Project was first of it's type for ISFP to deliver a turnkey solution, All with what it includes from infrastructure components and software applications. The first phase of the Adabeya Project was about establishing an electronic management system in the port. This required establishing a professional standardized workflow before actually automating it.",
+      "description": " implementing the necessary applications required for automating the different operations in the port. The Second phase of the Adabeya Project includes integrating and establishing electronic linkage among members of the port community and between them and the port authority, through an electronic message exchange system."
+    },{
+      "id": 4,
+      "product": "SPS",
+      "country": "Lybia",
+      "author": "Al-khums Port",
+      "thumbnail": "al_khoms_port.jpg",
+      "date": "MAY-2010",
+      "overview": "As the Socialist people’s Libyan Arab Great Jamahiriya the Single Window Initiative to facilitate external trade, the Lybian government currently working to automate the Maritime Sector.",
+      "description": "Al-Khums was chosen as the pilot project for maritime automation held in Libya. ISFP acts as both the application provider and infrastructure consultant for the automation of Al-Khums Port. Work was initiated in the form of an automation business study of Al-Khums Port workflow and proceeded with SPS applications being implemented in three phases. As for the infrastructure process, ISFP handled the projects implementation and operation strategy."
+    },
+    {
+      "id": 5,
+      "product": "SPS",
+      "country": "Lybia",
+      "author": "Misurata Port",
+      "thumbnail": "misurata.jpg",
+      "date": "OCT-2010",
+      "overview":"As a maritime business consultant, ISFP has conducted an automation business study for the different operational activities at Misurata port.",
+      "description": "The study included reengineering the workflows in the port, specifying the applications and infrastructure required for the automation. By implementing this study, Misurata port is targeting to be incorporated as a fully automated libyan port."
+    },
+    {
+      "id": 6,
+      "product": "SPS",
+      "country": "Sudan",
+      "author": "Sudanese Port",
+      "thumbnail": "Port_Sudan.jpg",
+      "date": "MAY-2013",
+      "overview": "The project aims to design and development a single window for the Sudanese Ports. It includes the design and development of electronic portal for the ship traffic processes.",
+      "description": "Cargo handling processes and e-payment, prepare a study for specifying the infrastructure required For the automation in order to establish electronic linkage among the port community members."
+    },
+    {
+      "id": 7,
+      "product": "SPS",
+      "country": "Lebanon",
+      "author": "Tripoli Port",
+      "thumbnail": "tripoli_2.jpg",
+      "date": "MAY-2013",
+      "overview": "The Project aims to develop and implement an integrated system for managing port operation activities Including vessel movement, cargo handling, gates control and bills issuing processes.",
+      "description": "The project also includes integrating and establishing electronic linkage among members of the port community and the port authority, through an electronic message exchange system."
+    },
+    {
+      "id": 8,
+      "product": "ERP",
+      "country": "Egypt",
+      "author": "Red Sea Ports Authority",
+      "thumbnail": "RSPAIMAGE21.png",
+      "date": "MARCH-2014",
+      "overview": "The project aims to automate the internal process in the Red Sea Ports Authority. The project was a turn key project including integration with the port management system implemented in the Red Sea Authority Ports.",
+      "description": "The system includes the financial module , Human Resources module , Commercial module , Procurement module , Secretary module and Inventory module."
+    },
+    {
+      "id": 9,
+      "product": "SPS",
+      "country": "Egypt",
+      "author": "Nuweiba Port",
+      "thumbnail": "Nuweiba_Port.jpg",
+      "date": "JUNE-2014",
+      "overview": "The project is about establishing an electronic management system in Nuweiba port and implementing A single window system for trade between Nuweiba port and El-Aqaba port.",
+      "description": "This required establishing a professional standardized workflow before actually automating it. The project includes integrating and establishing electronic linkage among members of the port Community and between them and the port authority, through an electronic message exchange system."
+    },
+    {
+      "id": 10,
+      "product": "SPS",
+      "country": "Egypt",
+      "author": "Hurghada Port",
+      "thumbnail": "hurghada.jpg",
+      "date": "MARCH-2015",
+      "overview": "",
+      "description": ""
+    },
+    {
+      "id": 11,
+      "product": "SPS",
+      "country": "Egypt",
+      "author": "Safaga Port",
+      "thumbnail": "safaga.jpg",
+      "date": "AUGUST-2015",
+      "overview": "",
+      "description": ""
+    },
+    {
+      "id": 12,
+      "product": "SPS",
+      "country": "Egypt",
+      "author": "Suez Port",
+      "thumbnail": "port_tawfik.jpg",
+      "date": "DECEMBER-2016",
+      "overview": "The project is a turnkey project  about establishing port management system in Suez Port including providing and implementing IT infrastructure components (Servers, switches, fiber cabling, end user equipment’s, …etc)  and the daily IT operation activities.",
+      "description": " Another major part in the project is to develop a mini databank for Red Sea ports operational data and get required indicators and integrated reports for red sea ports to help decision makers. The project includes developing the required electronic messages for communicating data among members of the port Community and between them and the port authority, through an electronic message exchange system."
+    },
+    {
+      "id": 13,
+      "product": "ERP",
+      "country": "Egypt",
+      "author": "Alexandria Port Authority",
+      "thumbnail": "alex.jpg",
+      "date": "AUGUST-2017",
+      "overview":"The project aims to automate the internal process in Alexandria Port Authority, The system integrates data and processes of all port’s business departments.",
+      "description": "The system includes the financial module , Procurement module , Secretary module and Inventory module. The system is integrated with Port Management System SPS which is implemented for the port operations."
+    },
+    {
+      "id": 14,
+      "product": "DATA BANK",
+      "country": "Egypt",
+      "author": "Egyptian Maritime Transport Sector",
+      "thumbnail": "emdb.jpg",
+      "date": "DECEMBER-2017",
+      "overview": "The Egyptian Maritime Data Bank EMDB is the first specialized data bank in the Middle East, Africa and the Arab World.",
+      "description": "EMDB aims to provide planners, decision-makers and researchers from various maritime fields with accurate information on all activities of the Egyptian maritime sector. EMDB is using about 21 subsystems implemented over a huge datacenter. The data is updated through all Egyptian maritime ports. ISFP is responsible of keeping the EMDB with best performance 24/7 through maintaining software applications, Database, networks , data security and operating systems."
+    },
+    {
+      "id": 15,
+      "product": "Land Port Managment System",
+      "country": "Egypt",
+      "author": "Taba, Qastal & Arquen",
+      "thumbnail": "Landport_pic.jpg",
+      "date": "AUGUST-2018",
+      "overview": "The project aims to manage & control processes related to the General Authority for Land & Dry Ports GLDAP in the land ports stated ( Taba, Qasta & Arquen).",
+      "description": "This is a TURNKEY project. The solution includes IT infrastructure (supplies & implementation) and Application (design, development & implementation ). The solution will handle all processes related to passengers and cargo including E-payment. The information from the three ports will be replicated at the HO in GLDAP to generate statistical & follow up reports for decision makers."
+    },
+    {
+      "id": 16,
+      "product": " Judicial System",
+      "country": "Egypt",
+      "author": "State Council",
+      "thumbnail": "statecouncil.jpg",
+      "date": "UNKWON",
+      "overview": "As the Egyptian state council aims to keep pace with recent technological development of judicial work in the modern world, it contracted ISFP to automate its business processes. The project aims at improving the efficiency of case resolution while raising the quality of courts provided services",
+      "description": {
+        "The project scopes includes:" :[
+          "Automation of the various courts of the state council: The administrative courts, Administrative judiciary, Disciplinary courts as well as the Supreme Administrative Court.",
+          "Automation of the state council back office: Financial, Human resources, warehouses and archiving.",
+          "Consultationfor the technological infrastructure needed for the automation project"
+          ],
+        "categories": [
+          {
+            "Improve the services provided to clients of the judicial system:":[
+              "Publishing online court services: e-filing, e-payment, e-notifications",
+              "Facilitate litigation procedures to save time and expedite adjudication",
+              "Availing public data or remote private access to case data only for involved parties"
+            ],
+            "Facilitating judges work":[
+              "Automatic activation of the court decisions once the session is over (notifications, claims of fines, placement of proceedings in court sessions, classification and preparation of cases lists)",
+              "The electronic annexation of two lawsuit cases",
+              "Avoid registering in many paper records such as schedule records, agendas, session diaries, etc.",
+              "A 24/7 workspace available to the judge with all the updated resources and documents (at the court or remotely)"
+            ],
+            "State council senior management":[
+              "Minimizes human intervention in the work cycle, hence minimizing corruption",
+              "Monitor and control over the work cycle from senior management",
+              "Improves judicial processes effiiency",
+              "Supporting senior management in decision making by providing accurate reports and statistics"
+            ],
+            "Economic and social effect": [
+              "Improves transparency and increases public confidence",
+              "Improves national KPIs that measures Justice application in a certain country"
+            ]
+          }
+        ]
       }
-    ]
     },
     {
-    "Lebanon": [
-      {
-        "city": "tripoli",
-        "overView": "The Project aims to develop and implement an integrated system for managing port operation activities Including vessel movement, cargo handling, gates control and bills issuing processes.",
-        "image": "tripoli_2.jpg"
-      }
-    ]
+      "id": 17,
+      "product": "Archiving System",
+      "country": "Egypt",
+      "author": "Egyptian Ministry Of Transportation",
+      "thumbnail": "transportion.jpg",
+      "date": "UNKWON",
+      "overview": "The project aims to manage the flow of the incoming and outgoing paper mails for The Egyptian Minister Of Transportation office. Also, The document flow between employees in the same department and between departments is managed by the system.",
+      "description": ""
     },
     {
-      "Sudanese": [
-        {
-          "city": "sudan",
-          "overView": "The project aims to design and development a single window for the Sudanese Ports. It includes the design and development of electronic portal for the ship traffic processes.",
-          "image": "Port_Sudan.jpg"
-        }
-      ]
+      "id": 18,
+      "product": "Archiving System",
+      "country": "Egypt",
+      "author": "Egyptian Maritime Transport Sector",
+      "thumbnail": "transportion.jpg",
+      "date": "UNKWON",
+      "overview": "The project aims to manage the flow of the incoming and outgoing paper mails for Egyptian Maritime Transport Sector. Also, The document flow between employees in the same department and between departments is managed by the system.",
+      "description": ""
+    },
+    {
+      "id": 19,
+      "product": "ERP System",
+      "country": "Egypt",
+      "author": "Ocean Express Shipping",
+      "thumbnail": "new_OC.png",
+      "date": "UNKWON",
+      "overview": "The project aims to automate the internal process in Ocean Express Shipping, The system integrates data and processes of all company’s business departments.",
+      "description": "The system includes the financial module , Human Resource module, Procurement module, Secretary module and Inventory module."
+    },
+    {
+      "id": 20,
+      "product": "ERP System",
+      "country": "Egypt",
+      "author": "Rail Projects Company",
+      "thumbnail": "railway.jpg",
+      "date": "UNKWON",
+      "overview": "The project aims to automate the internal process in the Rail Projects Company. The project was a turn key project.",
+      "description": "The system includes the Financial module , Human Resources module , Commercial module , Procurement module , and Inventory modules"
+    },
+    {
+      "id": 21,
+      "product": "Navis Sparcs N4",
+      "country": "Egypt",
+      "author": "Damietta Container & Cargo Handling Terminal",
+      "thumbnail": "navisDCCCC.png",
+      "date": "UNKWON",
+      "overview": "DCHC is one of  the biggest Egyptian container terminals located on  the meditrainean shore . DCHC is planning to fully implement Navis Sparcs N4 in order to automate operations , controlling when the container is supposed to move, which piece of equipment is going to move it and where it's going to be moved.",
+      "description": "ISFP successfully started Navis Sparcs N4 implementation at DCHC on November 2017. In order to achieve the success of the implementation, ISFP  lead the implementation of the wireless network at DCHC."
     }
   ],
   "News & Events":[
     {
       "title": "The State Council Contract",
       "overView": "The President of the Egyptian State Council, Dr. Ahmed Abul Azm,  Dr. Ismail Abdel Ghafar",
-      "date": "05 Dec 2018",
+      "date": "05-Dec-2018",
       "subject": "President of the Arab Academy for Science & Technology & Maritime Transport AASTMT and Mrs Hala El-Sheridy CEO of Integrated Solutions For Ports ISFP  signed  the contracts of implementation of Automation System for State Council. (date 5/12/2018)"
       
     },
     {
       "title": "ISFP participated in Cairo ICT ",
       "overView": "ISFP Pariticipated in the 23rd International Telecommunication and Information Technology",
-      "date": "01 Dec 2019",
+      "date": "01-Dec-2019",
       "subject": "Trade Fair and Forum for the Middle East and Africa"
 
     },
     {
       "title": "Maritime Transport Sector",
       "overView": "Maritime Transport Sector (MTS) and Integrated solutions for ports (ISFP)",
-      "date": "24 Jun 2020",
+      "date": "24-Jun-2020",
       "subject": "have signed the contract of a new project for the development of a new system for the Egyptian Maritime Data Bank. The new system will be linked to the current port automation systems in the Egyptian ports. The new system will use the latest technologies to provide online KPI’s and statistical reports for Egyptian ports, vessel traffic, handled cargo. The new system will be live by the 2nd half of 2021 and its services will be also available to non - governmental entities through subscriptions. Also, ISFP will start a new service for economic analysis for Egyptian maritime sector data to support decision-makers."
     },
     {
       "title": "Smart Court Management System",
       "overView": "The Intellectual Property Rights Office affiliated to the Egyptian Ministry of Communications and Information Technology",
-      "date": "02 Mar 2021",
+      "date": "02-Mar-2021",
       "subject": "has issued the certificate that recognizes the intellectual property rights for Smart Court Management System CMS for Integrated Solutions For Ports ISFP company. ISFP has developed this system to manage the courts of the Egyptian Council of State. It is currently being implemented in all Egyptian courts."
     },
     {
       "title": "ISFP granted the Excellence Award by The Egyptian Ministry of Transportation",
       "overView": "ISFP granted the Excellence Award by The Egyptian Ministry of Transportation",
-      "date": "09 Oct 2022",
+      "date": "09-Oct-2022",
       "subject": "ISFP has been granted the Excellence Award by The Egyptian Ministry of Transportation during the celebrations of The World Maritime Day - 2022, The trophy was granted for launching the Yacht tourism single window system. Using this system, Tourists can plan and apply for their visit to Egypt by Yachts. The system provide several online services, like providing required information and scanned documents, Receive all governmental approvals from the involved ministries and Online payment for all governmental fees in a single invoice."
     },
     {
       "title": " partnership agreement",
       "overView": "partnership agreement to implement studying the establishment of an Arab mechanism and a database to support the field of ship repair and construction industry in the Arab countries.",
-      "date": "19 Jan 2023",
+      "date": "19-Jan-2023",
       "subject": "Engineer Hani Salem Sonbol, CEO of the International Islamic Trade Finance Corporation, formally greeted His Excellency Dr. Ismail Abdel Ghaffar Ismail Farag, President of the Arab Academy for Science, Technology and Maritime Transport  And in the presence of Engineer / Hala Al-Shraidi, CEO of Integrated Solutions for Ports Where the two parties signed a partnership agreement to implement studying the establishment of an Arab mechanism and a database to support the field of ship repair and construction industry in the Arab countries. Which will be implemented by the Integrated Solutions for Ports Company During the meeting, the two sides discussed joint cooperation and projects that are being completed under the umbrella of the Trade Assistance Initiative for Arab Countries (AFTIAS 2.0) program."
     }
   ], 
