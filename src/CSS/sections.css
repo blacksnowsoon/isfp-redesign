@@ -1,7 +1,6 @@
 
 .container#services {
   margin-top: 100svh ;
-  
 }
 .sec-title {
   font-size: 2rem;
@@ -136,61 +135,95 @@
   clear: left;
 }
 /* projects style */
-/* project container which is ul---*/
 
-.country {
-  overflow: auto;
-  height: 500px;
-}
-.country h3 {
-  font-size: 1.5em;
-  font-weight: bold;
-  padding: var(--l-gap);
-}
-.locations {
-  display: flex;
-  gap: var(--l-gap);
-  overflow-y: hidden;
-  padding: var(--l-gap);
-}
-/* this the li of the locations */
-.location {
+.wrapper {
   position: relative;
-  min-width: 250px;
-  max-width: 250px;
-  height: 350px;
+  height: calc(75svh - var(--hero-margin));
+  clip-path: polygon(5% 0, 95% 0, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
 }
-.location h6 {
+.wrapper .btn {
+  height: 50%;
+  width: 30px;
+  align-items: center;
+  padding: var(--s-gap);
+  background: var(--background-color);
+  outline: transparent;
+  border: none;
   position: absolute;
-  bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.3em;
+  top: 25%;
+  z-index: 1;
+  cursor: pointer;
+  transition: opacity 500ms ease-in-out;
+  background: var(--hero-background);
+  filter:drop-shadow(inset var(--box-shadow)) ;
+  /* opacity: .2; */
 }
-.location img {
+.wrapper .btn:hover {
+  opacity: 1;
+}
+.wrapper .left {
+  left: 0;
+  clip-path: polygon(95% 0%, 100% 0%, 100% 100%, 95% 100%, 0% 50%);
+}
+.wrapper .right {
+  right: 0;
+  clip-path: polygon(0% 0%, 5% 0%, 100% 50%,5% 100%, 0% 100%);
+}
+.projects-list {
+  position: relative;
+  isolation: isolate;
   width: 100%;
-  height: 60%;
-  object-fit: cover;
-  border-radius: 50%;
+  height: 100%;
+  overflow: hidden;
 }
-.location .location-overview{
-  --transparency-1: .5;
+.project {
   background: var(--background-color);
   position: absolute;
-  top: calc(100% + 1rem);
-  text-align: justify;
-  padding: .5rem;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  transition: transform 500ms ease-in-out;
+  
+}
+.project:not(:nth-child(1)) {
+  transform: translateX(100%);
+}
+.project-thumbnail {
+  grid-column: 1/1;
+}
+.project-thumbnail img {
+  width: 100%;
   height: 100%;
-  transition: top 1s;
+  object-fit: cover;
 }
-.location-overview a {
-  align-content: end;
+.project-details {
+  grid-column: 2/3;
+  padding: var(--xl-gap);
+  text-align: left;
+  display: grid;
 }
-.location:hover .location-overview, .location:focus .location-overview{
-  top: 0;
+.project-details p {
+  text-overflow: ellipsis;
+  /* border: 1px solid; */
+  padding: var(--xl-gap);
+  box-shadow: var(--box-shadow);
+  border-radius:  85% 15% 91% 9% / 11% 81% 19% 89% ;
+}
+.project a {
+  /* max-width: 75%; */
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  justify-self: center;
+  box-shadow: var(--box-shadow);
+  border-radius:  85% 15% 91% 9% / 11% 81% 19% 89% ;
+  padding: var(--l-gap);
 }
 
-
+.projects-page {
+  border-radius:  85% 15% 91% 9% / 11% 81% 19% 89% ;
+  padding: var(--l-gap);
+}
 /* clients section style */
 .clients {
   padding: 4rem 0;
