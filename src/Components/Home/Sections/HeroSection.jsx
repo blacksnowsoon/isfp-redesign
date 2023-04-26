@@ -82,11 +82,7 @@ export const HeroSection = () => {
     const colneFirst = slides.slice(0, 1);
     const colneLast = slides.slice(slides.length - 1);
     const restOfSlides = slides.slice(1,-1)
-    console.log("first", colneFirst)
-    console.log("last", colneLast)
-    console.log("rest", restOfSlides)
-
-    // setSlides([colneFirst, ...slides, colneLast]);
+    
   }
   // useeffect to handle the slide transtion
   useEffect(() => {
