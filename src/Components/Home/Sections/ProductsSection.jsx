@@ -55,6 +55,7 @@ export const ProductsSection = () => {
     <section id="products" className="container">
       <h2 className="sec-title">Main Products</h2>
       {generateProductsList(products)}
+      <div className="clear"></div>
     </section>
   );
 };
