@@ -22,7 +22,7 @@ const Home = () => {
 			
 			<ProductsSection products ={Products}/>
 			
-			<ProjectsSection projects ={Projects} />
+			<ProjectsSection projects ={Projects.slice(0,7)} />
 
 				{/* <NewsSection news={news} /> */}
 
