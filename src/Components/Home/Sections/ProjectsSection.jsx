@@ -1,105 +1,100 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 // this section has an array of entities each item in the array
-// hold and Object with one key which is the country
+// hold an Object with one key which is the country
 // and each country has a list of some objects each object
-// hold a project by location or the city
-// to handle the setion of an array data object
-export const ProjectsSection = (projects) => {
-  const secName =
-    Object.keys(projects)[0].charAt(0).toLocaleUpperCase() +
-    Object.keys(projects)[0].slice(1);
-
-  const listOfCountries = Object.values(projects)[0];
-  
-  const generateHomeProjectsSection = ()=>{
-    const elements = {}
-    const array = []
-    listOfCountries.map(country =>{
-      const countryName = Object.keys(country)[0].charAt(0).toLocaleUpperCase() +
-            Object.keys(country)[0].slice(1)
-        elements[countryName] = []
-      const projects = Object.values(country)[0]
-      
-      // console.log(listOfCountries.length)
-      
-      for (let i=0; i < projects.length; i++) {
-        const random = Math.ceil(Math.random() * 10 % projects.length);
-          if(random < projects.length) {
-            // console.log(projects[random])
-          } else {
-            // console.log(countryName)
-            // console.log("out")
-          }
-      }
-      
-
-    })
-  
-
-  }
-  const generateProjects = useCallback(() => {
-    generateHomeProjectsSection()
+// hold a project by the city
+// handle the setion of an array data object
+export const ProjectsSection = ({ projects = {} }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const prevIndex = useRef(0);
+  const projectsContainer = useRef();
+  const leftRef = useRef();
+  const rightRef = useRef();
+  const handleSwappingButton = (e) => {
+    const target = e.target;
+    prevIndex.current = currentIndex;
+    if (target.classList.contains("left")) {
+      setCurrentIndex(
+        currentIndex === projects.length  ? projects.length : currentIndex + 1
+      );
+    } else if (target.classList.contains("right")) {
+      setCurrentIndex(
+        currentIndex === 0 ? currentIndex : currentIndex - 1
+        );
+    }
+    e.preventDefault();
+  };
+  const generateHomeProjectsSection = useCallback(() => {
     return (
-      <>
-        <ul className="projects">
-          {
-            listOfCountries.map((country) => {
-            const countryName = Object.keys(country)[0].charAt(0).toLocaleUpperCase() +
-            Object.keys(country)[0].slice(1)
-            const listOfCountries = Object.values(country)[0]
-            
-            return (
-              <li className="country" key={Math.random() }>
-                <h3>
-                  {countryName}
-                </h3>
-                {
-                  // each country has an array of projects
-                  <ul className="locations">
-                    {
-                      listOfCountries.map(project =>{
-                        // console.log(project.location.replaceAll(/[^a-zA-Z0-9]/g,""))
-                        return (
-                        <li key={Math.random()} className="location card">
-                          <h6 className="location-title">{project.city}</h6>
-                          <img src={new URL(`../../../assets/imgs/projects/${project.image}`, import.meta.url).href}/>
-                          {/* <div className="location-img">
-                          
-                          </div> */}
-                          <p className="location-overview">
-                            {
-                              project.overView.slice(0, project.overView.split("").indexOf("."))
-                            }.<br></br>
-                            <NavLink to={`projects/${project.city.toLowerCase().replace(/[^a-zA-Z0-9]/g,"")}`}> ➡️Read More</NavLink>
-                          </p>
-                          
-                        </li>)
-                      })
-                      
-
-                    }
-                  </ul>
-                }
-              </li>
-            );
-          })}
-        </ul>
-      </>
+      <ul className="projects-list" ref={projectsContainer}>
+        {projects.map((project) => {
+          return <Project project={project} key={project.id + project.date} />;
+        })}
+        <li className="project" key={"projectsPath"}>
+          <NavLink to={"projects"} className={"projects-page"}><h3>Show All Projects</h3></NavLink>
+        </li>
+      </ul>
     );
-  }, []);
+  }, [projects]);
 
-  const img = new URL("../assets/imgs/projects/ADABIA.jpg", import.meta.url)
-    .href;
-
+  useEffect(() => {
+      if (currentIndex < prevIndex.current) {
+        projectsContainer.current.childNodes[
+          currentIndex + 1
+        ].style.transform = `translateX(100%)`;
+      } else {
+        projectsContainer.current.childNodes[
+          currentIndex
+        ].style.transform = `translateX(0%)`;
+      }
+    
+  }, [currentIndex]);
   return (
     <section id="projects" className="container">
-      <h1 className="sec-title">{secName} Board</h1>
-      {
-      generateProjects() 
-      
-      }
+      <h2 className="sec-title">Projects</h2>
+      <div className="wrapper">
+        <button
+          ref={leftRef}
+          onClick={handleSwappingButton}
+          className={`btn left ${
+            currentIndex === projects.length && "hide" 
+          }`}
+        >
+          {/* &lt; */}
+        </button>
+        <button
+          ref={rightRef}
+          onClick={handleSwappingButton}
+          className={`btn right ${currentIndex === 0 && "hide" }`}
+        >
+          {/* &gt; */}
+        </button>
+        {generateHomeProjectsSection()}
+      </div>
     </section>
+  );
+};
+
+// return each project slide
+const Project = ({ project }) => {
+  const img = new URL(
+    `../../../assets/imgs/projects/${project.thumbnail}`,
+    import.meta.url
+  ).href;
+  return (
+    <li className="project">
+      <div className="project-thumbnail">
+        <img src={img} alt={project.author} title={project.author} />
+      </div>
+      <div className="project-details">
+        <h2>{project.author}</h2>
+        <h3>located in {project.country}</h3>
+        {/* <h4> {project.product}</h4> */}
+        <p>{project.overview}</p>
+        <NavLink to={`projects/${project.id}`}>Read More</NavLink>
+      </div>
+    </li>
   );
 };
