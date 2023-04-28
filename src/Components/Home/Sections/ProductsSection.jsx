@@ -5,7 +5,7 @@ import {
   useLocation,
   useOutletContext,
 } from "react-router-dom";
-import { getProduct } from "../../../API";
+
 // handle the section for an Object as data type
 export const ProductsSection = () => {
   const { Products: products = {} } = useOutletContext();
@@ -52,7 +52,7 @@ export const ProductsSection = () => {
   }, []);
 
   return (
-    <section id="products" className="container">
+    <section id="products" className="container" aria-label="products section">
       <h2 className="sec-title">Main Products</h2>
       {generateProductsList(products)}
       <div className="clear"></div>
@@ -61,3 +61,7 @@ export const ProductsSection = () => {
 };
 
 
+const Product = ()=>{
+  const pargraphReg = /[A-z]{1}\./
+  return 
+}

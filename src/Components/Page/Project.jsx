@@ -1,13 +1,25 @@
-import React from 'react'
+import React from "react";
+import { useLoaderData } from "react-router-dom";
+import { getProject } from "../../API";
 
-export const Project = () => {
+const Project = () => {
+  const  { project = {} }  = useLoaderData();
   return (
-    <div>Project</div>
+    <>
+    <h1>{project.id}</h1>
+    </>
+  
   )
-}
-export default Project;
+};
+
+export default Project
 
 export const loader = async (request) => {
-  const projects = await getProjects();
-  return { projects }
-}
+  try {
+    const project = await getProject(request.params.id);
+    return { project };
+  } catch (err) {
+    
+  }
+  
+};
