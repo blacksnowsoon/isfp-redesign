@@ -135,37 +135,38 @@
   clear: left;
 }
 /* projects style */
-
+#projects {
+  position: relative;
+  isolation: isolate;
+  --wrapper-height: calc(75svh - var(--hero-margin));
+}
 .wrapper {
   margin-bottom: 2em;
   position: relative;
-  height: calc(75svh - var(--hero-margin));
+  height: var(--wrapper-height);
 }
-.wrapper .btn {
-  height: 49%;
-  width: 50px;
-  align-items: center;
-  padding: var(--s-gap);
-  background: var(--background-color);
-  outline: transparent;
-  border: none;
+.btns-wrapper {
   position: absolute;
-  z-index: 1;
-  cursor: pointer;
-  transition: opacity 500ms ease-in-out;
-  background: var(--hero-background);
-  filter:drop-shadow(inset var(--box-shadow)) ;
-  opacity: .2;
   right: 0;
-  color: aliceblue;
+  top: 0;
+  height: var(--wrapper-height);
+  display: grid;
+  grid-auto-flow: row;
   font-size: 1.2em;
+  z-index: 1;
 }
-.wrapper .btn:hover {
+.btn-wrapper:hover button {
   opacity: 1;
 }
-.wrapper .btn.right {
-  bottom: 0;
-}
+.btns-wrapper .right, .btns-wrapper .left {
+  font-size: 1.3em;
+  outline: transparent;
+  border: none;
+  cursor: pointer;
+  transition: opacity 500ms ease-in-out;
+  filter:drop-shadow(inset var(--box-shadow)) ;
+  color: aliceblue;
+} 
 .projects-list {
   position: relative;
   isolation: isolate;
@@ -175,7 +176,6 @@
   
 }
 .project {
-  padding-right: 30px;
   background: var(--background-color);
   position: absolute;
   inset: 0;
@@ -208,7 +208,6 @@
   border-radius:  85% 15% 91% 9% / 11% 81% 19% 89% ;
 }
 .project a {
-  /* max-width: 75%; */
   display: flex;
   justify-content: center;
   align-self: center;
@@ -259,14 +258,23 @@
 
 @media screen and (width < 1000px){
   .wrapper {
-    
     height: calc(100svh - var(--hero-margin));
-    
   }
   .project {
-    
     overflow: auto;
-    
+  }
+  .btns-wrapper {
+    width: 100%;
+    height: 40px;
+    top: calc(100% - 1em);
+    writing-mode: vertical-lr;
+  }
+  .project {
+    width: 100%;
+    clip-path: polygon(47% 0, 51% 0, 100% 4%, 100% 100%, 0 99%, 0 3%);
+  }
+  .project:not(:nth-child(1)) {
+    transform: translateY(100%);
   }
   .project-thumbnail {
     grid-column: 1 / -1;
