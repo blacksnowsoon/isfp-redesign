@@ -28,12 +28,12 @@ export const ProjectsSection = ({ projects = {} }) => {
   };
   const generateHomeProjectsSection = useCallback(() => {
     return (
-      <ul className="projects-list" ref={projectsContainer}>
+      <ul className="projects-list" ref={projectsContainer} aria-label="projects list">
         {projects.map((project) => {
-          return <Project project={project} key={project.id + project.date} />;
+          return <ProjectSlide project={project} key={project.id + project.date} />;
         })}
         <li className="project" key={"projectsPath"}>
-          <NavLink to={"projects"} className={"projects-page"}><h3>Show All Projects</h3></NavLink>
+          <NavLink to={"projects"} className={"projects-page"} aria-label="read more link"><h3>Show All Projects</h3></NavLink>
         </li>
       </ul>
     );
@@ -52,33 +52,36 @@ export const ProjectsSection = ({ projects = {} }) => {
     
   }, [currentIndex]);
   return (
-    <section id="projects" className="container">
-      <h2 className="sec-title">Projects</h2>
+    <section id="projects" className="container" aria-label="projects section">
+      <h2 className="sec-title" aria-label="title">Projects</h2>
       <div className="wrapper">
         <button
+          aria-label="slide left"
           ref={leftRef}
           onClick={handleSwappingButton}
           className={`btn left ${
             currentIndex === projects.length && "hide" 
           }`}
         >
-          {/* &lt; */}
+          &lt;
         </button>
         <button
+        aria-label="slide back"
           ref={rightRef}
           onClick={handleSwappingButton}
           className={`btn right ${currentIndex === 0 && "hide" }`}
         >
-          {/* &gt; */}
+          &gt;
         </button>
         {generateHomeProjectsSection()}
       </div>
+      <NavLink to={"projects"} className={"projects-link"}>See All Projects <span>➡️</span></NavLink>
     </section>
   );
 };
 
 // return each project slide
-const Project = ({ project }) => {
+const ProjectSlide = ({ project }) => {
   const img = new URL(
     `../../../assets/imgs/projects/${project.thumbnail}`,
     import.meta.url
@@ -93,7 +96,7 @@ const Project = ({ project }) => {
         <h3>located in {project.country}</h3>
         {/* <h4> {project.product}</h4> */}
         <p>{project.overview}</p>
-        <NavLink to={`projects/${project.id}`}>Read More</NavLink>
+        <NavLink to={`/projects/${project.id}`}>Read More</NavLink>
       </div>
     </li>
   );
