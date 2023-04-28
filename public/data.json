@@ -241,12 +241,12 @@
       "description": "SIB is an integration middleware to perform intermediary services for the integrated parties, moreover a web application to provide a variety of collaboration services.",
       "modules": [
         "Message Tracking",
-        "Messaging administration",
+        "Messaging Administration",
         "Administrate Master Data",
         "Code Mapping",
         "Business Process Trading",
         "Validating",
-        "File & Code conversion"
+        "File & Code Conversion"
       ],
     "thumbnail": "sib/SIB.png",
     "images": [
