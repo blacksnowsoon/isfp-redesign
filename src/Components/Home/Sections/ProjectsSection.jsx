@@ -54,12 +54,14 @@ export const ProjectsSection = ({ projects = {} }) => {
   return (
     <section id="projects" className="container" aria-label="projects section">
       <h2 className="sec-title" aria-label="title">Projects</h2>
+      
       <div className="wrapper">
+        <div className="btns-wrapper">
         <button
           aria-label="slide left"
           ref={leftRef}
           onClick={handleSwappingButton}
-          className={`btn left ${
+          className={`left ${
             currentIndex === projects.length && "hide" 
           }`}
         >
@@ -69,10 +71,11 @@ export const ProjectsSection = ({ projects = {} }) => {
         aria-label="slide back"
           ref={rightRef}
           onClick={handleSwappingButton}
-          className={`btn right ${currentIndex === 0 && "hide" }`}
+          className={`right ${currentIndex === 0 && "hide" }`}
         >
           &gt;
         </button>
+        </div>
         {generateHomeProjectsSection()}
       </div>
       <NavLink to={"projects"} className={"projects-link"}>See All Projects <span>➡️</span></NavLink>
