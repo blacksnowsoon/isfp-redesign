@@ -13,7 +13,7 @@
   --accent: hsl(209, 93%, 27%, .9);
 
   --hero-background: hsl(240, 100%, 6%, var(--transparency-1));
-  --color: hsl(0 ,100% ,10% , var(--transparency-75));
+  --color: hsl(0 ,100% ,100% , var(--transparency-75));
   --background-color: hsl(0, 0%, 14%, var(--transparency-1));
 /* global vars */
   --box-shadow: 0rem 0rem .5rem var(--accent);
@@ -25,7 +25,7 @@
   --hero-margin : var(--offset-top, 100px);
   /* theme settings */
   color-scheme: light dark;
-  color:var(--color);
+  color: var(--color);
   background-color: var(--background-color);
   font-family: 'Hanken Grotesk',
               Inter, Avenir, 
