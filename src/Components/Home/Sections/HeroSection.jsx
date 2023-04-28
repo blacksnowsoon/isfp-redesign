@@ -106,7 +106,7 @@ export const HeroSection = () => {
         onClick={handelCarouselEventsBtns}>
         &gt;
       </button>
-      {BoundingClientRect && generatCanves(BoundingClientRect)}
+      {/* {BoundingClientRect && generatCanves(BoundingClientRect)} */}
       <div className="carousel">
         <div className="slides" ref={slideRef}>
           {slides.map((slide) => slide)}
