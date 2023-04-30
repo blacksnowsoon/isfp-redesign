@@ -1,19 +1,19 @@
 import React from "react";
-import "./index.css";
+import "./CSS/index.css";
 import ReactDOM from "react-dom/client";
 
-import App, { loader as appLoader, loader } from "./App";
-import {loader as productLoader } from './Components/Page/Product'
+import App, { loader as appLoader } from "./App";
+import {loader as productLoader } from './Pages/Product'
 import {
   createBrowserRouter,
   RouterProvider,
   useRoutes,
 } from "react-router-dom";
 import { Error } from "./Error";
-import Home from "./Components/Home/Home";
-import Product  from "./Components/Page/Product";
-import Projects, {loader as projectsLoader} from "./Components/Page/Projects";
-import Project, { loader as projectLoader} from "./Components/Page/Project"
+import Home from "./Home/Home";
+import Product  from "./Pages/Product";
+import Projects, {loader as projectsLoader} from "./Pages/Projects";
+import Project, { loader as projectLoader} from "./Pages/Project"
 
 const router = createBrowserRouter([
   {

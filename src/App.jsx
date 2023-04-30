@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import './App.css';
+import './CSS/App.css';
 import { NavBar } from './Components/NavBar';
 import { Outlet } from 'react-router-dom';
 import { Footer } from './Components/Footer';

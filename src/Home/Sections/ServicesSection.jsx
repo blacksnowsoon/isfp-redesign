@@ -14,7 +14,7 @@ export const ServicesSection = (services) => {
           <ul className="services">
             {
               listOfServices.map(service =>{
-                const img = new URL(`../../../assets/imgs/services/${service.image}`, import.meta.url).href
+                const img = new URL(`../../assets/imgs/services/${service.image}`, import.meta.url).href
                 return (
                   <li className="service" key={service.name + Math.random}>
                     <img loading="lazy" src={img} alt={service.name} />

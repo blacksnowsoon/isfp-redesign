@@ -1,6 +1,6 @@
-@import './CSS/hero.css';
-@import './CSS/sections.css';
-@import './CSS/linkded-pages.css';
+@import 'hero.css';
+@import 'sections.css';
+@import 'linkded-pages.css';
 
 #root {
   margin: 0 auto;
@@ -112,7 +112,7 @@
   --under-line : var(--accent)
 }
 .link-container:hover .nested-menu, .link-container:focus .nested-menu {
-  display: -webkit-flex;
+  display: flex;
   transition: opacity 2s, display 2s;
   opacity: 1;
   flex-direction: column;
@@ -169,7 +169,7 @@
 
 /* breakPoints----------------------------------- */
 
-@media screen and (max-width: 767px) {
+@media screen and (width< 1000px) {
   .nav-bar {
     box-shadow: none;
   }
@@ -232,6 +232,7 @@
   }
   .media-container {
     width: 100%;
+    
   }
   .slides {
     width: 100%;
@@ -239,17 +240,20 @@
   }
   .slide {
     flex-direction: column;
-    gap: 2rem;
-    padding: 1rem;
+    
   }
   .col {
     margin-inline: 0;
+    /* padding: 0; */
+  }
+  .col.logo {
+    width: 100%;
   }
   .slide:nth-child(even) {
     flex-direction:column;
   }
   .sec-title {
-    font-size: 1rem;
+    font-size: 1.5em;
   }
   .sec-title::after, .sec-title::before {
     width: 30%;

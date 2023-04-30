@@ -4,9 +4,9 @@ import React, {
   useState,
   useCallback,
 } from "react";
-import shortmap from "../../../assets/imgs/hero/shortmap.png";
-import point from "../../../assets/imgs/hero/point.png";
-import logo from "../../../assets/imgs/logos/ISFP.png";
+import shortmap from "../../assets/imgs/hero/shortmap.png";
+import point from "../../assets/imgs/hero/point.png";
+import logo from "../../assets/imgs/logos/ISFP.png";
 
 export const HeroSection = () => {
   const [slides, setSlides] = useState([
@@ -161,15 +161,19 @@ const PieSlide = () => {
   return (
     <div className="slide">
       <div className="col">
-        <div className="pie"></div>
+        <div className="pie">
+          <div className="pie-col">66%</div>
+          <div className="pie-col">25%</div>
+          <div className="pie-col">9%</div>
+        </div>
       </div>
       <div className="col content">
         <h3>Shareholders</h3>
         <ul>
-          <li>The Egyptian Ministry of Transport</li>
-          <li>The Egyptian Ministry of Communication</li>
+          <li>66% The Egyptian Ministry of Transport</li>
+          <li>25% The Egyptian Ministry of Communication</li>
           <li>
-            The Arab Academy for Science, Technology and Maritime Transport.
+            9% The Arab Academy for Science, Technology and Maritime Transport.
           </li>
         </ul>
       </div>

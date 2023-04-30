@@ -13,7 +13,6 @@ const Home = () => {
 	
 	const {Corporate : {"Clients & Beneficiaries": cli_ben}, Services, Products, "News & Events":news, Projects } = useOutletContext()
 	
-	
 	return (
 		<>
 			<HeroSection />
@@ -24,9 +23,9 @@ const Home = () => {
 			
 			<ProjectsSection projects ={Projects.slice(0,7)} />
 
-				{/* <NewsSection news={news} /> */}
+			<NewsSection news={news} />
 
-				{/* <ClientsSection clients={cli_ben.Clients} />   */}
+			<ClientsSection clients={cli_ben.Clients} />  
 			
 		</>
 	)

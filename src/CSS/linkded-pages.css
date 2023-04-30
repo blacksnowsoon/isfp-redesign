@@ -1,26 +1,23 @@
 /* styling the link page */
 .one-item-container {
-  display: flex;
-  /* min-height: 100svh; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   margin-block-start: var(--hero-margin);
   padding: var(--l-gap);
 }
 .one-item-container .col2 {
-  flex: 1 0 0;
   text-align: left;
-  /* outline: 1px solid; */
   padding: var(--l-gap);
+  outline: 1px solid;
 }
-.one-item-container h2 {
+.one-item-container .col2 h2 {
   align-self: flex-start;
   /* border-bottom: 2px solid; */
 }
-.one-item-container p {
+.one-item-container .col2 p {
   padding: var(--l-gap);
-  
 }
-
-.one-item-container ul {
+.one-item-container .col2 ul {
   align-self: flex-start;
   margin-top: var(--l-gap);
 }
@@ -30,7 +27,6 @@
   margin-top: var(--s-gap);
   margin-left: var(--xl-gap);
 }
-
 .one-item-container .col2 ul  li::before {
   content: "";
   font-size: .8em;
@@ -75,36 +71,37 @@
 .item-links a:hover::before {
   width: 100%;
 }
-.imgs-container {
+.one-item-container .imgs-container {
   --children: 8;
+  /* animation: wave 3s infinite; */
+  outline: 2px solid rgb(46, 29, 204);
+  
+}
+.imgs-container .core {
+  aspect-ratio: 1;
+  position: relative;
+  isolation: isolate;
+  
+  outline: 2px solid rgb(204, 29, 29);
+  /* width: 100%; */
+  /* height: fit-content; */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* animation: wave 3s infinite; */
-}
-.imgs-container .core {
-  --size: 10rem;
-  position: relative;
-  isolation: isolate;
-  width: var(--size);
-  aspect-ratio: 1;
-  /* outline: 1px solid; */
-  
 }
 .imgs-container .thumbnail {
   opacity: 1;
   box-shadow: inset var(--box-shadow);
 }
 .imgs-container img {
-  width: 75%;
-  height: 75%;
+  --size: 20%;
+  width: var(--size);
   position: absolute;
   border-radius: 25%;
   box-shadow: inset var(--box-shadow);
   padding: 1rem;
   
 }
-
 .imgs-container img:not(.thumbnail) {
   opacity: 0;
 }
@@ -165,4 +162,11 @@
     transform: rotate(360deg);
     
   }
+}
+
+@media  screen and (width < 1000px) {
+  .one-item-container {
+    grid-template-columns: 1fr;
+  }
+  
 }

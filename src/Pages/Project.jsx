@@ -1,6 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
-import { getProject } from "../../API";
+import { getProject } from "../API";
 
 const Project = () => {
   const  { project = {} }  = useLoaderData();

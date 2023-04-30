@@ -1,5 +1,5 @@
 import React from 'react'
-import { getProjects } from '../../API';
+import { getProjects } from '../API';
 import { useLoaderData } from 'react-router-dom';
 
 const Projects = () => {

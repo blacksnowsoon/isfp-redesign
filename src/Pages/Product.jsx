@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useLoaderData } from "react-router-dom";
-import { getProduct } from "../../API";
+import { getProduct } from "../API";
 
 
 
@@ -13,29 +13,7 @@ const Product = () => {
     containerRef.current.style.setProperty('--children', product.images.length)
   })
   return (
-    <div  className="one-item-container">
-      <div className="col2">
-        <h2>{product.fullName}</h2>
-        <p>{product.description}</p>
-        <ul className="modules">
-          <h2>Main Modules</h2>
-          {product.modules.map((module) => (
-            <li key={product.fullName.replaceAll(" ", "") + Math.random()}>
-              {module}
-            </li>
-          ))}
-        </ul>
-        <div className="item-links">
-          <a href="https://www.isfpegypt.com/beta/index.php/resources-library/demos">
-            Reqest a demo
-          </a>
-          <a href="https://www.isfpegypt.com/beta/index.php/contacts-us">
-            Contact Us
-          </a>
-          <a href={product.brochure}>Download Brochure</a>
-        </div>
-      </div>
-
+    <div  className="one-item-container container">
       <div className="col2 imgs-container">
         <div ref={containerRef} className="core">
         <img
@@ -63,6 +41,29 @@ const Product = () => {
         </div>
         
       </div>
+      <div className="col2">
+        <h2>{product.fullName}</h2>
+        <p>{product.description}</p>
+        <ul className="modules">
+          <h2>Main Modules</h2>
+          {product.modules.map((module) => (
+            <li key={product.fullName.replaceAll(" ", "") + Math.random()}>
+              {module}
+            </li>
+          ))}
+        </ul>
+        <div className="item-links">
+          <a href="https://www.isfpegypt.com/beta/index.php/resources-library/demos">
+            Reqest a demo
+          </a>
+          <a href="https://www.isfpegypt.com/beta/index.php/contacts-us">
+            Contact Us
+          </a>
+          <a href={product.brochure}>Download Brochure</a>
+        </div>
+      </div>
+
+      
     </div>
   );
 };
