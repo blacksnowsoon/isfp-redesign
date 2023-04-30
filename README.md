@@ -27,7 +27,7 @@
 
 ![github repo](https://github.com/blacksnowsoon/isfp-redesign)
 
-![website link](https://isfp-redesign.vercel.app)
+![website link](https://isfp-redesign.vercel.app/)
 
 ## Built with
 
