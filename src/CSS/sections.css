@@ -310,6 +310,12 @@
     top: calc(100% - 1em);
     writing-mode: vertical-lr;
   }
+  .btns-wrapper .left {
+    clip-path: polygon(50% 0%, 100% 50%, 100% 100%, 0 100%, 0 0);
+  }
+  .btns-wrapper .right {
+    clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%, 0 50%);
+  }
   .project {
     width: 100%;
     clip-path: polygon(47% 0, 51% 0, 100% 4%, 100% 100%, 0 99%, 0 3%);
