@@ -1,49 +1,44 @@
 import React, { useEffect, useRef } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getProduct } from "../API";
-
+import { Image } from "../Components/Image";
 
 
 const Product = () => {
   const { product = {} } = useLoaderData();
-  const containerRef = useRef(null);
+  const containerRef = useRef();
 
-  useEffect(()=>{
+  useEffect(()=> {
     const ref = getComputedStyle(containerRef.current)
     containerRef.current.style.setProperty('--children', product.images.length)
   })
   return (
-    <div  className="one-item-container container">
+    <section  className="one-item-container container">
       <div className="col2 imgs-container">
         <div ref={containerRef} className="core">
-        <img
-          src={
-            new URL(
-              `../../assets/imgs/products/${product.thumbnail}`,
-              import.meta.url
-            ).href
-          }
+        <Image
+          url={`products/${product.thumbnail}`}
           alt={product.fullName}
           className="thumbnail"
         />
-        {product?.images.map((img, index) => {
-          return (
-            <img
-              src={
-                new URL(`../../assets/imgs/products/${img}`, import.meta.url).href
-              }
-              alt={product.modules[index]}
-              key={product.fullName + index}
-            />
-          );
-        })}
-
+        {
+          product?.images.map((img, index) => {
+            return (
+              <Image
+              url={`products/${img}`}
+                alt={product.modules[index]}
+                key={product.fullName + index}
+              />
+            );
+          })}
         </div>
         
       </div>
       <div className="col2">
-        <h2>{product.fullName}</h2>
-        <p>{product.description}</p>
+        <div>
+          <h2>{product.fullName}</h2>
+          <p>{product.description}</p>
+        </div>
         <ul className="modules">
           <h2>Main Modules</h2>
           {product.modules.map((module) => (
@@ -53,7 +48,7 @@ const Product = () => {
           ))}
         </ul>
         <div className="item-links">
-          <a href="https://www.isfpegypt.com/beta/index.php/resources-library/demos">
+          <a href="https://www.isfpegypt.com/beta/index.php/resources-library/demos" role="button">
             Reqest a demo
           </a>
           <a href="https://www.isfpegypt.com/beta/index.php/contacts-us">
@@ -62,9 +57,7 @@ const Product = () => {
           <a href={product.brochure}>Download Brochure</a>
         </div>
       </div>
-
-      
-    </div>
+    </section>
   );
 };
 // [A-z]{1}\.
