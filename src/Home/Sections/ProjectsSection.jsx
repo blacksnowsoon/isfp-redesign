@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { NavigationLink } from "../../Components/NavigationLink";
 import { SectionTitle } from "../../Components/SectionTitle";
 import { Button } from "../../Components/Button";
+import { Image } from "../../Components/Image";
 // this section has an array of entities each item in the array
 // hold an Object with one key which is the country
 // and each country has a list of some objects each object
@@ -113,15 +114,15 @@ const ProjectsList = ({projects = {}, reference = ""})=>{
 }
 // return each project slide
 const ProjectSlide = ({ project }) => {
-  const img = new URL(
-    `../../assets/imgs/projects/${project.thumbnail}`,
-    import.meta.url
-  ).href;
+  
   return (
     <li className="project">
-      <div className="project-thumbnail">
-        <img src={img} alt={project.author} title={project.author} />
-      </div>
+      <Image 
+        containerClassName={"project-thumbnail"}
+        url={`projects/${project.thumbnail}`}
+        className={""}
+        alt={project.author} 
+        title={project.author} />
       <div className="project-details">
         <h2>{project.author}</h2>
         <h3>located in {project.country}</h3>

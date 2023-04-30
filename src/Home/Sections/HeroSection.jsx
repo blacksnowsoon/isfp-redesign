@@ -4,9 +4,9 @@ import React, {
   useState,
   useCallback,
 } from "react";
-import shortmap from "../../assets/imgs/hero/shortmap.png";
-import point from "../../assets/imgs/hero/point.png";
-import logo from "../../assets/imgs/logos/ISFP.png";
+import shortmap from "/assets/imgs/hero/shortmap.png";
+import point from "/assets/imgs/hero/point.png";
+import logo from "/assets/imgs/logos/ISFP.png";
 
 export const HeroSection = () => {
   const [slides, setSlides] = useState([

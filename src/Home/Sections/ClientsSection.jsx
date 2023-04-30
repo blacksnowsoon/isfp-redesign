@@ -1,8 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useCallback } from "react";
+import { Image } from "../../Components/Image";
 
 export const ClientsSection = ({clients}) => {
-  const secName = "CLients"
-  const generateClientsList = () => {
+  const secName = "CLients";
+
+  const generateClientsList = useCallback(() => {
     return (
       <>
         <ul className="clients-content">
@@ -14,13 +16,10 @@ export const ClientsSection = ({clients}) => {
         </ul>
       </>
     );
-  };
-  useEffect(() => {
-    generateClientsList();
-  }, []);
+  },[clients]);
+
   return (
     <section className="clients container">
-      {/* <h1 className="sec-title">Our {secName}</h1> */}
       {
 				generateClientsList()
 			}
@@ -30,13 +29,10 @@ export const ClientsSection = ({clients}) => {
 
 
 const ClientLogo = ({client}) => {
-  const img = new URL(
-    `../../assets/imgs/clients/${client.logo}`,
-    import.meta.url
-  ).href;
+  
   return (
     <li >
-      <img loading="lazy" src={img} alt={client.logo.slice(0,-4)} title={client.title} />
+      <Image url={`clients/${client.logo}`} alt={client.logo.slice(0,-4)} title={client.title} />
     </li>
   );
 }

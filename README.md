@@ -17,7 +17,7 @@
 
 - So far i have been collecting all the static data in a single JSON file and constracted the pages with that data. That mean if the data in that file modifided will modify the pages. An approach of DMS (Data Management System).
 
-- For all other content that has and action such as contact us, ask for demo or the staff corner. I have delevred the php version from the old website.
+- For all other content that has an action such as contact us, ask for demo or the staff corner. I have delevred the php version from the old website.
 
 (Note): In the data json file if the key has a value as an object will add a link with a nested menu to the nav bar else will just add a link in the menu
 
@@ -27,7 +27,7 @@
 
 ![github repo](https://github.com/blacksnowsoon/isfp-redesign)
 
-![hosted in Vercel](https://isfp-redesign.vercel.app)
+![website link](https://isfp-redesign.vercel.app)
 
 ## Built with
 

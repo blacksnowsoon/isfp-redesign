@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
 import './CSS/App.css';
-import { NavBar } from './Components/NavBar';
+import { NavBar } from './Home/NavBar';
 import { Outlet } from 'react-router-dom';
-import { Footer } from './Components/Footer';
+import { Footer } from './Home/Footer';
 import { useLoaderData } from 'react-router-dom';
 import { getData } from './API';
 
@@ -31,7 +31,6 @@ function App() {
     <div className="App" >
       <header>
         <NavBar navProps={generateNavBarMneu()} />
-        
       </header>
       <main >
         <Outlet context={data}/>

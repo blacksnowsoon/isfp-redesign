@@ -1,13 +1,13 @@
 import React from 'react'
 
 export const Image = (props) => {
-  const path = '../assets/imgs/' + props?.url
+  const path = '/assets/imgs/' + props?.url
   const src = new URL(path, import.meta.url).href
-  console.log(src)
   return (
     props.containerClassName ? 
     <div className={props.containerClassName}>
       <img 
+        loading="lazy"
         className={props?.className}
         src={src} 
         alt={props?.alt} 
@@ -15,9 +15,10 @@ export const Image = (props) => {
     </div>
     :
     <img 
-        className={props?.className}
-        src={src} 
-        alt={props?.alt} 
-        title={props?.title} />
+      loading="lazy"
+      className={props?.className}
+      src={src} 
+      alt={props?.alt} 
+      title={props?.title} />
   )
 }

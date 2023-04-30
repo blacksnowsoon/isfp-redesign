@@ -1,4 +1,5 @@
 import React, { useCallback } from "react";
+import { Image } from "../../Components/Image";
 // handle the section of an array data type
 export const ServicesSection = (services) => {
   // to get the name of the section from the prop key and captilize the first letter
@@ -14,15 +15,8 @@ export const ServicesSection = (services) => {
           <ul className="services">
             {
               listOfServices.map(service =>{
-                const img = new URL(`../../assets/imgs/services/${service.image}`, import.meta.url).href
                 return (
-                  <li className="service" key={service.name + Math.random}>
-                    <img loading="lazy" src={img} alt={service.name} />
-                    <div className="description">
-                      <h3>{service.name}</h3>
-                      <p>{service.description}</p>
-                    </div>
-                  </li>
+                  <Service service={service} key={service.name + Math.random}/>
                 )
               })
             }
@@ -39,3 +33,17 @@ export const ServicesSection = (services) => {
     </section>
   );
 };
+
+
+const Service = ({service})=>{
+
+  return (
+    <li className="service">
+      <Image url={`services/${service.image}`} alt={service.name} />
+      <div className="description">
+        <h3>{service.name}</h3>
+        <p>{service.description}</p>
+      </div>
+    </li>
+  )
+}
