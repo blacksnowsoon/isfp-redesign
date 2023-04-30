@@ -125,7 +125,6 @@ const ProjectSlide = ({ project }) => {
       <div className="project-details">
         <h2>{project.author}</h2>
         <h3>located in {project.country}</h3>
-        {/* <h4> {project.product}</h4> */}
         <p>{project.overview}</p>
         <NavLink to={`/projects/${project.id}`}>Read More</NavLink>
       </div>

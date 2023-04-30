@@ -13,13 +13,13 @@
 
 ## An Overview
 
-- I have seen that the website of the company has the same look for a while long. So I thought to give it a new LOOK and here is what i comeup with so far, I wish if i had has more contents details but any way the research still going...
+- I have seen the website of the company where I work has the same look for a while long. So I thought to give it a new LOOK and here is what i came up with so far, I wish if i had has more contents details but any way the research still going...
 
 - So far i have been collecting all the static data in a single JSON file and constracted the pages with that data. That mean if the data in that file modifided will modify the pages. An approach of DMS (Data Management System).
 
 - For all other content that has and action such as contact us, ask for demo or the staff corner. I have delevred the php version from the old website.
 
-(Note): in the data json file if the key has a value as an object will add a link with a nested menu to the nav bar else will just add a link in the menu
+(Note): In the data json file if the key has a value as an object will add a link with a nested menu to the nav bar else will just add a link in the menu
 
 ## Screenshots
 

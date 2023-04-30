@@ -3,6 +3,7 @@ import React from 'react'
 export const Image = (props) => {
   const path = '../assets/imgs/' + props?.url
   const src = new URL(path, import.meta.url).href
+  console.log(src)
   return (
     props.containerClassName ? 
     <div className={props.containerClassName}>

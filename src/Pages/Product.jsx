@@ -3,36 +3,32 @@ import { useLoaderData } from "react-router-dom";
 import { getProduct } from "../API";
 import { Image } from "../Components/Image";
 
-
 const Product = () => {
   const { product = {} } = useLoaderData();
   const containerRef = useRef();
 
-  useEffect(()=> {
-    const ref = getComputedStyle(containerRef.current)
-    containerRef.current.style.setProperty('--children', product.images.length)
-  })
+  useEffect(() => {
+    containerRef.current.style.setProperty("--children", product.images.length);
+  });
   return (
-    <section  className="one-item-container container">
+    <section className="one-item-container container">
       <div className="col2 imgs-container">
         <div ref={containerRef} className="core">
-        <Image
-          url={`products/${product.thumbnail}`}
-          alt={product.fullName}
-          className="thumbnail"
-        />
-        {
-          product?.images.map((img, index) => {
+          <Image
+            url={`products/${product.thumbnail}`}
+            alt={product.fullName}
+            className="thumbnail"
+          />
+          {product?.images.map((img, index) => {
             return (
               <Image
-              url={`products/${img}`}
+                url={`products/${img}`}
                 alt={product.modules[index]}
                 key={product.fullName + index}
               />
             );
           })}
         </div>
-        
       </div>
       <div className="col2">
         <div>
@@ -48,7 +44,10 @@ const Product = () => {
           ))}
         </ul>
         <div className="item-links">
-          <a href="https://www.isfpegypt.com/beta/index.php/resources-library/demos" role="button">
+          <a
+            href="https://www.isfpegypt.com/beta/index.php/resources-library/demos"
+            role="button"
+          >
             Reqest a demo
           </a>
           <a href="https://www.isfpegypt.com/beta/index.php/contacts-us">
@@ -60,9 +59,8 @@ const Product = () => {
     </section>
   );
 };
-// [A-z]{1}\.
 
-export default Product
+export default Product;
 
 export const loader = async (request) => {
   const productName = request.params["*"].toLocaleUpperCase();
