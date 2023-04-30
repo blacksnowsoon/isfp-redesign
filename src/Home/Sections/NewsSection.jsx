@@ -1,17 +1,16 @@
 import React from 'react'
-
+import { SectionTitle } from '../../Components/SectionTitle'
+import { Image } from '../../Components/Image'
 export const NewsSection = ({news}) => {
   return (
     <section id='news&events' className='container'>
-      <h1 className='sec-title'>News & Events</h1>
+      <SectionTitle className='sec-title' caption={"News & Events"} />
       <ul className='news-wrapper'>
         {
           news.map(event => {
             return <EventSlide event={event} key={Math.random() + event.title.slice(0,6)}/>
           })
         }
-        
-
       </ul>
     </section>
   )
@@ -19,16 +18,18 @@ export const NewsSection = ({news}) => {
 
 
 const EventSlide = ({event}) => {
-  const img = new URL(`../../../assets/imgs/news/${event.thumbnail}`, import.meta.url).href
   return (
     <li >
       <div className='news-slide'>
-        <div className='img'>
-          <img src={img} alt={event.title} />
-          <i>In {event.date} </i>
-        </div>
+        
+        <Image 
+          containerClassName={"img"} 
+          url={`news/${event.thumbnail}`} 
+          alt={event.title}/>
+          
         <div className='content'>
           <h2>{event.title}</h2>
+          <i>In {event.date} </i>
           <p>{event.overview}</p>
         </div>
       </div>
