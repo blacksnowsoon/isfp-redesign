@@ -41,19 +41,19 @@
 
 ## My process
 
-1- Collecting all the content data in one file to have an control over it.
+[1] Collecting all the content data in one file to have an control over it.
 
-2- Drawing the path of the routes.
+[2] Drawing the path of the routes.
 
-3- Buliding each component with its owne style and positioning. it could be not best practice but also has it's pros, Each component would be independed and easy to maintained.
+[3] Buliding each component with its owne style and positioning. it could be not best practice but also has it's pros, Each component would be independed and easy to maintained.
 
 ## Useful resources🚀
 
-![MDN](https://developer.mozilla.org/en-US/)
-![Reacr-reference](https://react.dev/reference/react)
+![MDN](https://developer.mozilla.org/en-US/).
+![Reacr-reference](https://react.dev/reference/react).
 ![Vite](https://vitejs.dev/)
-![react-router-dom](https://reactrouter.com/en/main)
-![Vercel](https://vercel.com/docs)
+![react-router-dom](https://reactrouter.com/en/main).
+![Vercel](https://vercel.com/docs).
 
 ## Continued development
 
