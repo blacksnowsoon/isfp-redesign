@@ -64,14 +64,14 @@ export const ProjectsSection = ({ projects = {} }) => {
             reference={leftRef}
             event={handleSwappingButton}
             className={`left ${currentIndex === projects.length && "hide"}`}
-            caption={'&lt;'}
+            caption={'<'}
           />
           <Button
             ariaLabel="slide back"
             reference={rightRef}
             event={handleSwappingButton}
             className={`right ${currentIndex === 0 && "hide"}`}
-            caption={'&gt;'}
+            caption={'>'}
           />
         </div>
         {
