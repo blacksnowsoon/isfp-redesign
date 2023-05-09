@@ -7,8 +7,11 @@ import { SectionTitle } from "../../Components/SectionTitle";
 // handle the section for an Object as data type
 export const ProductsSection = ({products = {}}) => {
   
-  const generateProductsList = useCallback(() => {
-    return (
+  
+
+  return (
+    <section id="products" className="container" aria-label="products section">
+      <SectionTitle className="sec-title" caption={'Main Products'}/>
       <ul className="products-content">
         {
           Object.entries(products).map((product) => {
@@ -21,15 +24,6 @@ export const ProductsSection = ({products = {}}) => {
           })
         }
       </ul>
-    );
-  }, [products]);
-
-  return (
-    <section id="products" className="container" aria-label="products section">
-      <SectionTitle className="sec-title" caption={'Main Products'}/>
-      {
-        generateProductsList()
-      }
       {/* to clear the float style */}
       <div className="clear"></div>
     </section>
@@ -47,7 +41,7 @@ const Product = ({product = {}, name = ""})=>{
       containerClassName='product-img'
       url={`products/${product.thumbnail}`}
       alt={product?.fullName} />
-                    
+      
       <div className="product-description">
         <div className="shape"></div>
         <p>
@@ -59,7 +53,7 @@ const Product = ({product = {}, name = ""})=>{
 
       <NavigationLink
         to={`products/${name.toLocaleLowerCase()}`} 
-        caption="Discover"/>
+        caption="Discover" className={"before"}/>
     </li>
   )
 }
