@@ -1,8 +1,9 @@
 import React from 'react'
+import { imgEncoded } from '../API'
 
 export const Image = (props) => {
   const path = '/assets/imgs/' + props?.url
-  const src = new URL(path, import.meta.url).href
+  const src = imgEncoded(path)
   return (
     props.containerClassName ? 
     <div className={props.containerClassName}>
