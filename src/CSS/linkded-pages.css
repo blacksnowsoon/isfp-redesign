@@ -47,23 +47,7 @@
   isolation: isolate;
   padding: var(--m-gap);
 }
-.item-links a::before {
-  content: "";
-  position: absolute;
-  width: 5px;
-  height: 100%;
-  background: var(--accent);
-  left: 0;
-  top: 0;
-  transition: width 500ms;
-  z-index: -1;
-}
-.item-links a:hover{
-  color: aliceblue;
-}
-.item-links a:hover::before {
-  width: 100%;
-}
+
 .one-item-container .imgs-container {
   --children: 8;
 }
@@ -91,55 +75,46 @@
 .imgs-container img:not(.thumbnail) {
   opacity: 0;
 }
-
 .imgs-container img:nth-child(2) {
   opacity: 1;
   transform: translate(calc(sin(calc(2 * 360deg / var(--children))) * 145% ),
                         calc(cos(calc(2 * 360deg / var(--children))) * 145% ));
 }
-
 .imgs-container img:nth-child(3) {
   opacity: 1;
   transform: translate(calc(sin(calc(3 * 360deg / var(--children))) * 145% ),
                         calc(cos(calc(3 * 360deg / var(--children))) * 145% ));
 }
-
 .imgs-container img:nth-child(4) {
   opacity: 1;
   transform: translate(calc(sin(calc(4 * 360deg / var(--children))) * 145% ),
                         calc(cos(calc(4 * 360deg / var(--children))) * 145% ));
 }
-
 .imgs-container img:nth-child(5) {
   opacity: 1;
   transform: translate(calc(sin(calc(5 * 360deg / var(--children))) * 145% ),
                         calc(cos(calc(5 * 360deg / var(--children))) * 145% ));
 }
-
 .imgs-container img:nth-child(6) {
   opacity: 1;
   transform: translate(calc(sin(calc(6 * 360deg / var(--children))) * 145% ),
                         calc(cos(calc(6 * 360deg / var(--children))) * 145% ));
 }
-
 .imgs-container img:nth-child(7) {
   opacity: 1;
   transform: translate(calc(sin(calc(7 * 360deg / var(--children))) * 145% ),
                         calc(cos(calc(7 * 360deg / var(--children))) * 145% ));
 }
-
 .imgs-container img:nth-child(8) {
   opacity: 1;
   transform: translate(calc(sin(calc(8 * 360deg / var(--children))) * 145% ),
                         calc(cos(calc(8 * 360deg / var(--children))) * 145% ));
 }
-
 .imgs-container img:nth-child(9) {
   opacity: 1;
   transform: translate(calc(sin(calc(9 * 360deg / var(--children))) * 145% ),
                         calc(cos(calc(9 * 360deg / var(--children))) * 145% ));
 }
-
 
 @keyframes wave {
   0% {
@@ -149,10 +124,110 @@
     
   }
 }
+/* styling projects page */
+.projects-filter {
+  display: flex;
+  justify-content: center;
+  gap: var(--m-gap);
+  padding-block: var(--l-gap);
+}
+.projects-filter .projects-filter-btn {
+  padding: 1em;
+  min-width: 100px;
+  cursor: pointer;
+  border: none;
+  outline: transparent;
+  border-radius: var(--raduis);
+  transition: outline 500ms;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.projects-filter .projects-filter-btn:hover , .projects-filter .projects-filter-btn:focus {
+  outline: 1px solid;
+}
+.projects-filter .active {
+  outline: 2px solid;
+}
+.projects-grid {
+  padding-block: var(--xl-gap);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(275px, 1fr));
+  gap: var(--l-gap);
+  
+}
+.project-card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+  outline: 1px solid;
+  box-shadow: inset var(--box-shadow) black;
+}
+.card-thumbnail {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+.project-content {
+  padding-inline: var(--m-gap);
+}
+.overlay {
+  position: absolute;
+  padding: var(--m-gap);
+  inset: 0;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateY(80%) skew(-5deg, -5deg);
+  transition: transform 500ms, background 500ms;
+}
+.overlay p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  overflow: hidden;
+  
+}
+.project-card:hover .overlay {
+  transform: translateY(0);
+  background: var(--accent);
+  color: aliceblue;
+}
+.project-link {
+  outline: 1px solid;
+  text-align: center;
+  padding: var(--m-gap);
+}
+/*  */
+
+.project-page {
+  display: flex;
+  text-align: left;
+}
+.project-page-thumb {
+  flex: 1 0 0;
+}
+.pro-img {
+  width: 100%;
+}
+.project-page-content {
+  flex: 1 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--l-gap);
+  padding: var(--l-gap);
+}
+
 
 @media  screen and (width < 1000px) {
   .one-item-container {
     grid-template-columns: 1fr;
+  }
+  .project-page-thumb {
+    flex-basis: 100%;
+  }
+  .project-page {
+    flex-direction: column;
   }
   
 }
