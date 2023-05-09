@@ -47,13 +47,14 @@ const Product = () => {
           <a
             href="https://www.isfpegypt.com/beta/index.php/resources-library/demos"
             role="button"
+            className="before"
           >
             Reqest a demo
           </a>
-          <a href="https://www.isfpegypt.com/beta/index.php/contacts-us">
+          <a href="https://www.isfpegypt.com/beta/index.php/contacts-us" role="button" className="before">
             Contact Us
           </a>
-          <a href={product.brochure}>Download Brochure</a>
+          <a href={product.brochure} role="button" className="before">Download Brochure</a>
         </div>
       </div>
     </section>
