@@ -49,11 +49,15 @@
 
 ## Useful resources🚀
 
-![MDN](https://developer.mozilla.org/en-US/).
-![Reacr-reference](https://react.dev/reference/react).
+![MDN](https://developer.mozilla.org/en-US/)
+
+![Reacr-reference](https://react.dev/reference/react)
+
 ![Vite](https://vitejs.dev/)
-![react-router-dom](https://reactrouter.com/en/main).
-![Vercel](https://vercel.com/docs).
+
+![react-router-dom](https://reactrouter.com/en/main)
+
+![Vercel](https://vercel.com/docs)
 
 ## Continued development
 
