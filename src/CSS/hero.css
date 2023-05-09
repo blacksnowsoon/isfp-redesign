@@ -7,7 +7,7 @@
   top: var(--hero-margin);
   left: 0;
   height: calc(100svh - var(--hero-margin));
-  background-image: conic-gradient(from 50deg at 50% 50%, yellow 29%, orange 6%, green 65%) ;
+  background-image: conic-gradient(from 50deg at 50% 50%, rgb(255, 102, 0) 29%, orange 6%, var(--accent) 65%) ;
 }
 .hero .btn {
   position: absolute;
