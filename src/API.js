@@ -1,4 +1,5 @@
 
+import { Image } from './Components/Image';
 export async function getData() {
   try {
       const respons = await fetch("../data.json");
@@ -21,6 +22,7 @@ export async function getProjects(){
   try {
     const respons = await fetch("../data.json");
     const {Projects} = await respons.json().then(fullfilled => fullfilled)
+    
     return Projects;
   } catch (error) {
     console.error('error #%d', error)
@@ -35,4 +37,14 @@ export async function getProject(id) {
   } catch (error) {
     console.error('error #%d', error)
   }
+}
+
+// return a string lowerCase and replace the spaces
+export const lowerCaseReplaceSpace = (string)=>{
+  return string.toLowerCase().replaceAll(" ", "")
+}
+
+// return an encoded Image
+export const imgEncoded = (path)=>{
+  return  new URL(path, import.meta.url).href
 }
