@@ -5,7 +5,7 @@
   --transparency-75: .75;
   --transparency-25: .25;
   --transparency-1: 1;
-  --color-scheme:#ffd945 ;
+  --color-scheme:#ffd945;
   --logo-blue: #044281;
   --middle-blue: hsl(210, 95%, 15%, .9);
   --mate-blue: hsl(208, 37%, 20%, .9);
@@ -16,15 +16,16 @@
   --color: hsl(0 ,100% ,100% , var(--transparency-75));
   --background-color: hsl(0, 0%, 14%, var(--transparency-1));
 /* global vars */
-  --box-shadow: 0rem 0rem .5rem var(--accent);
-  --s-gap: .375rem;
-  --m-gap: .75rem;
-  --l-gap: 1rem;
-  --xl-gap: 1.75rem;
-  --raduis: 6px;
-  --hero-margin : var(--offset-top, 100px);
+  --box-shadow: 0em 0em .5em var(--accent);
+  --s-gap: .375em;
+  --m-gap: .75em;
+  --l-gap: 1em;
+  --xl-gap: 1.75em;
+  --raduis: .375em;
+  --hero-margin : var(--offset-top, 6.25em);
+  --max-width: 75em;
   /* theme settings */
-  color-scheme: light dark;
+  /* color-scheme: light dark; */
   color: var(--color);
   background-color: var(--background-color);
   font-family: 'Hanken Grotesk',
@@ -56,17 +57,25 @@ header {
   width: 100%;
   top: 0;
 }
+hr {
+  margin: 0;
+  color: var(--accent);
+  height: 1px;
+}
 main {
   position: relative;
   background: var(--background-color);
 }
-
 a {
   text-decoration: none;
   color: inherit;
 }
+a:hover {
+  color: var(--accent);
+}
 footer {
   background: var(--background-color);
+  
 }
 ul {
   list-style: none;
@@ -75,8 +84,8 @@ ul {
 }
 .container {
   padding-top: var(--hero-margin);
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: var(--max-width);
+  margin: var(--l-gap) auto;
 }
 .isactive {
   --under-line : var(--accent)
@@ -89,13 +98,28 @@ ul {
 .clear {
   clear: both;
 }
-@media (prefers-color-scheme: light) {
+.before::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  background: var(--accent);
+  left: 0;
+  top: 0;
+  transition: width 500ms;
+  z-index: -1;
+}
+.before:hover {
+  color: aliceblue;
+}
+.before:hover::before {
+  width: 100%;
+}
+@media (prefers-color-scheme: light ) {
   :root {
     --color: hsl(0, 0%, 10%);
     --background-color: hsl(0, 0%, 100%);
   }
-  a:hover {
-    color: var(--logo-blue);
-  }
+  
   
 } 
