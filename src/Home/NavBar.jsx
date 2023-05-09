@@ -1,27 +1,79 @@
-import React, { useCallback, useEffect, useRef } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import React, {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  useContext,
+} from "react";
+import { useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import logo from "/assets/imgs/logos/ISFP.png";
+import { NavigationLink } from "../Components/NavigationLink";
+import { AppContext } from "../App";
+import { SliderButton } from "../Components/SliderButton";
+import { lowerCaseReplaceSpace } from '../API'
+
 export const NavBar = ({ navProps }) => {
+  const { theme, setTheme, activeNavLink, setActiveNavLink } =
+    useContext(AppContext);
   const navigate = useNavigate();
   const menuRef = useRef();
   const navRef = useRef();
-  /* useing the call back to avoid re-render
-   * the menu unless the props has modified
-   */
+
+  const handleActiveLink = (e) => {
+    const link = e.target.hash.slice(1);
+    setActiveNavLink(link);
+  };
+  // showing the menu
+  const toggleMenu = (e) => {
+    e.preventDefault();
+    menuRef.current.classList.toggle("grap-down");
+  };
+  const handleThemeChange = (e) => {
+    const root = document.querySelector(":root")
+    switch (e.target.value) {
+      case "0":
+        setTheme("light");
+        root.style.setProperty('--color', "hsl(0, 0%, 10%)")
+        root.style.setProperty('--background-color', "hsl(0, 0%, 100%)")
+        break;
+      case "1":
+        setTheme("dark");
+        root.style.setProperty('--color', "hsl(0 ,100% ,100% , var(--transparency-75))")
+        root.style.setProperty('--background-color', " hsl(0, 0%, 14%, var(--transparency-1))")
+        break;
+      default:
+        break;
+    }
+  };
+  // calc the nav offsetX to set the margin top
+  const calcNavOffSetY = () => {
+    const nav = navRef.current;
+    const rectBounds = nav.getBoundingClientRect();
+    document.documentElement.style.setProperty(
+      "--offset-top",
+      rectBounds.height + "px"
+    );
+  };
+
   const listFragment = useCallback(() => {
     /** if the value of the given key has an Array will return
-     * a nested ul else will return a page Link.
+     * a nested ul else will return a section Link.
      */
-    const list = Object.keys(navProps).map((key) => {
+    return Object.keys(navProps).map((key) => {
+      
+      const link = lowerCaseReplaceSpace(key);
       // if the prop has value of an array will return a local page link
       if (!Array.isArray(navProps[key])) {
         return (
-          <li className="link-container" key={key + Math.random()}>
-            <HashLink
-              className={"menu-link"}
-              to={`/#${key.toLowerCase().replaceAll(" ", "")}`}
-            >
+          <li
+            onClick={handleActiveLink}
+            className={`link-container ${
+              activeNavLink === link ? "active-link" : ""
+            }`}
+            key={key + Math.random()}
+          >
+            <HashLink className={"menu-link"} to={`/#${link}`}>
               {key}
             </HashLink>
           </li>
@@ -29,25 +81,25 @@ export const NavBar = ({ navProps }) => {
       } else {
         // else will return a local page link with nested menu
         return (
-          <li className="link-container" key={key + Math.random()}>
-            <HashLink
-              className={"menu-link"}
-              to={`/#${key.toLowerCase().replaceAll(" ", "")}` || navigate("/")}
-            >
+          <li
+            onClick={handleActiveLink}
+            className={`link-container ${
+              activeNavLink === link ? "active-link" : ""
+            }`}
+            key={key + Math.random()}
+          >
+            <HashLink className={"menu-link"} to={`/#${link}` || navigate("/")}>
               {key}
             </HashLink>
             <ul className="nested-menu">
               {navProps[key].map((item) => {
                 return (
                   <li className="link-container" key={item + Math.random()}>
-                    <NavLink
+                    <NavigationLink
                       className={"menu-link"}
-                      to={`/${key.toLowerCase().replaceAll(" ", "")}/${item
-                        .toLowerCase()
-                        .replaceAll(" ", "")}`}
-                    >
-                      {item}
-                    </NavLink>
+                      to={`/${link}/${lowerCaseReplaceSpace(item)}`}
+                      caption={item}
+                    />
                   </li>
                 );
               })}
@@ -56,54 +108,47 @@ export const NavBar = ({ navProps }) => {
         );
       }
     });
-    return list;
   }, [navProps]);
 
-  // showing the menu
-  const toggleMenu = (e) => {
-    e.preventDefault();
-    menuRef.current.classList.toggle("grap-down");
-  };
-  const calcNavOffSet = () => {
-    const nav = navRef.current;
-    const rectBounds = nav.getBoundingClientRect();
-    document.documentElement.style.setProperty(
-      "--offset-top",
-      rectBounds.height + "px"
-    );
-  };
   useEffect(() => {
-    calcNavOffSet();
+    if(navRef) calcNavOffSetY();
     return () => {
-      calcNavOffSet();
+      if(navRef) calcNavOffSetY();
     };
-  }, []);
+  }, [theme]);
+
   return (
-    <nav ref={navRef} className="nav-bar" onLoadedData={calcNavOffSet}>
-      <div className=" bar1">
-        <p>
-          <a href="tel:+2034293846" title="call ISFP">
-            📞+(2 03) 429 38 46 |
-          </a>
-          <NavLink
+    <nav ref={navRef} className="nav-bar" onLoadedData={calcNavOffSetY}>
+      <div className=" top-bar">
+        <div className="contacts">
+          <NavigationLink
+            to="tel:+2034293846"
+            title="call ISFP"
+            caption={"📞+(2 03) 429 38 46"}
+          />
+          <NavigationLink
             to={"https://www.isfpegypt.com/beta/./index.php/staff-corner2"}
-            title="Staff Corner"
-          >
-            Staff Corner
-          </NavLink>{" "}
-          |
-          <NavLink to={"/contactUs"} title="contact ISFP">
-            Contact Us
-          </NavLink>
-        </p>
+            caption="Staff Corner"
+            title={"staff corner"}
+          />
+          <NavigationLink
+            to={"/contactUs"}
+            title="contact ISFP"
+            caption={"Contact Us"}
+          />
+        </div>
+        <div>
+          <SliderButton onChangeValue={handleThemeChange} />
+        </div>
       </div>
-      <div className="bar2">
-        <div className="bar2-left">
+      <hr></hr>
+      <div className="bottom-bar">
+        <div className="bottom-bar-left">
           <a href="/">
             <img className="logo" src={logo} alt="logo" />
           </a>
-
           <button className="menu-btn" onClick={toggleMenu}>
+            {/* menu icon svg */}
             <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
               <path d="M3 18v-2h18v2Zm0-5v-2h18v2Zm0-5V6h18v2Z" />
             </svg>
@@ -116,3 +161,5 @@ export const NavBar = ({ navProps }) => {
     </nav>
   );
 };
+
+
