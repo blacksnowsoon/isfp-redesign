@@ -6,40 +6,106 @@
   margin: 0 auto;
   text-align: center;
 }
-/* nav bar style --------------------------- */
+/* nav bar style -------0px .5em .5em -.5em-------------------- */
 .nav-bar {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  background: var(--background-color) ;
-  box-shadow: 0px .5em .5em -.5em;
   z-index: 999;
-  padding: .5rem 0;
+  background: var(--background-color) ;
+  box-shadow: var(--box-shadow);
 }
 /* first bar */
-.bar1 {
-  border-bottom: 1px solid;
-}
-.bar1 p {
-  max-width: 1000px;
-  padding: .5rem;
+.top-bar {
+  margin-inline: auto;
+  max-width: var(--max-width);
+  padding-inline: var(--l-gap);
   display: flex;
-  margin: 0 auto;
-  gap: 10px;
-  font-size: 12px;
+  justify-content: space-between;
+  align-items: center;
 }
-.bar1 a {
-  text-decoration: none;
-  color: inherit;
+.top-bar .contacts {
+  display: flex;
+  padding: var(--m-gap);
+  gap: var(--m-gap);
+  font-size: .75em;
+}
+.top-bar .contacts :nth-child(2) {
+  border-left: 1px solid;
+  border-right: 1px solid;
+  padding-inline: var(--l-gap);
+}
+.range-btn {
+  outline: 1px solid var(--accent);
+  width: 5em;
+  height: 2em;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 25px;
+  isolation: isolate;
+  
+  /* box-shadow: inset var(--box-shadow); */
+}
+.range-btn svg {
+  scale: .6;
+  fill: var(--accent);
+  
+}
+.range-btn input[type=range] {
+  position: absolute;
+  width: 85%;
+  left: 5%;
+  z-index: 1;
+  background: transparent;
+  -webkit-appearance: none;
+}
+/* the bar view in chrome and edge */
+
+.range-btn input[type=range]::-webkit-slider-thumb {
+  height: 2em;
+  width: 2em;
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: transparent;
+  border-radius: 25px;
+  transition: all 500ms, step 500ms;
+  box-shadow: inset var(--box-shadow);
+}
+/* the bar view in edge */
+.range-btn input[type=range]::-ms-thumb{
+  height: 2em;
+  width: 2em;
+  cursor: pointer;
+  background: transparent;
+  border-radius: 25px;
+  transition: all 500ms, step 500ms;
+  box-shadow: inset var(--box-shadow);
+}
+
+/* the bar view in firfox  */
+/* circle */
+.range-btn input[type=range]::-moz-range-thumb {
+  height: 2em;
+  width: 2em;
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: transparent;
+  border-radius: 25px;
+  transition: all 500ms, step 500ms;
+  box-shadow: inset var(--box-shadow);
 }
 /* second bar */
-.bar2 {
+.bottom-bar {
   display: grid;
   grid-template-columns: auto 1fr auto;
-  margin: 0 auto;
-  max-width: 1000px;
+  margin-inline: auto;
+  max-width: var(--max-width);
+  padding-inline: var(--l-gap);
 }
-.bar2 .bar2-left {
+.bottom-bar .bottom-bar-left {
   display: flex;
   justify-content: space-between;
 }
@@ -108,7 +174,7 @@
 .nested-menu .menu-link {
   padding: var(--s-gap);
 }
-.bar2 .link-container:hover, .bar2 .link-container:focus {
+.bottom-bar .link-container:hover, .bottom-bar .link-container:focus {
   --under-line : var(--accent)
 }
 .link-container:hover .nested-menu, .link-container:focus .nested-menu {
@@ -118,15 +184,18 @@
   flex-direction: column;
   gap: var(--s-gap);
 }
-
+.active-link {
+  --under-line : var(--accent)
+}
 /* footer style */
 .footer {
+  padding: var(--l-gap);
+}
+.footer-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
-  padding: var(--l-gap);
-  gap: 1rem;
-  font-size: .9em;
+  max-width: 1200px;
+  margin-inline: auto;
 }
 .footer h2 {
   font-size: 1.6em;
@@ -146,12 +215,9 @@
 
 /* footer style */
 .footer .column>h2:hover::before {
-  width: 40%;
+  width: 50%;
 }
-.footer ul {
-  padding: 0;
-  margin: 0;
-}
+
 .column {
   display: flex;
   flex-direction: column;
@@ -173,7 +239,11 @@
   .nav-bar {
     box-shadow: none;
   }
-  .bar2 {
+  .top-bar {
+    font-size: .9em;
+    padding-inline: var(--s-gap);
+  }
+  .bottom-bar {
     grid-template-columns: auto;
   }
   .menu-btn {
@@ -268,16 +338,16 @@
   .products-content {
     grid-template-columns: 1fr;
   }
-
   .product-card:nth-child(2) {
     border-bottom: 1px solid;
     border-top: 1px solid ;
     border-left: none;
     border-right: none;
   }
-  .footer {
+  /* styling the footer */
+  .footer-container {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    
   }
+
 }
