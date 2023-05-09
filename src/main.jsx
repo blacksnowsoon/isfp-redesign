@@ -1,13 +1,13 @@
-import React from "react";
+import React, { createContext, useContext } from "react";
 import "./CSS/index.css";
 import ReactDOM from "react-dom/client";
-
 import App, { loader as appLoader } from "./App";
 import {loader as productLoader } from './Pages/Product'
 import {
   createBrowserRouter,
   RouterProvider,
   useRoutes,
+  
 } from "react-router-dom";
 import { Error } from "./Error";
 import Home from "./Home/Home";
@@ -34,11 +34,11 @@ const router = createBrowserRouter([
       },
       {
         path: "projects",
-        loader: projectsLoader,
         children: [
           {
             index: true,
             element: <Projects />,
+            loader: projectsLoader,
           },
           {
             path: ":id",
@@ -50,9 +50,11 @@ const router = createBrowserRouter([
     ],
   },
 ]);
-
+const AppContext = createContext({defaultTheme: "system", NavActiveLink: "none"})
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    {/* <AppContext.Provider value={}> */}
+      <RouterProvider router={router} />
+    {/* </AppContext.Provider> */}
   </React.StrictMode>
 );
