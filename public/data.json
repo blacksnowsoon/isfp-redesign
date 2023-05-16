@@ -210,14 +210,14 @@
       "image": "infrastructure1.png"
     },
     {
-      "name": "Consultation Services",
-      "description": "Faster, Smarter, Smoother, Better, Cheaper. This is how companies required to run IT. ",
-      "image": "consultation1.png"
-    },
-    {
       "name": "IT Management & Operation Services",
       "description": "Basically Your company’s data is more important than its physical assets. We can help securing your information from threats",
       "image": "securing1.png"
+    },
+    {
+      "name": "Consultation Services",
+      "description": "Faster, Smarter, Smoother, Better, Cheaper. This is how companies required to run IT. ",
+      "image": "consultation1.png"
     },
     {
       "name": "Training Services",
@@ -316,7 +316,7 @@
       "author": "Alex Port",
       "thumbnail": "alex_port.jpg",
       "date": "JULY-2005",
-      "overview": "In order to meet rising customer expectations and stay ahead of the competition, APA sought to enrich the overall port operation services by moving to a paperless environment and providing a valuable and relevant solution that completely restructures the manual process of documents exchange between port community members.",
+      "overview": "In order to meet rising customer expectations and stay ahead of the competition, APA sought to enrich the overall port operation services by moving to a paperless environment and providing a valuable and relevant solution. That completely restructures the manual process of documents exchange between port community members.",
       "description": "The Automation aimed at and achieved the optimization of the Port Management Processes from decreasing the vessel and cargo turn-around time to making available the necessary real time data for yard operations and performing all statistical and data analysis for decision makers."
     },{
       "id": 3,
