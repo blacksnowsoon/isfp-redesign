@@ -240,4 +240,17 @@
 }
 @media screen and (width <= 640px) { 
 
+  .projects-filter {
+    flex-wrap: wrap;
+  }
+  .projects-grid {
+    padding: var(--m-gap);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (width <= 440px) { 
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 }

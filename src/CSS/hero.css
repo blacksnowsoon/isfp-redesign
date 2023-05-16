@@ -69,6 +69,7 @@
   height: 100%;
   margin-inline: auto;
   overflow: hidden;
+  
 }
 .slides {
   height: 100%;
@@ -87,6 +88,7 @@
   color: aliceblue;
   padding-inline: var(--xl-gap);
   transition: transform 0.5s;
+  
 }
 .slide:first-child, .slide:nth-child(2){
   --t-d: -100%;
@@ -228,7 +230,15 @@
   
 }
 @media screen and (width <= 920px) { 
-  
+  .carousel {
+    width:100%
+  }
+  .slide {
+    padding-inline: var(--s-gap);
+  }
+  .slide .col {
+    width: 100%;
+  }
 }
 @media screen and (width <= 768px) { 
   
