@@ -1,25 +1,24 @@
 import React, {
   useCallback,
-  useEffect,
   useRef,
-  useState,
   useContext,
 } from "react";
-import { useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import logo from "/assets/imgs/logos/ISFP.png";
 import { NavigationLink } from "../Components/NavigationLink";
 import { AppContext } from "../App";
 import { SliderButton } from "../Components/SliderButton";
-import { lowerCaseReplaceSpace } from '../API'
+import {
+  lowerCaseReplaceSpace,
+  themeChoosed,
+  setOffsetY,
+} from "../Utiles/UtilesMethods";
 
 export const NavBar = ({ navProps }) => {
-  const { theme, setTheme, activeNavLink, setActiveNavLink } =
-    useContext(AppContext);
-  const navigate = useNavigate();
+  const { activeNavLink, setActiveNavLink } = useContext(AppContext);
   const menuRef = useRef();
-  const navRef = useRef();
 
+  // track active link
   const handleActiveLink = (e) => {
     const link = e.target.hash.slice(1);
     setActiveNavLink(link);
@@ -29,96 +28,31 @@ export const NavBar = ({ navProps }) => {
     e.preventDefault();
     menuRef.current.classList.toggle("grap-down");
   };
+  // chang between light and dark mode
   const handleThemeChange = (e) => {
-    const root = document.querySelector(":root")
-    switch (e.target.value) {
-      case "0":
-        setTheme("light");
-        root.style.setProperty('--color', "hsl(0, 0%, 10%)")
-        root.style.setProperty('--background-color', "hsl(0, 0%, 100%)")
-        break;
-      case "1":
-        setTheme("dark");
-        root.style.setProperty('--color', "hsl(0 ,100% ,100% , var(--transparency-75))")
-        root.style.setProperty('--background-color', " hsl(0, 0%, 14%, var(--transparency-1))")
-        break;
-      default:
-        break;
-    }
-  };
-  // calc the nav offsetX to set the margin top
-  const calcNavOffSetY = () => {
-    const nav = navRef.current;
-    const rectBounds = nav.getBoundingClientRect();
-    document.documentElement.style.setProperty(
-      "--offset-top",
-      rectBounds.height + "px"
-    );
+    const mode = e.target.className;
+    themeChoosed(mode);
+    e.preventDefault();
   };
 
   const listFragment = useCallback(() => {
-    /** if the value of the given key has an Array will return
-     * a nested ul else will return a section Link.
-     */
+    // return a plane menu link or menu link with nested menu
     return Object.keys(navProps).map((key) => {
-      
       const link = lowerCaseReplaceSpace(key);
-      // if the prop has value of an array will return a local page link
-      if (!Array.isArray(navProps[key])) {
-        return (
-          <li
-            onClick={handleActiveLink}
-            className={`link-container ${
-              activeNavLink === link ? "active-link" : ""
-            }`}
-            key={key + Math.random()}
-          >
-            <HashLink className={"menu-link"} to={`/#${link}`}>
-              {key}
-            </HashLink>
-          </li>
-        );
-      } else {
-        // else will return a local page link with nested menu
-        return (
-          <li
-            onClick={handleActiveLink}
-            className={`link-container ${
-              activeNavLink === link ? "active-link" : ""
-            }`}
-            key={key + Math.random()}
-          >
-            <HashLink className={"menu-link"} to={`/#${link}` || navigate("/")}>
-              {key}
-            </HashLink>
-            <ul className="nested-menu">
-              {navProps[key].map((item) => {
-                return (
-                  <li className="link-container" key={item + Math.random()}>
-                    <NavigationLink
-                      className={"menu-link"}
-                      to={`/${link}/${lowerCaseReplaceSpace(item)}`}
-                      caption={item}
-                    />
-                  </li>
-                );
-              })}
-            </ul>
-          </li>
-        );
-      }
+      return (
+        <MenuItem 
+        isActive={activeNavLink === link} 
+        event={handleActiveLink}
+        value={navProps[key]}
+        name={key} 
+        link={link}
+        key={key + Math.random()}/>
+      );
     });
   }, [navProps]);
 
-  useEffect(() => {
-    if(navRef) calcNavOffSetY();
-    return () => {
-      if(navRef) calcNavOffSetY();
-    };
-  }, [theme]);
-
   return (
-    <nav ref={navRef} className="nav-bar" onLoadedData={calcNavOffSetY}>
+    <nav ref={(node) => setOffsetY(node)} className="nav-bar">
       <div className=" top-bar">
         <div className="contacts">
           <NavigationLink
@@ -137,8 +71,8 @@ export const NavBar = ({ navProps }) => {
             caption={"Contact Us"}
           />
         </div>
-        <div>
-          <SliderButton onChangeValue={handleThemeChange} />
+        <div className="theme-actions">
+          <SliderButton event={handleThemeChange} />
         </div>
       </div>
       <hr></hr>
@@ -162,4 +96,43 @@ export const NavBar = ({ navProps }) => {
   );
 };
 
-
+const MenuItem = (props) => {
+  if (!Array.isArray(props?.value)) {
+    return (
+      <li
+        onClick={props?.event}
+        className={`link-container ${props?.isActive ? "active-link" : ""}`}
+      >
+        <HashLink className={"menu-link"} to={`/#${props?.link}`}>
+          {props?.name}
+        </HashLink>
+      </li>
+    );
+  } else {
+    // else will return a local page link with nested menu
+    return (
+      <li
+        onClick={props?.event}
+        className={`link-container ${props?.isActive ? "active-link" : ""}`}>
+        <HashLink
+          className={"menu-link"}
+          to={`/#${props?.link}` || navigate("/")}>
+          {props?.name}
+        </HashLink>
+        <ul className="nested-menu">
+          {props?.value.map((item) => {
+            return (
+              <li className="link-container" key={item + Math.random()}>
+                <NavigationLink
+                  className={"menu-link"}
+                  to={`/${props?.link}/${lowerCaseReplaceSpace(item)}`}
+                  caption={item}
+                />
+              </li>
+            );
+          })}
+        </ul>
+      </li>
+    );
+  }
+};

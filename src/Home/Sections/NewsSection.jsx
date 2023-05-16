@@ -2,6 +2,10 @@ import React, { useCallback, useEffect, useRef } from 'react'
 import { SectionTitle } from '../../Components/SectionTitle'
 import { Image } from '../../Components/Image'
 import { Button } from '../../Components/Button'
+
+
+
+
 export const NewsSection = ({news}) => {
   const listRef = useRef()
 
@@ -49,7 +53,7 @@ const EventSlide = ({event, index}) => {
     <li className='news-card' style={style}>
       <div className='thumbnail'>
       <Image 
-        containerClassName={"img-container"} 
+        className={"img-container"} 
         url={`news/${event.thumbnail}`} 
         alt={event.title}/>
       <small><i>In {event.date} </i>{event.title}</small>

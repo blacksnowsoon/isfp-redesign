@@ -1,23 +1,18 @@
-import React, {
-  useEffect,
-  useRef,
-  useState,
-  useCallback,
-} from "react";
-import shortmap from "/assets/imgs/hero/shortmap.png";
-import point from "/assets/imgs/hero/point.png";
-import logo from "/assets/imgs/logos/ISFP.png";
+import React, { useEffect, useRef, useState, useCallback } from "react";
+import { Image } from "../../Components/Image";
 
 export const HeroSection = () => {
+  const slideRef = useRef();
+  
   const [slides, setSlides] = useState([
-    <IsfpSlide key="IsfpSlide"/>,
-    <MapSlide key="MapSlide"/>,
-    <PieSlide key="PieSlide"/>,
-    <OurTeamSlide key="OurTeamSlide"/>,
+    <IsfpSlide key="IsfpSlide" />,
+    <MapSlide key="MapSlide" />,
+    <PieSlide key="PieSlide" />,
+    <OurTeamSlide key="OurTeamSlide" />,
+    <InvestMent key="InvestMent" />,
   ]);
   const [BoundingClientRect, setBoundingClientRect] = useState();
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const slideRef = useRef();
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
   const heroRef = useCallback((container) => {
     if (container) {
@@ -59,107 +54,108 @@ export const HeroSection = () => {
     );
   }, []);
 
-  
   // to handle the Next and Previous Btns of the carousel
   const handelCarouselEventsBtns = (e) => {
     const id = e.target.id;
     if (id === "right") {
-      setCurrentSlide(
-        currentSlide === 0 ? slides.length - 1 : currentSlide - 1
-      );
+      if (currentSlideIndex === 0) {
+        addMoreSlidesToTheLeft()
+      } else {
+        setCurrentSlideIndex(currentSlideIndex - 1);
+      }
     } else if (id === "left") {
-      setCurrentSlide(
-        currentSlide === slides.length - 1 ? 0 : currentSlide + 1
-      );
-    }
-    if (currentSlide % 2 === 0 ) {
-      reorderSlidesList()
+      currentSlideIndex === slides.length - 1
+        ? addMoreSlidesToTheRight()
+        : setCurrentSlideIndex(currentSlideIndex + 1);
     }
   };
 
-  // reorder the order of the slides list
-  const reorderSlidesList = ()=> {
-    const colneFirst = slides.slice(0, 1);
-    const colneLast = slides.slice(slides.length - 1);
-    const restOfSlides = slides.slice(1,-1)
-    
-  }
+  // grap the first slide and add to the end of the slides array
+  const addMoreSlidesToTheRight = () => {
+    const cloneFirst = slides.at(0);
+    const cloneSlidesAfterFirst = slides.filter(
+      (ele) => slides.indexOf(ele) !== 0
+    );
+    setSlides([...cloneSlidesAfterFirst, cloneFirst]);
+  };
+
+  // grap the last slide and add it to the beginning of the slides array
+  const addMoreSlidesToTheLeft = () => {
+    const cloneLast = slides.at(slides.length - 1);
+    const cloneSlidesBeforeLast = slides.filter(
+      (ele) => slides.indexOf(ele) !== slides.length - 1
+    );
+    setSlides([cloneLast, ...cloneSlidesBeforeLast]);
+  };
+
   // useeffect to handle the slide transtion
   useEffect(() => {
     const slideWidth = slideRef.current.clientWidth;
+    
     slideRef.current.style.transform = `translateX(-${
-      slideWidth * currentSlide
+    slideWidth * currentSlideIndex
     }px)`;
     
-  }, [currentSlide]);
+  }, [currentSlideIndex, slides]);
 
   // colne the first and the last childes for infinite
 
   return (
-    <div ref={heroRef} className="hero">
+    <section ref={heroRef} className="hero">
       <button id="left" className="btn left" onClick={handelCarouselEventsBtns}>
         &lt;
       </button>
       <button
         id="right"
         className="btn right"
-        onClick={handelCarouselEventsBtns}>
+        onClick={handelCarouselEventsBtns}
+      >
         &gt;
       </button>
       {/* {BoundingClientRect && generatCanves(BoundingClientRect)} */}
       <div className="carousel">
         <div className="slides" ref={slideRef}>
-          {slides.map((slide) => slide)}
+          {Array.from(slides).map((slide) => slide)}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-const IsfpSlide = () => {
-  return (
-    <div className="slide">
-      <div className="col logo">
-        <img src={logo} alt="logo" />
-      </div>
-      <div className="col content">
-        An Egyptian pioneer software house in the field of Transport Automation,
-        Integration Solutions and Business Process Management
-      </div>
-    </div>
-  );
-};
-
+// slide -1
 const MapSlide = () => {
+  const locations = [];
+  for (let i = 1; i < 12; i++) {
+    locations.push(i);
+  }
   return (
-    <div className="slide">
+    <article className="slide">
       <div className="col">
         <div className="map">
-          <img src={shortmap} alt="map" />
-          <img src={point} alt="point" className="point" />
-          <img src={point} alt="point" className="point" />
-          <img src={point} alt="point" className="point" />
-          <img src={point} alt="point" className="point" />
-          <img src={point} alt="point" className="point" />
-          <img src={point} alt="point" className="point" />
-          <img src={point} alt="point" className="point" />
-          <img src={point} alt="point" className="point" />
-          <img src={point} alt="point" className="point" />
-          <img src={point} alt="point" className="point" />
-          <img src={point} alt="point" className="point" />
+          <Image url={"hero/shortmap.png"} alt={"map"} />
+          {locations.map((index) => {
+            return (
+              <Image
+                url={"hero/point.png"}
+                className={"point"}
+                alt={"point"}
+                key={"point" + index}
+              />
+            );
+          })}
         </div>
       </div>
       <div className="col content">
-        <h3>We need to prove it</h3>
+        <h2>We Do Not Need to Prove It.</h2>
         <p>just let you know Our Products & Services In most growing ports</p>
       </div>
-    </div>
+    </article>
   );
 };
-
+// slide -2
 const PieSlide = () => {
   return (
-    <div className="slide">
+    <article className="slide">
       <div className="col">
         <div className="pie">
           <div className="pie-col">66%</div>
@@ -168,7 +164,7 @@ const PieSlide = () => {
         </div>
       </div>
       <div className="col content">
-        <h3>Shareholders</h3>
+        <h2>Shareholders</h2>
         <ul>
           <li>66% The Egyptian Ministry of Transport</li>
           <li>25% The Egyptian Ministry of Communication</li>
@@ -177,20 +173,50 @@ const PieSlide = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </article>
   );
 };
+// slide -3 which is the center and start index
+const IsfpSlide = () => {
+  return (
+    <article className="slide">
+      <Image
+        containerClassName={"col logo"}
+        url={"logos/ISFP.png"}
+        alt={"ISFP"}
+      />
 
+      <h2 className="col content">
+        An Egyptian pioneer software house in the field of Transport Automation,
+        Integration Solutions and Business Process Management
+      </h2>
+    </article>
+  );
+};
+// slide -4
 const OurTeamSlide = () => {
   return (
-    <div className="slide">
+    <article className="slide">
       <div className="col our-teams"></div>
       <div className="col content">
-        <p>
+        <h2>
           Confidence in our teams of experts to provide Innovative and Efficient
-          solutions
-        </p>
+          solutions.
+        </h2>
       </div>
-    </div>
+    </article>
+  );
+};
+// slide -5
+const InvestMent = () => {
+  return (
+    <article className="slide">
+      <div className="col">
+        <h1>`123</h1>
+      </div>
+      <div className="col content">
+        <h2>We Invest In Human Resource.</h2>
+      </div>
+    </article>
   );
 };

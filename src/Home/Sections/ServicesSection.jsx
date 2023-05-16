@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { Image } from "../../Components/Image";
 // handle the section of an array data type
 export const ServicesSection = (services) => {
@@ -9,27 +9,18 @@ export const ServicesSection = (services) => {
   // to get the array of the services which is the value of prop
   const listOfServices = Object.values(services)[0];
 
-  const generateServicesList = useCallback(()=>{
-      return (
-        <>
-          <ul className="services">
+  return (
+    <section id="services" className="container">
+      <h2 className="sec-title">{secName}</h2>
+      <ul className="services">
             {
-              listOfServices.map(service =>{
+              listOfServices.map(service => {
                 return (
-                  <Service service={service} key={service.name + Math.random}/>
+                  <Service service={service} key={service.name + Math.random} />
                 )
               })
             }
           </ul>
-        </>
-      )
-  },[])
-  return (
-    <section id="services" className="container">
-      <h2 className="sec-title">{secName}</h2>
-      {
-        generateServicesList()
-      }
     </section>
   );
 };

@@ -1,25 +1,26 @@
-import React from 'react'
-import { imgEncoded } from '../API'
+import React from "react";
+import { imgEncoded } from "../Utiles/UtilesMethods";
 
-export const Image = (props) => {
-  const path = '/assets/imgs/' + props?.url
-  const src = imgEncoded(path)
-  return (
-    props.containerClassName ? 
-    <div className={props.containerClassName}>
-      <img 
+export const Image = ({ url, containerClassName, className, alt, title }) => {
+  const path = "/assets/imgs/" + url;
+  const src = imgEncoded(path);
+  return containerClassName ? (
+    <div className={containerClassName}>
+      <img
         loading="lazy"
-        className={props?.className}
-        src={src} 
-        alt={props?.alt} 
-        title={props?.title} />
+        className={className}
+        src={src}
+        alt={alt}
+        title={title || ""}
+      />
     </div>
-    :
-    <img 
+  ) : (
+    <img
       loading="lazy"
-      className={props?.className}
-      src={src} 
-      alt={props?.alt} 
-      title={props?.title} />
-  )
-}
+      className={className}
+      src={src}
+      alt={alt}
+      title={title || ""}
+    />
+  );
+};

@@ -1,11 +1,11 @@
-import { createContext, useCallback, useContext, useMemo, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import "./CSS/App.css";
 import { NavBar } from "./Home/NavBar";
-import { Outlet } from "react-router-dom";
+import { Outlet, json } from "react-router-dom";
 import { Footer } from "./Home/Footer";
 import { useLoaderData } from "react-router-dom";
 import { getData } from "./API";
-
+import { themeChoosed, userPreferdColor } from "./Utiles/UtilesMethods";
 
 export const AppContext = createContext({
   defaultTheme: "system",
@@ -13,17 +13,24 @@ export const AppContext = createContext({
 });
 function App() {
 
-  const {defaultTheme, NavActiveLink } = useContext(AppContext);
-  const [theme, setTheme] = useState(defaultTheme);
+  const {NavActiveLink } = useContext(AppContext);
   const [activeNavLink, setActiveNavLink] = useState(NavActiveLink);
   const { data } = useLoaderData();
+  
 
   // to sepreate the nested link from the simple links
   const generateNavBarMneu = useCallback(() => generateNavbarObject(data) , [data]);
 
+  useEffect(()=>{
+    userPreferdColor && themeChoosed(userPreferdColor)
+
+    return()=>{
+      userPreferdColor && themeChoosed(userPreferdColor)
+    }
+  },[])
   return (
     <AppContext.Provider
-      value={{ theme, setTheme, activeNavLink, setActiveNavLink }} >
+      value={{ activeNavLink, setActiveNavLink }} >
       <div className="App">
         <header>
           <NavBar navProps={generateNavBarMneu()} />
