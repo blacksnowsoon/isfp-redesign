@@ -14,6 +14,7 @@ export const HeroSection = () => {
   const [BoundingClientRect, setBoundingClientRect] = useState();
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
+  const rightBtn = useRef()
   const heroRef = useCallback((container) => {
     if (container) {
       setBoundingClientRect(container.getBoundingClientRect());
@@ -68,6 +69,8 @@ export const HeroSection = () => {
         ? addMoreSlidesToTheRight()
         : setCurrentSlideIndex(currentSlideIndex + 1);
     }
+    e.preventDefault()
+    clearInterval()
   };
 
   // grap the first slide and add to the end of the slides array
@@ -97,15 +100,19 @@ export const HeroSection = () => {
     }px)`;
     
   }, [currentSlideIndex, slides]);
-
+useEffect(()=>{
+  const interval = setInterval(()=>{rightBtn.current.click()},3000)
+  return()=> clearInterval(interval)
+})
   // colne the first and the last childes for infinite
 
   return (
     <section ref={heroRef} className="hero">
-      <button id="left" className="btn left" onClick={handelCarouselEventsBtns}>
+      <button  id="left" className="btn left" onClick={handelCarouselEventsBtns}>
         &lt;
       </button>
       <button
+        ref={rightBtn}
         id="right"
         className="btn right"
         onClick={handelCarouselEventsBtns}
