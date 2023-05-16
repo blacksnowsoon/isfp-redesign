@@ -39,12 +39,6 @@ export async function getProject(id) {
   }
 }
 
-// return a string lowerCase and replace the spaces
-export const lowerCaseReplaceSpace = (string)=>{
-  return string.toLowerCase().replaceAll(" ", "")
-}
 
-// return an encoded Image
-export const imgEncoded = (path)=>{
-  return  new URL(path, import.meta.url).href
-}
+
+
