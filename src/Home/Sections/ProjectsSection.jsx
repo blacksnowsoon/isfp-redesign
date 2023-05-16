@@ -30,15 +30,6 @@ export const ProjectsSection = ({ projects = {} }) => {
     e.preventDefault();
   };
 
-  const generateProjectsSection =
-    useCallback(()=>{
-      return (
-      <ProjectsList
-        reference={projectsContainer} 
-        projects={projects} />
-      )
-    }, [projects]);
-
   useEffect(() => {
     if (currentIndex < prevIndex.current) {
       projectsContainer.current.childNodes[
@@ -75,9 +66,9 @@ export const ProjectsSection = ({ projects = {} }) => {
             caption={'>'}
           />
         </div>
-        {
-          generateProjectsSection()
-        }
+        <ProjectsList
+        reference={projectsContainer} 
+        projects={projects} />
       </div>
       <NavigationLink 
       to={"projects"} 

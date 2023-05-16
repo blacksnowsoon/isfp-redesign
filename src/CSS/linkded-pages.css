@@ -2,16 +2,13 @@
 .one-item-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  margin-block-start: var(--hero-margin);
-  padding: var(--l-gap);
 }
 .one-item-container .col2 {
   text-align: left;
-  padding: var(--l-gap);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 2rem;
+  justify-content: space-evenly;
+  gap: var(--l-gap);
 }
 .one-item-container .col2 p {
   padding-left: var(--l-gap);
@@ -37,7 +34,7 @@
 .item-links {
   display: flex;
   gap: var(--s-gap);
-  padding: var(--s-gap);
+  
 }
 .item-links a {
   position: relative;
@@ -46,6 +43,7 @@
   justify-content: center;
   isolation: isolate;
   padding: var(--m-gap);
+  font-size: .9rem;
 }
 
 .one-item-container .imgs-container {
@@ -69,7 +67,7 @@
   position: absolute;
   border-radius: 25%;
   box-shadow: inset var(--box-shadow);
-  padding: 1rem;
+  padding: var(--m-gap);
   
 }
 .imgs-container img:not(.thumbnail) {
@@ -151,7 +149,7 @@
 .projects-grid {
   padding-block: var(--xl-gap);
   display: grid;
-  grid-template-columns: repeat(4, minmax(275px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--l-gap);
   
 }
@@ -160,7 +158,7 @@
   overflow: hidden;
   aspect-ratio: 1;
   outline: 1px solid;
-  box-shadow: inset var(--box-shadow) black;
+  box-shadow: inset var(--box-shadow) ;
 }
 .card-thumbnail {
   aspect-ratio: 16 / 9;
@@ -186,7 +184,6 @@
   -webkit-line-clamp: 5;
   line-clamp: 5;
   overflow: hidden;
-  
 }
 .project-card:hover .overlay {
   transform: translateY(0);
@@ -203,9 +200,11 @@
 .project-page {
   display: flex;
   text-align: left;
+  min-height: calc(100svh - var(--hero-margin));
 }
 .project-page-thumb {
   flex: 1 0 0;
+  padding-top: var(--l-gap);
 }
 .pro-img {
   width: 100%;
@@ -218,8 +217,14 @@
   padding: var(--l-gap);
 }
 
-
-@media  screen and (width < 1000px) {
+/* breackpoints-------------------------------------------- */
+@media screen and (width >= 1366px) { 
+  
+}
+@media screen and (width <= 1280px) { 
+  
+}
+@media screen and (width <= 920px) { 
   .one-item-container {
     grid-template-columns: 1fr;
   }
@@ -229,5 +234,10 @@
   .project-page {
     flex-direction: column;
   }
+}
+@media screen and (width <= 768px) { 
   
+}
+@media screen and (width <= 640px) { 
+
 }
