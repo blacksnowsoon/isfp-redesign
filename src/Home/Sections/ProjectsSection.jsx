@@ -31,14 +31,15 @@ export const ProjectsSection = ({ projects = {} }) => {
   };
 
   useEffect(() => {
+    const dirction = window.innerWidth <= 768 ? "Y" : "X"
     if (currentIndex < prevIndex.current) {
       projectsContainer.current.childNodes[
         currentIndex + 1
-      ].style.transform = `translateX(100%)`;
+      ].style.transform = `translate${dirction}(100%)`;
     } else {
       projectsContainer.current.childNodes[
         currentIndex
-      ].style.transform = `translateX(0%)`;
+      ].style.transform = `translate${dirction}(0%)`;
     }
   }, [currentIndex]);
 
@@ -50,7 +51,8 @@ export const ProjectsSection = ({ projects = {} }) => {
         caption={'Projects'}/>
       
       <div className="wrapper">
-        <div className="btns-wrapper">
+        <div className="wrap-col">
+          <div className="btns-wrapper">
           <Button
             ariaLabel="slide left"
             reference={leftRef}
@@ -65,15 +67,19 @@ export const ProjectsSection = ({ projects = {} }) => {
             className={`right ${currentIndex === 0 && "hide"}`}
             caption={'>'}
           />
+          </div>
+          <ProjectsList
+          reference={projectsContainer} 
+          projects={projects} />
         </div>
-        <ProjectsList
-        reference={projectsContainer} 
-        projects={projects} />
+        <div className="wrap-col">
+          <NavigationLink 
+          to={"projects"} 
+          className={"projects-link"} 
+          caption={`See All Projects`}/>
+        </div>
+        
       </div>
-      <NavigationLink 
-      to={"projects"} 
-      className={"projects-link"} 
-      caption={`See All Projects`}/>
     </section>
   );
 };

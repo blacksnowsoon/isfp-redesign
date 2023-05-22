@@ -13,7 +13,7 @@ export const ClientsSection = ({clients}) => {
   };
   useEffect(()=>{
     const parentNode = clientsContainer.current
-    console.log(parentNode.style)
+    // console.log(parentNode.style)
   
   
   },[])

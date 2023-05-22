@@ -10,7 +10,7 @@ export const NewsSection = ({news}) => {
   const listRef = useRef()
 
   const handleExtendText = (e)=>{
-    const target = e.taget
+    const target = e.target
     const listFullHeight = listRef.current.scrollHeight
     let listCurrentHeight = listRef.current.offsetHeight
     if (listCurrentHeight < listFullHeight) {
@@ -18,12 +18,14 @@ export const NewsSection = ({news}) => {
       listRef.current.style.height = listCurrentHeight+ "px"
       if (listCurrentHeight >= listFullHeight) {
         listRef.current.classList.toggle("shadow")
+        target.innerText = "-"
       }
     } else {
       listRef.current.style.height = "var(--news-height)"
       listRef.current.classList.toggle("shadow")
+      target.innerText = "+"
     }
-    
+    e.preventDefault()
   }
   useEffect(()=>{
   }, [])
