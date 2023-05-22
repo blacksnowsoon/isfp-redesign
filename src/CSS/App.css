@@ -121,6 +121,7 @@
   display: flex;
   border-color: var(--under-line);
   transition: all 300ms;
+  /* color: var(--color); */
 }
 /* li has ul as nested menu */
 .nested-menu {
@@ -156,15 +157,14 @@
   --under-line : var(--accent)
 }
 /* footer style */
-.footer {
-  /* padding: var(--l-gap); */
-}
+
 .footer-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   max-width: var(--max-width);
   margin-inline: auto;
   gap: var(--l-gap);
+  padding-top: var(--l-gap);
 }
 .footer h2 {
   font-size: 1.2rem;
@@ -223,6 +223,7 @@
     fill: var(--accent);
     filter: drop-shadow(0 0 .3rem var(--accent));
   }
+  
   .menu {
     justify-self: start;
     display: block;
@@ -245,7 +246,7 @@
     margin-left: 1.5rem;
     min-width: 100%;
     border: none;
-    
+    /* display: flex; */
   }
   .nested-menu::before {
     content: "";
@@ -269,31 +270,6 @@
   .grap-down {
     transition: transform 1s;
     transform: translateY(0);
-  }
-  .hero .btn {
-    transform: translateY(-120%);
-  }
-  .media-container {
-    width: 100%;
-    
-  }
-  .slides {
-    width: 100%;
-    height: 100%;
-  }
-  .slide {
-    flex-direction: column;
-    
-  }
-  .col {
-    margin-inline: 0;
-    /* padding: 0; */
-  }
-  .col.logo {
-    width: 100%;
-  }
-  .slide:nth-child(even) {
-    flex-direction:column;
   }
   
   /* styling the footer */

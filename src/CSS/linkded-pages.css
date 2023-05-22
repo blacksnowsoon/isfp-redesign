@@ -175,7 +175,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transform: translateY(80%) skew(-5deg, -5deg);
+  transform: translateY(100%) skew(-5deg, -5deg);
   transition: transform 500ms, background 500ms;
 }
 .overlay p {

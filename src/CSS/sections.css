@@ -115,14 +115,22 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  --wrapper-height: calc(80svh - var(--hero-margin));
   padding-bottom: var(--m-gap);
 }
 .wrapper {
+  --wrapper-height: 70svh;
   margin-bottom: var(--m-gap);
   position: relative;
-  height: var(--wrapper-height);
+  display: flex;
+  gap: var(--m-gap);
+  flex-direction: column;
 }
+/* grid col  */
+.wrapper .wrap-col {
+  display: flex;
+  flex-direction: column;
+}
+/* the buttons container */
 .btns-wrapper {
   position: absolute;
   right: 0;
@@ -131,11 +139,14 @@
   display: grid;
   grid-auto-flow: row;
   z-index: 1;
+  justify-content: space-between;
 }
 .btns-wrapper .left {
+  place-self: start;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0 50%);
 }
 .btns-wrapper .right {
+  place-self: end;
   clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%, 0 50%);
 }
 .btns-wrapper .right, .btns-wrapper .left {
@@ -148,14 +159,14 @@
   filter:drop-shadow(inset var(--box-shadow)) ;
   color: aliceblue;
   background: var(--accent);
+  max-height: 200px;
 } 
+/* the projects ul container */
 .projects-list {
   position: relative;
   isolation: isolate;
-  width: 100%;
-  height: 100%;
   overflow: hidden;
-  
+  height: var(--wrapper-height);
 }
 .project {
   background: var(--background-color);
@@ -164,7 +175,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   transition: transform 500ms ease-in-out;
-  clip-path: polygon(5% 0, 95% 0, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 10% 100%, 0% 50%);
 }
 .project:not(:nth-child(1)) {
   transform: translateX(100%);
@@ -180,33 +191,24 @@
 .project-details {
   padding: var(--l-gap);
   text-align: left;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  gap: var(--xl-gap);
 }
 .project-details p {
+  justify-self: end;
   font-size: .8rem;
   padding: var(--xl-gap);
   box-shadow: var(--box-shadow);
-  border-radius:  85% 15% 91% 9% / 11% 81% 19% 89% ;
 }
-.project a {
-  display: flex;
-  align-self: center;
-  justify-self: center;
+.project-details a {
+  place-self: center;
   box-shadow: var(--box-shadow);
-  border-radius:  85% 15% 91% 9% / 11% 81% 19% 89% ;
   padding: var(--l-gap);
 }
 .projects-link {
-  padding-block: var(--m-gap);
-  margin-inline: var(--m-gap);
-  display: flex;
-  justify-content: center;
-  font-size: 1.3em;
-  box-shadow: var(--box-shadow);
-  border-radius:  85% 15% 91% 9% / 11% 81% 19% 89%;
-}
-.projects-link:hover {
-  box-shadow:inset var(--box-shadow);
+padding: 1rem;
+outline: 1px solid;
 }
 @keyframes move-right {
   to {
@@ -233,14 +235,16 @@
 }
 .btn-wrapper {
   outline: 1px solid;
+  /* color: black; */
 }
 .shadow {
   box-shadow: var(--shadow) inset;
 }
 .btn-exetend {
   padding-block: 1rem;
-  font-size: 1.5em;
-  background: var(--background-color);
+  font-size: 1em;
+  background: transparent;
+  color: var(--color);
   border: none;
   cursor: pointer;
   width: 100%;
@@ -298,13 +302,11 @@
   
 }
 .clients::after, .clients::before {
-  border-radius: 50%;
   content: "";
   position: absolute;
-  height: 100%;
   z-index: 2;
   top: 0;
-  box-shadow: 0rem 0rem 7rem 3rem var(--accent);
+  box-shadow: 0rem 0rem 5rem 2rem var(--accent);
 }
 @keyframes marque {
   to {
@@ -341,42 +343,6 @@
   
 }
 @media screen and (width <= 920px) { 
-  .sec-title {
-    font-size: 1.5em;
-  }
-  .sec-title::after, .sec-title::before {
-    width: 40%;
-    height: 10px;
-  }
-  .wrapper {
-    height: calc(100svh - var(--hero-margin));
-  }
-  .btns-wrapper {
-    width: 100%;
-    height: 40px;
-    top: calc(100% - 2rem);
-    writing-mode: vertical-lr;
-  }
-  .btns-wrapper .left {
-    clip-path: polygon(50% 0%, 100% 50%, 100% 100%, 0 100%, 0 0);
-  }
-  .btns-wrapper .right {
-    clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%, 0 50%);
-  }
-  .project {
-    width: 100%;
-    clip-path: polygon(47% 0, 51% 0, 100% 4%, 100% 100%, 0 99%, 0 3%);
-  }
-  .project:not(:nth-child(1)) {
-    transform: translateY(100%);
-  }
-  .project-thumbnail {
-    grid-column: 1 / -1;
-  }
-  .project-details {
-    grid-column: 1 / -1;
-  }
-  
   
 }
 @media screen and (width <= 768px) { 
@@ -385,6 +351,30 @@
   }
   .products-content {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .project {
+    clip-path: polygon(51% 0, 100% 10%, 100% 100%, 0 100%, 0 11%);
+    grid-template-columns: 1fr;
+    grid-auto-flow:row;
+  }
+  .project:not(:nth-child(1)) {
+    transform: translateY(100%);
+  }
+  .project-details {
+    gap:var(--s-gap);
+  }
+  .btns-wrapper {
+    width: 100%;
+    height: 40px;
+    top:85%;
+    writing-mode: vertical-lr;
+  }
+  
+  .btns-wrapper .left {
+    clip-path: polygon(50% 0%, 100% 50%, 100% 100%, 0 100%, 0 0);
+  }
+  .btns-wrapper .right {
+    clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%, 0 50%);
   }
 }
 @media screen and (width <= 640px) { 
