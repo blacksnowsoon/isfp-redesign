@@ -1,41 +1,39 @@
 
-import { Image } from './Components/Image';
+function get() {
+  return fetch("../data.json", {method: 'get'})
+}
 export async function getData() {
   try {
-      const respons = await fetch("../data.json");
-      return respons.json();
+      return await get().then((respons)=> respons.json());
   } catch (error) {
-    console.error('error #%d', error)
+    console.error('getData error #%d', error)
   }
 }
+
 export async function getProduct(productName) {
   try {
-    const respons = await fetch("../data.json");
-    const { Products } = await respons.json().then(fullfilled => fullfilled);
+    const { Products = {}} = await getData()
     return Products[`${productName}`];
   } catch (error) {
-    console.error('error #%d', error)
+    console.error('getProduct error #%d', error)
   }
 }
 
 export async function getProjects(){
   try {
-    const respons = await fetch("../data.json");
-    const {Projects} = await respons.json().then(fullfilled => fullfilled)
-    
+    const { Projects = {}} = await getData()
     return Projects;
   } catch (error) {
-    console.error('error #%d', error)
+    console.error('getProjects error #%d', error)
   }
 }
+
 export async function getProject(id) {
   try {
-    const respons = await fetch("../data.json")
-    const {Projects = {}} = await respons.json().then(fullfilled =>  fullfilled)
-    const project = Projects.filter(project => Number.parseInt(id) === project.id)
-    return project[0]
+    const { Projects = {} } =await getData()
+    return Projects.filter(project => Number.parseInt(id) === project.id)[0]
   } catch (error) {
-    console.error('error #%d', error)
+    console.error('getProject error #%d', error)
   }
 }
 
