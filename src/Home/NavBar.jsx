@@ -13,10 +13,17 @@ import {
   themeChoosed,
   setOffsetY,
 } from "../Utiles/UtilesMethods";
+import { UseOutSideClick } from "../Hooks/UseOutSideClick";
 
 export const NavBar = ({ navProps }) => {
   const { activeNavLink, setActiveNavLink } = useContext(AppContext);
   const menuRef = useRef();
+
+  const toggleMenu = ()=> {
+    if (!menuRef.current.classList.contains("grap-down")) return
+    menuRef.current.classList.toggle("grap-down");
+  }
+  const toggleBtn = UseOutSideClick(toggleMenu)
 
   // track active link
   const handleActiveLink = (e) => {
@@ -24,9 +31,9 @@ export const NavBar = ({ navProps }) => {
     setActiveNavLink(link);
   };
   // showing the menu
-  const toggleMenu = (e) => {
-    e.preventDefault();
+  const handleToggleBtnClick = (e) => {
     menuRef.current.classList.toggle("grap-down");
+    e.stopPropagation()
   };
   // chang between light and dark mode
   const handleThemeChange = (e) => {
@@ -76,12 +83,12 @@ export const NavBar = ({ navProps }) => {
         </div>
       </div>
       <hr></hr>
-      <div className="bottom-bar">
+      <div  className="bottom-bar">
         <div className="bottom-bar-left">
           <a href="/">
             <img className="logo" src={logo} alt="logo" />
           </a>
-          <button className="menu-btn" onClick={toggleMenu}>
+          <button ref={toggleBtn} className="menu-btn" onClick={handleToggleBtnClick}>
             {/* menu icon svg */}
             <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
               <path d="M3 18v-2h18v2Zm0-5v-2h18v2Zm0-5V6h18v2Z" />
